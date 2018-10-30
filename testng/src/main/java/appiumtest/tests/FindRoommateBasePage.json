@@ -1,0 +1,41 @@
+{
+  "homePageButton": "id@com.loulifang.house:id/llfLyt",
+  "findRoommateButton": "id@com.loulifang.house:id/friendLyt",
+  "messageButton": "id@com.loulifang.house:id/serviceLyt",
+  "mineButton": "id@com.loulifang.house:id/mineLyt",
+  //找室友主页，包含筛选、发房。发帖。帖子入口等按钮
+  "filterIcon": "id@com.loulifang.house:id/filterIconBg",
+  "publishIcon": "id@com.loulifang.house:id/publishIcon",
+  "replyIcon": "id@com.loulifang.house:id/replyIcon",
+  "isRoomMakers": "id@com.loulifang.house:id/hasRoomText",
+  "genders": "id@com.loulifang.house:id/genderImg",
+  "roomFirstImages": "id@com.loulifang.house:id/imageView0",
+  //每个帖子的房间的第一张图片
+  "hasRoomButton": "id@com.loulifang.house:id/roomBtn1",
+  "hasntRoomButton": "id@com.loulifang.house:id/roomBtn2",
+  //发房内容页，包含标题、地点、价格、图片选择等
+  "titleInput": "id@com.loulifang.house:id/titleEdit",
+  "locationButton": "id@com.loulifang.house:id/addressContetText",
+  "businessCircle": "text@商圈",
+  "jingan": "text@静安",
+  "jingansi": "text@静安寺",
+  "subway": "text@地铁",
+  "line7": "text@7号线",
+  "yuntaiLoad": "text@云台路",
+  "locationEnsuredButton": "id@com.loulifang.house:id/rightLty",
+  "priceGlider": "id@com.loulifang.house:id/seekbar",
+  "priceMin": "id@com.loulifang.house:id/minText",
+  "priceMax": "id@com.loulifang.house:id/maxText",
+  "addImagesButton": "id@com.loulifang.house:id/imageView",
+  "albumButton": "text@相册",
+  "screenshotAlbum": "text@Screenshots",
+  "toobar": "id@com.loulifang.house:id/toolbar",
+  //相册选择时的上方工具栏，用于判定当前页面
+  "loading": "id@android:id/progress",
+  "images": "id@com.loulifang.house:id/image_view_image_select",
+  //相册文件下的多个图片
+  "imagesEnsuredButton": "id@com.loulifang.house:id/menu_item_add_image",
+  "otherContentInput": "id@com.loulifang.house:id/contentEdit",
+  "publishButton": "id@com.loulifang.house:id/rightText",
+  "publishToast": "xpath@//*[contains(@text,'发帖成功')]"
+}

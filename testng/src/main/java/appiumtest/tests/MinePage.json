@@ -1,0 +1,10 @@
+{
+  "homePageButton": "id@com.loulifang.house:id/llfLyt",
+  "findRoommateButton": "id@com.loulifang.house:id/friendLyt",
+  "messageButton": "id@com.loulifang.house:id/serviceLyt",
+  "mineButton": "id@com.loulifang.house:id/mineLyt",
+  "myPostButton": "id@com.loulifang.house:id/myTopicLyt",
+  "deleteButtons": "id@com.loulifang.house:id/tvw_item_delete",
+  "deleteEnsureButton": "id@android:id/button1",
+  "deletedSucessToast": "xpath@//*[contains(@text,'删除成功')]"
+}
