@@ -20,6 +20,11 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+import org.testng.annotations.AfterMethod;
 
 /**
  * 这块筛选主要测试一下app端筛选器以及房源数据是否正确 注意：每个test断言完后，需要回到筛选结果页 附近房源的筛选以及不限筛选未完善

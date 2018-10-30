@@ -22,6 +22,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Parameters;
 
 /**
  * 这个房源详情的测试类，目前先做收藏、预约
@@ -213,7 +219,7 @@ import org.slf4j.LoggerFactory;
 
   /**
    * @param mobile 用于未登录的情况下
-   * @param password用于未登录的情况下 BookHouseTest这个测试类主要检测预约以及重复预约以及取消预约后的重新预约
+   * @param password 用于未登录的情况下 BookHouseTest这个测试类主要检测预约以及重复预约以及取消预约后的重新预约
    */
   // 预约房源测试类依赖的方法已完成进入房源详情（测试小区第一个）
   @Parameters({ "mobile", "password" }) @Test(dependsOnMethods = { "FirstMethod" }, priority = 2)
