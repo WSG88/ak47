@@ -1,0 +1,186 @@
+[
+  {
+    "key": "libchaosvmp.so",
+    "value": "娜迦"
+  },
+  {
+    "key": "libddog.so",
+    "value": "娜迦"
+  },
+  {
+    "key": "libfdog.so",
+    "value": "娜迦"
+  },
+  {
+    "key": "libedog.so",
+    "value": "娜迦企业版"
+  },
+
+  {
+    "key": "libexec.so",
+    "value": "爱加密"
+  },
+  {
+    "key": "libexecmain.so",
+    "value": "爱加密"
+  },
+  {
+    "key": "ijiami.dat",
+    "value": "爱加密"
+  },
+  {
+    "key": "ijiami.ajm",
+    "value": "爱加密企业版"
+  },
+
+  {
+    "key": "libsecexe.so",
+    "value": "梆梆免费版"
+  },
+  {
+    "key": "libsecmain.so",
+    "value": "梆梆免费版"
+  },
+  {
+    "key": "libSecShell.so",
+    "value": "梆梆免费版"
+  },
+
+  {
+    "key": "libDexHelper.so",
+    "value": "梆梆企业版"
+  },
+  {
+    "key": "libDexHelper-x86.so",
+    "value": "梆梆企业版"
+  },
+
+  {
+    "key": "libprotectClass.so",
+    "value": "360"
+  },
+  {
+    "key": "libjiagu.so",
+    "value": "360"
+  },
+  {
+    "key": "libjiagu_art.so",
+    "value": "360"
+  },
+  {
+    "key": "libjiagu_x86.so",
+    "value": "360"
+  },
+
+  {
+    "key": "libegis.so",
+    "value": "通付盾"
+  },
+  {
+    "key": "libNSaferOnly.so",
+    "value": "通付盾"
+  },
+
+  {
+    "key": "libnqshield.so",
+    "value": "网秦"
+  },
+
+  {
+    "key": "libbaiduprotect.so",
+    "value": "百度"
+  },
+
+  {
+    "key": "aliprotect.dat",
+    "value": "阿里聚安全"
+  },
+  {
+    "key": "libsgmain.so",
+    "value": "阿里聚安全"
+  },
+  {
+    "key": "libsgsecuritybody.so",
+    "value": "阿里聚安全"
+  },
+  {
+    "key": "libmobisec.so",
+    "value": "阿里聚安全"
+  },
+
+  {
+    "key": "libtup.so",
+    "value": "腾讯"
+  },
+  {
+    "key": "libexec.so",
+    "value": "腾讯"
+  },
+  {
+    "key": "libshell.so",
+    "value": "腾讯"
+  },
+  {
+    "key": "mix.dex",
+    "value": "腾讯"
+  },
+  {
+    "key": "lib/armeabi/mix.dex",
+    "value": "腾讯"
+  },
+  {
+    "key": "lib/armeabi/mixz.dex",
+    "value": "腾讯"
+  },
+
+  {
+    "key": "libtosprotection.armeabi.so",
+    "value": "腾讯御安全"
+  },
+  {
+    "key": "libtosprotection.armeabi-v7a.so",
+    "value": "腾讯御安全"
+  },
+  {
+    "key": "libtosprotection.x86.so",
+    "value": "腾讯御安全"
+  },
+
+  {
+    "key": "libnesec.so",
+    "value": "网易易盾"
+  },
+
+  {
+    "key": "libAPKProtect.so",
+    "value": "APKProtect"
+  },
+
+  {
+    "key": "libkwscmm.so",
+    "value": "几维安全"
+  },
+  {
+    "key": "libkwscr.so",
+    "value": "几维安全"
+  },
+  {
+    "key": "libkwslinker.so",
+    "value": "几维安全"
+  },
+
+  {
+    "key": "libx3g.so",
+    "value": "顶像科技"
+  },
+
+  {
+    "key": "libapssec.so",
+    "value": "盛大"
+  },
+
+  {
+    "key": "librsprotect.so",
+    "value": "瑞星"
+  }
+]
