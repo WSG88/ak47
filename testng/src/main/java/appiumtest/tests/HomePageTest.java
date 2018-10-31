@@ -1,12 +1,11 @@
 package appiumtest.tests;
 
+import appiumtest.page.BasePage;
 import appiumtest.utils.AndroidDriverWait;
 import appiumtest.utils.AssertionListener;
-import appiumtest.utils.ChooseCity;
-import appiumtest.utils.HomePage;
+import appiumtest.utils.AssertionUtil;
 import appiumtest.utils.InitDriver;
-import appiumtest.utils.MyAssertion;
-import appiumtest.utils.SearchResult;
+import appiumtest.utils.LogUtil;
 import appiumtest.utils.UsualClass;
 import io.appium.java_client.android.AndroidDriver;
 import java.util.ArrayList;
@@ -18,8 +17,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -33,18 +30,12 @@ import org.testng.annotations.Test;
  * 发布房源计划在发房测试类中完善
  */
 @Listeners({ AssertionListener.class }) public class HomePageTest {
-  // 日志对象
-  Logger log = LoggerFactory.getLogger("HomePageTest");
   private AndroidDriver driver;
   private AndroidDriverWait wait;
-  private int netstatus;
 
   @BeforeClass public void InitDriver() {
     driver = InitDriver.dr;
     wait = InitDriver.wait;
-    netstatus = InitDriver.netstatus;
-    // 配置线程名字用于日志记录
-    Thread.currentThread().setName("HomePageTest");
   }
 
   // 城市切换以及城市列表的校验
@@ -68,14 +59,14 @@ import org.testng.annotations.Test;
     }
 
     // 获取首页城市定位
-    WebElement city = HomePage.Location(driver, "city");
+    WebElement city = BasePage.homeLocation(driver, "city");
 
     // 模拟点击首页城市按钮（页面跳转至选择城市页面）
     city.click();
     // 获取标题
-    String title = ChooseCity.Location(driver, "title").getText();
+    String title = BasePage.chooseCityLocation(driver, "title").getText();
     // 获取所有城市(并转string)
-    List<WebElement> actualallcity = (List<WebElement>) ChooseCity.Allcity(driver);
+    List<WebElement> actualallcity = (List<WebElement>) BasePage.getAllCity(driver);
     List<String> actualallcity_String = new ArrayList<String>();
     for (WebElement e : actualallcity) {
       actualallcity_String.add(e.getText());
@@ -111,7 +102,7 @@ import org.testng.annotations.Test;
       }
     }
     // 初始城市页面（当前城市以及列表中的√的坐标）
-    String actualcurrentcity = ChooseCity.Location(driver, "currentcity").getText();
+    String actualcurrentcity = BasePage.chooseCityLocation(driver, "currentcity").getText();
     try {
       Assert.assertEquals("上海", actualcurrentcity);
     } catch (Exception e) {
@@ -119,7 +110,7 @@ import org.testng.annotations.Test;
     }
 
     // 获取打钩的坐标(这块因为手机分辨率不一样后期做调整)
-    Point bounds = ChooseCity.Location(driver, "Selectedsign").getLocation();
+    Point bounds = BasePage.chooseCityLocation(driver, "Selectedsign").getLocation();
     try {
       Assert.assertEquals(969, bounds.x);
       Assert.assertEquals(541, bounds.y);
@@ -142,10 +133,10 @@ import org.testng.annotations.Test;
     }
     // 断言判定选择北京后在首页是否显示北京这个城市
     try {
-      Assert.assertEquals("北京", HomePage.Location(driver, "city").getText());
+      Assert.assertEquals("北京", BasePage.homeLocation(driver, "city").getText());
     } catch (Exception e) {
       System.out.println(
-          "选择北京后返回首页文案显示错误，实际值：" + HomePage.Location(driver, "city").getText() + "预期:北京");
+          "选择北京后返回首页文案显示错误，实际值：" + BasePage.homeLocation(driver, "city").getText() + "预期:北京");
     }
   }
 
@@ -154,48 +145,48 @@ import org.testng.annotations.Test;
    * 6：嗨住美家（这块位置最好不要变）
    */
   @Test public void PagebuttonTest() {
-    log.info("********************");
-    log.info("现在开始测试首页各入口，点击首页各按钮");
+    LogUtil.info("********************");
+    LogUtil.info("现在开始测试首页各入口，点击首页各按钮");
     // 等待首页所有按钮（整租合租等）
     List<WebElement> homepagebutton = wait.until(new ExpectedCondition<List<WebElement>>() {
       @Override public List<WebElement> apply(WebDriver d) {
-        return HomePage.Locationlist(driver, "homepagebutton");
+        return BasePage.homeListLocation(driver, "homepagebutton");
       }
     });
-    log.info("首页按钮个数" + homepagebutton.size());
+    LogUtil.info("首页按钮个数" + homepagebutton.size());
     // 首页按钮文案存在buttonText中
     List<String> buttonText = new ArrayList<>();
     // 拿到首页所有按钮的文案元素（整租、合租、公寓等）
-    List<WebElement> buttonElement = HomePage.Locationlist(driver, "homepagebuttontext");
+    List<WebElement> buttonElement = BasePage.homeListLocation(driver, "homepagebuttontext");
     // 转为string类型
     if (buttonElement.size() == 0) {
       System.out.println("长度等于0");
     } else {
       for (WebElement e : buttonElement) {
         buttonText.add(e.getText());
-        log.info("预期的按钮文案" + e.getText());
+        LogUtil.info("预期的按钮文案" + e.getText());
       }
     }
     // 模拟每个按钮点击，主要检查一下搜索的房源是否符合预期(i表示首页按钮的下标索引，这块可以处理一下哪些按钮跑与不跑)
     for (int i = 0; i < homepagebutton.size(); i++) {
-      log.info("********************");
+      LogUtil.info("********************");
       // 这个button变量指每次循环到的那个按钮
       WebElement button = null;
       // 如果i==5是发布房源按钮，我这边先continue
       if (homepagebutton.size() == 6) {
         if (i == homepagebutton.size() - 1) {
-          log.info("发布房源先跳过");
+          LogUtil.info("发布房源先跳过");
           continue;
         }
         //如果7个图标则跳过最后的2个按钮（懒人找房、发布房源）
       } else if (homepagebutton.size() == 7) {
         if (i == homepagebutton.size() - 1 || i == homepagebutton.size() - 2) {
-          log.info("发布房源、懒人找房先跳过");
+          LogUtil.info("发布房源、懒人找房先跳过");
           continue;
         }
       }
       //记录日志当前点击的按钮以及按钮的名称
-      log.info("点击第" + (i + 1) + "个按钮" + buttonText.get(i));
+      LogUtil.info("点击第" + (i + 1) + "个按钮" + buttonText.get(i));
       // 这块需要加个等待，保证这个按钮能点击，否则执行click没有效果
       button = wait.until(ExpectedConditions.elementToBeClickable(homepagebutton.get(i)));
       // 循环点击
@@ -203,13 +194,13 @@ import org.testng.annotations.Test;
       // 等待房源列表（等待出租类型）
       List<WebElement> renttype = wait.until(new ExpectedCondition<List<WebElement>>() {
         @Override public List<WebElement> apply(WebDriver d) {
-          return SearchResult.LocationList(driver, "renttype");
+          return BasePage.SearchResultListLocation(driver, "renttype");
         }
       });
       // 等待更多按钮
       WebElement more = wait.until(new ExpectedCondition<WebElement>() {
         @Override public WebElement apply(WebDriver d) {
-          return SearchResult.Location(driver, "more");
+          return BasePage.SearchResultLocation(driver, "more");
         }
       });
       // 拿到更多筛选处
@@ -221,95 +212,73 @@ import org.testng.annotations.Test;
       if (i == 0) {
         // 预期搜索结果就是从首页按钮文案来
         String expectedscreen = buttonText.get(0);
-        log.info("搜索结果页，应该默认选中" + expectedscreen + "，实际是：" + moretostring);
-        MyAssertion.AssertEquals(driver, moretostring, expectedscreen, expectedscreen + "未被选中");
+        LogUtil.info("搜索结果页，应该默认选中" + expectedscreen + "，实际是：" + moretostring);
+        AssertionUtil.AssertEquals(driver, moretostring, expectedscreen, expectedscreen + "未被选中");
         // 拿到出去类型进行比较（是否整租的房源）(把后面的点去掉)
         String actualscreen = null;
         for (WebElement Element : renttype) {
           actualscreen = Element.getText().substring(0, 2);
-          MyAssertion.AssertEquals(driver, actualscreen, expectedscreen,
+          AssertionUtil.AssertEquals(driver, actualscreen, expectedscreen,
               "有房源不是" + expectedscreen + "类型的");
-          log.info("搜索出来的房源出租类型是：" + actualscreen);
+          LogUtil.info("搜索出来的房源出租类型是：" + actualscreen);
         }
         // 点击返回按钮至首页
-        SearchResult.Location(driver, "searchback").click();
+        BasePage.SearchResultLocation(driver, "searchback").click();
         // 合租断言以及逻辑
       } else if (i == 1) {
         String expectedscreen = buttonText.get(1);
-        log.info("搜索结果页，应该默认选中" + expectedscreen + "，实际是：" + moretostring);
-        MyAssertion.AssertEquals(driver, moretostring, expectedscreen, expectedscreen + "未被选中");
+        LogUtil.info("搜索结果页，应该默认选中" + expectedscreen + "，实际是：" + moretostring);
+        AssertionUtil.AssertEquals(driver, moretostring, expectedscreen, expectedscreen + "未被选中");
         // 拿到出去类型进行比较（是否整租的房源）(把后面的点去掉)
         String actualscreen = null;
         for (WebElement Element : renttype) {
           actualscreen = Element.getText().substring(0, 2);
-          MyAssertion.AssertEquals(driver, actualscreen, expectedscreen,
+          AssertionUtil.AssertEquals(driver, actualscreen, expectedscreen,
               "有房源不是" + expectedscreen + "类型的");
-          log.info("搜索出来的房源出租类型是：" + actualscreen);
+          LogUtil.info("搜索出来的房源出租类型是：" + actualscreen);
         }
         // 点击返回按钮至首页
-        SearchResult.Location(driver, "searchback").click();
+        BasePage.SearchResultLocation(driver, "searchback").click();
         // 公寓断言以及逻辑
       } else if (i == 2) {
-        log.info("公寓这块目前是ab测试，先continue");
+        LogUtil.info("公寓这块目前是ab测试，先continue");
         // 点击返回按钮至首页
-        SearchResult.Location(driver, "searchback").click();
-        continue;
-        // 更多处被筛选“公寓”(首页的是独栋公寓需要subString一下)(这块主要检查一下筛选更多处是否筛选公寓)
-        //				String expectedscreen = buttonText.get(2).substring(2);
-        //				log.info("搜索结果页，应该默认选中" + expectedscreen + "，实际是：" + moretostring);
-        //				MyAssertion.AssertEquals(driver, moretostring, expectedscreen, expectedscreen + "未被选中");
-        //				// 检查筛选的房源是否有“集中公寓”，这块检查一下集中公寓是否>=3,首先拿到所有的房源标签
-        //				List<WebElement> tags = SearchResult.LocationList(driver, "tags");
-        //				// 定义一个计数变量
-        //				int tagcounts = 0;
-        //				for (WebElement tag : tags) {
-        //					log.info("房源标签是" + tag.getText());
-        //					//这块就判定标签是否包含公寓两字（目前搜索公寓而标签是集中公寓）
-        //					if (tag.getText().contains(moretostring)) {
-        //						tagcounts++;
-        //						log.info("出现了" + tagcounts + "次" + moretostring + "标签");
-        //					}
-        //				}
-        //				// 一屏一般能显示3个房（目前这块先取3个吧）
-        //				MyAssertion.AssertTrue(driver, tagcounts >= 2, "集中公寓预期是3个，实际是" + tagcounts + "个");
-        //				// 点击返回按钮至首页
-        //				SearchResult.Location(driver, "searchback").click();
-        // 视频找房与嗨住美家断言基本一致，所以写一块
+        BasePage.SearchResultLocation(driver, "searchback").click();
       } else if (i == 3 || i == 4) {
         // 由于视频找房那个更多筛选是“实拍视频”与首页的按钮并不一致，所以自己定义一个变量作为预期
         if (i == 4) {
           // 这块校验搜索关键字
           final String expectedscreen = "实拍视频";
-          log.info("搜索结果页，预期默认选中，" + expectedscreen);
-          log.info("实际是：" + moretostring);
-          MyAssertion.AssertEquals(driver, moretostring, expectedscreen, expectedscreen + "未被选中");
+          LogUtil.info("搜索结果页，预期默认选中，" + expectedscreen);
+          LogUtil.info("实际是：" + moretostring);
+          AssertionUtil.AssertEquals(driver, moretostring, expectedscreen, expectedscreen + "未被选中");
           // 嗨住美家筛选关键字与首页按钮是一致的，都是嗨住美家
         } else if (i == 3) {
           // 这块校验搜索关键字
           String expectedscreen = buttonText.get(3);
-          log.info("搜索结果页，预期默认选中，" + expectedscreen);
-          log.info("实际是：" + moretostring);
-          MyAssertion.AssertEquals(driver, moretostring, expectedscreen, expectedscreen + "未被选中");
+          LogUtil.info("搜索结果页，预期默认选中，" + expectedscreen);
+          LogUtil.info("实际是：" + moretostring);
+          AssertionUtil.AssertEquals(driver, moretostring, expectedscreen, expectedscreen + "未被选中");
         }
         // 这块校验搜索的房源的标签（视频找房与嗨住美家一致，都是看房源标签，拿前三个的标签遍历是否大于等于3）
         // 定义一个计数变量
         int tagcounts = 0;
         // 检查筛选的房源是否有“视频房源”以及“嗨住美家”，这块检查一下集中公寓是否>=3,首先拿到所有的房源标签
-        List<WebElement> tags = SearchResult.LocationList(driver, "tags");
+        List<WebElement> tags = BasePage.SearchResultListLocation(driver, "tags");
         for (WebElement tag : tags) {
           // 判定实际拿到的tags有几个是符合预期的（预期是从筛选结果的更多筛选关键字，对于变量是moretostring）
-          log.info("房源标签是" + tag.getText());
+          LogUtil.info("房源标签是" + tag.getText());
           if (tag.getText().equals(moretostring)) {
             tagcounts++;
-            log.info("出现了" + tagcounts + "次" + moretostring + "标签");
+            LogUtil.info("出现了" + tagcounts + "次" + moretostring + "标签");
           }
         }
         // 一屏一般能显示3个房（目前这块先取3个吧）
-        MyAssertion.AssertTrue(driver, tagcounts >= 3, "预期是3个，实际是" + tagcounts + "个");
+        AssertionUtil.AssertTrue(driver, tagcounts >= 3, "预期是3个，实际是" + tagcounts + "个");
         // 点击返回按钮至首页
-        SearchResult.Location(driver, "searchback").click();
+        BasePage.SearchResultLocation(driver, "searchback").click();
       } else {
-        log.error("还没有覆盖此按钮，目前只有整租、合租、公寓、视频找房、嗨住美家");
+        LogUtil.error("还没有覆盖此按钮，目前只有整租、合租、公寓、视频找房、嗨住美家");
       }
     }
   }

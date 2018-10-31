@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll">
+
+  <test name="test_1">
+
+    <parameter name="appPackage" value="com.loulifang.house"/>
+    <parameter name="appActivity" value=".activities.WelcomeActivity"/>
+    <parameter name="appWaitActivity" value=".activities.WelcomeActivity"/>
+
+    <parameter name="platformName" value="Android"/>
+    <parameter name="port" value="4723"/>
+
+
+    <!--<parameter name="platformVersion" value="7.1.1"/>
+    <parameter name="deviceName" value="OPPO R9s"/>
+    <parameter name="udid" value="e87adaf6"/>
+
+    <parameter name="platformVersion" value="5.1.1"/>
+    <parameter name="deviceName" value="HNKIW-Q"/>
+    <parameter name="udid" value="QMS0216331002608"/>-->
+
+    <parameter name="platformVersion" value="5.1"/>
+    <parameter name="deviceName" value="R9"/>
+    <parameter name="udid" value="MFQ8FMJZJVPNRGZH"/>
+
+
+    <parameter name="mobile" value="17302136038"/>
+    <parameter name="password" value="180205"/>
+
+    <classes>
+      <class name="appiumtest.utils.InitDriver"/>
+      <!--<class name="appiumtest.tests.LoginTest"/>-->
+      <class name="appiumtest.tests.HomePageTest"/>
+      <class name="appiumtest.tests.SearchHouseTest"/>
+      <!--<class name="appiumtest.tests.ScreenHouseTest"/>-->
+      <!--<class name="appiumtest.tests.HouseDetailTest"/>-->
+      <!--<class name="appiumtest.tests.PublishPostTest"/>-->
+      <!--<class name="appiumtest.tests.ReleaseHouseTest"/>-->
+    </classes>
+
+  </test>
+
+
+</suite>

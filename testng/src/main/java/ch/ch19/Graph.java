@@ -1,6 +1,6 @@
 package ch.ch19;
 
-import ch03.MyStack;
+import ch.ch03.MyStack;
 
 /**
  * 图

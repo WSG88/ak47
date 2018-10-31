@@ -1,6 +1,6 @@
 package ch.ch08;
 
-import ch02.InsertSort;
+import ch.ch02.InsertSort;
 
 public class TestShellSort {
 	public static void main(String[] args) {

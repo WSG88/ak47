@@ -1,6 +1,6 @@
 package ch.ch05;
 
-import ch04.Node;
+import ch.ch04.Node;
 
 /*
  * 双端链表

@@ -1,33 +1,48 @@
 package appiumtest.utils;
 
 import io.appium.java_client.android.AndroidDriver;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.net.URL;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class InitDriver {
   public static AndroidDriver dr = null;
   public static AndroidDriverWait wait = null;
-  public static int netstatus;
-  //日志对象
-  static Logger log = LoggerFactory.getLogger("InitDriver");
 
-  @Parameters({ "DeviceName", "UDID", "System_version", "port" }) @Test
-  public void Init(String DeviceName, String UDID, String System_version, int port) {
-    BeforeToolClass.AppConfigure(DeviceName, UDID, System_version, port);
-    dr = BeforeToolClass.driver;
-    if (dr == null) {
-      log.info("初始化driver失败");
-    } else {
-      log.info("初始化driver成功");
-      wait = new AndroidDriverWait(dr, 30);
-      netstatus = dr.getNetworkConnection().value;
-    }
+  @Parameters({
+      "platformName", "platformVersion", "deviceName", "udid", "port", "appPackage", "appActivity",
+      "appWaitActivity"
+  }) @Test
+  public void init(String platformName, String platformVersion, String deviceName, String udid,
+      int port, String appPackage, String appActivity, String appWaitActivity) throws Exception {
+
+    DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+    desiredCapabilities.setCapability("platformName", platformName);
+    desiredCapabilities.setCapability("platformVersion", platformVersion);
+    desiredCapabilities.setCapability("deviceName", deviceName);
+    desiredCapabilities.setCapability("udid", udid);
+
+    desiredCapabilities.setCapability("appPackage", appPackage);
+    desiredCapabilities.setCapability("appActivity", appActivity);
+    desiredCapabilities.setCapability("appWaitActivity", appWaitActivity);
+
+    desiredCapabilities.setCapability("unicodeKeyboard", "True");
+    desiredCapabilities.setCapability("resetKeyboard", "True");
+    // 每次启动时覆盖session，否则第二次后运行会报错不能新建session
+    //desiredCapabilities.setCapability("sessionOverride", true);
+    desiredCapabilities.setCapability("noReset", true);
+    desiredCapabilities.setCapability("automationName", "UIAutomator2");
+
+    dr = new AndroidDriver(new URL("http://127.0.0.1:" + port + "/wd/hub"), desiredCapabilities);
+
+    wait = new AndroidDriverWait(dr, 30);
+
+    LogUtil.info("初始化driver成功");
   }
-  //整个测试完之后卸载app，未后期发新包安装做准备
-  //	@AfterTest
-  //	public void afterTest() {
-  //		dr.removeApp("com.loulifang.house");
-  //	}
+
+  @AfterTest public void afterTest() {
+    LogUtil.info("afterTest");
+  }
 }

@@ -9,9 +9,8 @@ public class AssertionListener extends TestListenerAdapter {
 
   private int index = 0;
 
-  @Override public void onTestStart(ITestResult result) {
-    MyAssertion.flag = true;
-    MyAssertion.errors.clear();
+  @Override public void onTestSuccess(ITestResult tr) {
+    this.handleAssertion(tr);
   }
 
   @Override public void onTestFailure(ITestResult tr) {
@@ -22,19 +21,20 @@ public class AssertionListener extends TestListenerAdapter {
     this.handleAssertion(tr);
   }
 
-  @Override public void onTestSuccess(ITestResult tr) {
-    this.handleAssertion(tr);
+  @Override public void onTestStart(ITestResult result) {
+    AssertionUtil.flag = true;
+    AssertionUtil.errors.clear();
   }
 
   private void handleAssertion(ITestResult tr) {
-    if (!MyAssertion.flag) {
+    if (!AssertionUtil.flag) {
       Throwable throwable = tr.getThrowable();
       if (throwable == null) {
         throwable = new Throwable();
       }
       StackTraceElement[] traces = throwable.getStackTrace();
       StackTraceElement[] alltrace = new StackTraceElement[0];
-      for (Error e : MyAssertion.errors) {
+      for (Error e : AssertionUtil.errors) {
         StackTraceElement[] errorTraces = e.getStackTrace();
         StackTraceElement[] et = this.getKeyStackTrace(tr, errorTraces);
         StackTraceElement[] message = new StackTraceElement[] {
@@ -52,8 +52,8 @@ public class AssertionListener extends TestListenerAdapter {
       }
       throwable.setStackTrace(alltrace);
       tr.setThrowable(throwable);
-      MyAssertion.flag = true;
-      MyAssertion.errors.clear();
+      AssertionUtil.flag = true;
+      AssertionUtil.errors.clear();
       tr.setStatus(ITestResult.FAILURE);
     }
   }

@@ -12,10 +12,9 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Sleeper;
 import org.openqa.selenium.support.ui.SystemClock;
 
-//@Listeners({AssertionListener.class})
 public class AndroidDriverWait extends FluentWait<AndroidDriver> {
 
-  public final static long DEFAULT_SLEEP_TIMEOUT = 500;
+  private final static long DEFAULT_SLEEP_TIMEOUT = 500;
   private final WebDriver driver;
 
   public AndroidDriverWait(AndroidDriver driver, long timeOutInSeconds) {
@@ -49,7 +48,7 @@ public class AndroidDriverWait extends FluentWait<AndroidDriver> {
       }
     }
     //加个超时截图
-    MyAssertion.ShotScreen((AndroidDriver) driver, "超时截图");
+    AssertionUtil.ShotScreen((AndroidDriver) driver, "超时截图");
     throw ex;
   }
 }
