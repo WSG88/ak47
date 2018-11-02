@@ -59,4 +59,13 @@ public class CmdUtil {
     LogUtil.debug("执行命令：" + commands.toString());
     return process;
   }
+
+  public static boolean isSameAct(String act) {
+    CmdUtil cmd = new CmdUtil();
+    String res = cmd.runCommandProcess("adb shell dumpsys window | findstr mCurrentFocus");
+    if (res.contains(act)) {
+      return true;
+    }
+    return false;
+  }
 }

@@ -3,12 +3,10 @@ package appiumtest.page;
 import appiumtest.BaseConfig;
 import appiumtest.utils.AndroidDriverWait;
 import appiumtest.utils.AssertionUtil;
-import appiumtest.utils.CmdUtil;
 import appiumtest.utils.LogUtil;
 import appiumtest.utils.UsualClass;
 import appiumtest.utils.XlsUtil;
 import com.alibaba.fastjson.JSONObject;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import java.io.BufferedReader;
@@ -16,7 +14,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -27,7 +24,6 @@ import java.util.Set;
 import org.apache.commons.io.IOUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -37,11 +33,38 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
 
   public AndroidDriver<AndroidElement> driver;
-  public Map<String, String> stringHashMap = new HashMap<String, String>();
+
+  private Map<String, String> stringHashMap = new HashMap<String, String>();
+
+  private Map<String, String> getStringHashMap() {
+    if (stringHashMap == null || stringHashMap.isEmpty()) {
+      stringHashMap = getElementMap();
+    }
+    return stringHashMap;
+  }
+
+  private Map<String, String> getElementMap() {
+    BufferedReader bufferedReader = null;
+    try {
+      bufferedReader = new BufferedReader(new FileReader(new File(BaseConfig.FILE_JSON)));
+    } catch (FileNotFoundException e1) {
+      //
+      e1.printStackTrace();
+    }
+
+    String jsonContent = null;
+    try {
+      jsonContent = IOUtils.toString(bufferedReader);
+    } catch (IOException e) {
+      //
+      e.printStackTrace();
+    }
+
+    return (Map<String, String>) JSONObject.parse(jsonContent);
+  }
 
   public BasePage(AndroidDriver<AndroidElement> driver) {
     this.driver = driver;
-    stringHashMap = this.getElementMap();
   }
 
   /*
@@ -1186,271 +1209,74 @@ public class BasePage {
     }
   }
 
-  /*
-   *
-   * 根据外部的类的调用，获取对应类名的json文件，生成元素信息map
-   *
-   * */
-  public Map<String, String> getElementMap() {
-    String filePath = BaseConfig.FILE_JSON;
-    BufferedReader bufferedReader = null;
+  public AndroidElement findE(String name) {
+    final String id = getStringHashMap().get(name);
+    LogUtil.debug("元素开始查：" + name + ": " + id);
+    AndroidElement element = null;
+    WebDriverWait driverWait = new WebDriverWait(driver, 15);
     try {
-      bufferedReader = new BufferedReader(new FileReader(new File(filePath)));
-    } catch (FileNotFoundException e1) {
-      //
-      e1.printStackTrace();
-    }
-
-    String jsonContent = null;
-    try {
-      jsonContent = IOUtils.toString(bufferedReader);
-    } catch (IOException e) {
-      //
-      e.printStackTrace();
-    }
-
-    return (Map<String, String>) JSONObject.parse(jsonContent);
-  }
-
-  /*
-   *
-   * 显示等待15s，根据元素map key值获取定位信息， 返回元素对象
-   *
-   * */
-  public AndroidElement findElement(String name) {
-    final String id = this.stringHashMap.get(name);
-    AndroidElement el = null;
-    WebDriverWait wait = new WebDriverWait(driver, 15);
-    try {
-      el = wait.until(new ExpectedCondition<AndroidElement>() {
+      element = driverWait.until(new ExpectedCondition<AndroidElement>() {
         @Override public AndroidElement apply(WebDriver d) {
-          return findEleBy(id);
+          return findEBy(id);
         }
       });
       LogUtil.debug("元素已找到：" + name + ": " + id);
     } catch (Exception e) {
-      LogUtil.error("未找到元素：" + name + ": " + id);
+      LogUtil.error("元素未找到：" + name + ": " + id);
     }
-    return el;
+    return element;
   }
 
-  /*
-   *
-   * 关键字驱动，兼容多种定位方式
-   *
-   * */
-  private AndroidElement findEleBy(String id) {
+  private AndroidElement findEBy(String id) {
     AndroidElement element = null;
-    String byTpye = id.split("@")[0];
-    String eleLoctorInfo = id.split("@")[1];
-    switch (byTpye) {
+    String type = id.split("@")[0];
+    String s = id.split("@")[1];
+    switch (type) {
       case "id":
-        element = driver.findElementById(eleLoctorInfo);
+        element = driver.findElementById(s);
         break;
       case "xpath":
-        element = driver.findElementByXPath(eleLoctorInfo);
+        element = driver.findElementByXPath(s);
         break;
       case "desc":
-        element = driver.findElementByAccessibilityId(eleLoctorInfo);
+        element = driver.findElementByAccessibilityId(s);
         break;
       case "text":
-        element = driver.findElementByAndroidUIAutomator(
-            "new UiSelector().text(\"" + eleLoctorInfo + "\")");
+        element = driver.findElementByAndroidUIAutomator("new UiSelector().text(\"" + s + "\")");
         break;
       case "class":
-        element = driver.findElementByClassName(eleLoctorInfo);
+        element = driver.findElementByClassName(s);
         break;
       case "name"://name和text都是用于定位text，但是text用于定位7.0以上的系统
-        element = driver.findElementByName(eleLoctorInfo);
+        element = driver.findElementByName(s);
         break;
       default:
-        LogUtil.error("暂不支持的by类型：" + byTpye);
+        LogUtil.error("暂不支持的by类型：" + type);
         break;
     }
     return element;
   }
 
-  /*
-   *
-   * 返回具有相同定位元素信息的list
-   *
-   * */
-  ArrayList<AndroidElement> findElesBy(String name) {
-    String id = this.stringHashMap.get(name);
+  public ArrayList<AndroidElement> findEsBy(String name) {
     ArrayList<AndroidElement> elements = new ArrayList<AndroidElement>();
-    String byTpye = id.split("@")[0];
-    String eleLoctorInfo = id.split("@")[1];
-    switch (byTpye) {
+    String id = getStringHashMap().get(name);
+    String type = id.split("@")[0];
+    String s = id.split("@")[1];
+    switch (type) {
       case "id":
-        elements = (ArrayList<AndroidElement>) driver.findElementsById(eleLoctorInfo);
+        elements = (ArrayList<AndroidElement>) driver.findElementsById(s);
         break;
       case "xpath":
-        elements = (ArrayList<AndroidElement>) driver.findElementsByXPath(eleLoctorInfo);
+        elements = (ArrayList<AndroidElement>) driver.findElementsByXPath(s);
         break;
       case "class":
-        elements = (ArrayList<AndroidElement>) driver.findElementsByClassName(eleLoctorInfo);
+        elements = (ArrayList<AndroidElement>) driver.findElementsByClassName(s);
         break;
       default:
-        LogUtil.error("暂不支持的by类型：" + byTpye);
+        LogUtil.error("暂不支持的by类型：" + type);
         break;
     }
     return elements;
-  }
-
-  /*
-   *
-   * 逐一点击元素列表中的元素，一般用于多选
-   * num 代表多选几个
-   *
-   * */
-  public void clickAllEles(ArrayList<AndroidElement> als, int num) {
-
-    for (int x = 0; x < num; x++) {
-      if (x > als.size() - 1) break;
-      als.get(x).click();
-    }
-  }
-
-  public void swipe(int x, int y, int toX, int toY) {
-    TouchAction action =
-        new TouchAction(driver).longPress(x, y, Duration.ofSeconds(1)).moveTo(toX, toY).release();
-    action.perform();
-  }
-
-  public void swipeToUp() {
-    int width = driver.manage().window().getSize().width;
-    int height = driver.manage().window().getSize().height;
-
-    swipe(width / 2, height * 3 / 4, width / 2, height / 4);
-    LogUtil.debug(
-        "往上滑动：" + width / 2 + "_" + height * 3 / 4 + " to " + width / 2 + "_" + height / 4);
-  }
-
-  /*
-   *
-   * toast的识别需要使用uiautomator2
-   * 仅使用了xpath的方式来识别
-   *
-   * */
-  public boolean findToast(String name) {
-    boolean isFind = false;
-    String id = this.stringHashMap.get(name);
-    String eleLoctorInfo = id.substring(6);
-    WebDriverWait wait = new WebDriverWait(driver, 15);
-    try {
-      wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(eleLoctorInfo)));
-      isFind = true;
-    } catch (Exception e) {
-      LogUtil.error(name + "未找到");
-    }
-    return isFind;
-  }
-
-  /*
-   *
-   * 判定当前页面元素是否存在
-   *
-   * */
-  public boolean eleIsExist(String name) {
-    boolean isExist = false;
-
-    try {
-      findElement(name);
-      isExist = true;
-    } catch (Exception e) {
-      LogUtil.error("isExist:" + isExist);
-    }
-
-    return isExist;
-  }
-
-  public void deletePost() {
-
-    findElement("mineButton").click();
-
-    while (findElement("myPostButton") == null) {
-      swipeToUp();
-    }
-    findElement("myPostButton").click();
-    findElement("deleteButtons").click();
-    findElement("deleteEnsureButton").click();
-  }
-
-  public void openPublishPage() {
-    // 无房->发房
-    findElement("findRoommateButton").click();
-    findElement("publishIcon").click();
-    findElement("hasntRoomButton").click();
-
-    // 判断是否需要登录，进入发帖页面
-    CmdUtil cmd = new CmdUtil();
-    String res = cmd.runCommandProcess("adb shell dumpsys window | findstr mCurrentFocus");
-    if (res.contains("LoginActivity")) {
-      BasePage.simplelogin(driver, "15575993304", "180205");
-      findElement("hasntRoomButton").click();
-    }//常规流程先登录再发帖，故这里登录写死了
-  }
-
-  public void inputText(String title, String otherContent) {
-    findElement("titleInput").sendKeys(otherContent);
-    findElement("otherContentInput").sendKeys(otherContent);
-  }
-
-  /*
-   *
-   * 目前仅写了地铁和商圈每个选一个。后期这块场景用的多，可以修改扩展一下
-   * 格式要求："jingan_jingansi","subway_line7"
-   * 父目录和子目录用_隔开
-   *
-   * */
-  public void selectLocation(String... location) {
-    String businessCircle = location[0];
-    String subway = location[1];
-
-    findElement("locationButton").click();
-
-    if (businessCircle != null) {
-      findElement("businessCircle").click();
-      findElement(businessCircle.split("_")[0]).click();
-      findElement(businessCircle.split("_")[1]).click();
-    }
-    if (subway != null) {
-      findElement("subway").click();
-      findElement(subway.split("_")[0]).click();
-      findElement(subway.split("_")[1]).click();
-    }
-
-    findElement("locationEnsuredButton").click();
-  }
-
-  public void selectPrice() {
-    AndroidElement ae = findElement("priceGlider");
-    int xlength = ae.getSize().width;
-    Point leftPoint = ae.getCenter().moveBy(-(xlength / 2), 0);
-    Point rightPoint = ae.getCenter().moveBy(xlength / 2, 0);
-    //起步价滑动
-    swipe(leftPoint.x + 10, leftPoint.y, leftPoint.x + xlength / 4, leftPoint.y);
-    //最高价滑动
-    swipe(rightPoint.x - 10, rightPoint.y, rightPoint.x - xlength / 4, rightPoint.y);
-  }
-
-  public void selectImages() {
-    // 选择房间照片
-    findElement("addImagesButton").click();
-    findElement("albumButton").click();
-    findElement("screenshotAlbum").click();
-    try {
-      Thread.sleep(3000);
-    } catch (InterruptedException e) {
-      //
-      e.printStackTrace();
-    }
-    clickAllEles(findElesBy("images"), 3);
-    findElement("imagesEnsuredButton").click();
-  }
-
-  public void clickPublish() {
-    findElement("publishButton").click();
   }
 
   public static WebElement findEBD(AndroidDriver dr, String args) {

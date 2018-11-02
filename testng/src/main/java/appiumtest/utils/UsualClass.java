@@ -215,4 +215,13 @@ public class UsualClass {
   public static void swipe(AndroidDriver<AndroidElement> driver, int x, int y, int toX, int toY) {
     swipe(driver, x, y, toX, toY, 1000);
   }
+
+  public static void swipeToUp(AndroidDriver<AndroidElement> driver) {
+    int width = driver.manage().window().getSize().width;
+    int height = driver.manage().window().getSize().height;
+
+    swipe(driver, width / 2, height * 3 / 4, width / 2, height / 4);
+    LogUtil.debug(
+        "往上滑动：" + width / 2 + "_" + height * 3 / 4 + " to " + width / 2 + "_" + height / 4);
+  }
 }
