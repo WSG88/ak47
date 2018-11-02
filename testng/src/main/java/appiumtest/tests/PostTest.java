@@ -1,7 +1,9 @@
 package appiumtest.tests;
 
 import appiumtest.page.BasePage;
+import appiumtest.page.PostPage;
 import appiumtest.utils.AssertionListener;
+import appiumtest.utils.CmdUtil;
 import appiumtest.utils.InitDriver;
 import appiumtest.utils.LogUtil;
 import appiumtest.utils.UsualClass;
@@ -12,25 +14,31 @@ import org.openqa.selenium.Point;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-@Listeners({ AssertionListener.class }) public class PublishPostTest {
+@Listeners({ AssertionListener.class }) public class PostTest {
   AndroidDriver<AndroidElement> driver;
 
-  BasePage basePage;
+  PostPage basePage;
 
-  /**
-   * 发帖删除帖子测试类
-   */
+  public static void threadSleep() {
+    try {
+      Thread.sleep(3000);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
   @BeforeClass public void setup() {
     driver = InitDriver.dr;
-    basePage = new BasePage(driver);
+    basePage = new PostPage(driver);
     basePage.findE("mineButton");
   }
 
-  @Test public void publishRoom() {
+  @Parameters({ "mobile", "password" }) @Test public void testPost(String mobile, String password) {
     LogUtil.info("开始测试发帖");
-    openPublishPage();
+    openPublishPage(mobile, password);
     inputText("标题", "其他内容");
     selectLocation("jingan_jingansi", "subway_line7");
     selectPrice();
@@ -38,11 +46,12 @@ import org.testng.annotations.Test;
     clickPublish();
   }
 
-  public void openPublishPage() {
-    // 无房->发房
-    basePage.findE("findRoommateButton").click();
-    basePage.findE("publishIcon").click();
-    basePage.findE("hasntRoomButton").click();
+  @AfterClass public void after() {
+    LogUtil.info("开始测试删除帖子");
+    deletePost();
+
+    //需要回到根页面
+    UsualClass.back(driver);
   }
 
   public void inputText(String title, String otherContent) {
@@ -82,19 +91,15 @@ import org.testng.annotations.Test;
         rightPoint.y);
   }
 
-  public void selectImages() {
-    // 选择房间照片
-    basePage.findE("addImagesButton").click();
-    basePage.findE("albumButton").click();
-    basePage.findE("screenshotAlbum").click();
-    try {
-      Thread.sleep(3000);
-    } catch (InterruptedException e) {
-      //
-      e.printStackTrace();
+  public void openPublishPage(String mobile, String password) {
+    // 无房->发房
+    basePage.findE("findRoommateButton").click();
+    basePage.findE("publishIcon").click();
+    basePage.findE("hasntRoomButton").click();
+    threadSleep();
+    if (CmdUtil.isSameAct("LoginActivity")) {
+      BasePage.simplelogin(driver, mobile, password);
     }
-    clickAllEles(basePage.findEsBy("images"), 3);
-    basePage.findE("imagesEnsuredButton").click();
   }
 
   public void clickPublish() {
@@ -109,7 +114,20 @@ import org.testng.annotations.Test;
     }
   }
 
+  public void selectImages() {
+    // 选择房间照片
+    basePage.findE("addImagesButton").click();
+    basePage.findE("albumButton").click();
+    basePage.findE("screenshotAlbum").click();
+
+    threadSleep();
+
+    clickAllEles(basePage.findEsBy("images"), 3);
+    basePage.findE("imagesEnsuredButton").click();
+  }
+
   public void deletePost() {
+    threadSleep();
 
     basePage.findE("mineButton").click();
 
@@ -119,21 +137,7 @@ import org.testng.annotations.Test;
     basePage.findE("myPostButton").click();
     basePage.findE("deleteButtons").click();
     basePage.findE("deleteEnsureButton").click();
-  }
 
-  @AfterClass
-  //发帖数据清除
-  public void setdown() {
-    LogUtil.info("开始测试删除帖子");
-    deletePost();
-
-    try {
-      Thread.sleep(3000);
-    } catch (InterruptedException e) {
-      //
-      e.printStackTrace();
-    }
-    //需要回到根页面
-    UsualClass.back(driver);
+    threadSleep();
   }
 }
