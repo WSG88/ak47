@@ -44,7 +44,7 @@ public class BasePage {
     stringHashMap = this.getElementMap();
   }
 
-  /**
+  /*
    * 我的-点击预约清单按钮-预约清单页面
    */
   public static WebElement bookHouseListLocation(AndroidDriver dr, String item) {
@@ -529,9 +529,6 @@ public class BasePage {
     }
   }
 
-  /**
-   * 这个参数只已经上传的图片个数，用于定位添加图片按钮
-   */
   // 相机拍照并上传（仅用于发布房源上传图片）
   public static void camerasubmitpictrue(final AndroidDriver dr, AndroidDriverWait wait,
       int piccount) {
@@ -610,7 +607,7 @@ public class BasePage {
     }
   }
 
-  /**
+  /*
    * 定位所有的head（例如小区商圈区域等） 定位所有的textview(例如：新梅共和城或者地标中的名称等)
    * 定位所有的address（搜索联想页中所有的地图） 考虑是需要拿到元素进行点击，文案的校验就测试类转String
    */
@@ -643,7 +640,7 @@ public class BasePage {
     }
   }
 
-  /**
+  /*
    * 这个方法兼容所有类型的搜索 如果搜索类型是地铁线与小区可以在房源列表中进行断言，如果是行政区以及商圈需要进入房源详情进行断言（这块已经做了相应的校验）
    * 主流程做到点击搜索联想词第一个，然后在搜索结果中开始分支写判定逻辑（分支从显示等待houselist房源列表开始）
    *
@@ -1379,8 +1376,6 @@ public class BasePage {
     findElement("deleteEnsureButton").click();
   }
 
-
-
   public void openPublishPage() {
     // 无房->发房
     findElement("findRoommateButton").click();
@@ -1456,5 +1451,13 @@ public class BasePage {
 
   public void clickPublish() {
     findElement("publishButton").click();
+  }
+
+  public static WebElement findEBD(AndroidDriver dr, String args) {
+    return dr.findElement(By.id(args));
+  }
+
+  public static List<WebElement> findESBD(AndroidDriver dr, String args) {
+    return dr.findElements(By.id(args));
   }
 }

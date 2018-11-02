@@ -11,7 +11,6 @@ import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import java.time.Duration;
 import java.util.List;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -134,7 +133,7 @@ import org.testng.annotations.Test;
       e.printStackTrace();
     }
     //楼层信息
-    List<WebElement> floor = driver.findElements(By.id("android:id/numberpicker_input"));
+    List<WebElement> floor = BasePage.findESBD(driver, "android:id/numberpicker_input");
     WebElement firstfloor = floor.get(0);
     WebElement totalfloor = floor.get(1);
     TouchAction action = new TouchAction(driver);
@@ -154,7 +153,7 @@ import org.testng.annotations.Test;
         e.printStackTrace();
       }
       //重新获取一次最新的楼层信息
-      floor = driver.findElements(By.id("android:id/numberpicker_input"));
+      floor = BasePage.findESBD(driver, "android:id/numberpicker_input");
       String firstfloorToString = floor.get(0).getText();
       String totalfloorToString = floor.get(1).getText();
       //点击确定按钮

@@ -52,8 +52,8 @@ import org.testng.annotations.Test;
 
     // 取消存储权限（暂不）
     try {
-      // driver.findElement(By.id("android:id/button2")).isDisplayed();
-      driver.findElement(By.id("android:id/button2")).click();
+      BasePage.findEBD(driver, "android:id/button2").isDisplayed();
+      BasePage.findEBD(driver, "android:id/button2").click();
     } catch (Exception e) {
       System.out.println("没有找到暂不弹框");
     }
