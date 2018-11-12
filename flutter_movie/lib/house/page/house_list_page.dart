@@ -82,6 +82,7 @@ class HouseListPageState extends State<HouseListPage> {
         house.main_img_path.replaceFirst("https", "http"),
         width: 100.0,
         height: 100.0,
+        fit: BoxFit.fill,
       ),
     );
 

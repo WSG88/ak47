@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -64,8 +65,9 @@ class HouseDetailPageState extends State<HouseDetailPage> {
       child: new Center(
         child: new Image.network(
           houseDetail.image_urls[0].replaceFirst("https", "http"),
-          width: 120.0,
-          height: 140.0,
+          width: window.physicalSize.width,
+          height: 200.0,
+          fit: BoxFit.fill,
         ),
       ),
     );
