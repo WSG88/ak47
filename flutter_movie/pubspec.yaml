@@ -12,7 +12,10 @@ dependencies:
   json_annotation: ^0.2.3
 
   device_info: ^0.2.1
-  flutter_refresh : ^0.0.2
+  flutter_refresh: ^0.0.2
+  flutter_swiper: ^1.1.4
+  carousel_slider: ^0.0.7
+
 
 dev_dependencies:
   flutter_test:
