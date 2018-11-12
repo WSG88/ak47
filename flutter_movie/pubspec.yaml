@@ -12,6 +12,7 @@ dependencies:
   json_annotation: ^0.2.3
 
   device_info: ^0.2.1
+  flutter_refresh : ^0.0.2
 
 dev_dependencies:
   flutter_test:

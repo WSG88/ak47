@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_movie/house/bean/house.dart';
 import 'package:flutter_movie/house/net/net_util.dart';
 import 'package:flutter_movie/house/page/house_detail_page.dart';
+import 'package:flutter_refresh/flutter_refresh.dart';
 
 class HouseListPage extends StatefulWidget {
   @override
@@ -10,11 +11,12 @@ class HouseListPage extends StatefulWidget {
 
 class HouseListPageState extends State<HouseListPage> {
   List<House> houses = [];
+  int page = 1;
 
   @override
   void initState() {
     super.initState();
-    getHouseListData();
+    getHouseListData(page);
   }
 
   @override
@@ -26,9 +28,22 @@ class HouseListPageState extends State<HouseListPage> {
         child: new CircularProgressIndicator(),
       );
     } else {
-      content = new ListView(children: buildHouseItems());
-    }
+//      content = new ListView(children: buildHouseItems());
 
+      content = new Refresh(
+        onFooterRefresh: onFooterRefresh,
+        onHeaderRefresh: onHeaderRefresh,
+        childBuilder: (BuildContext context,
+            {ScrollController controller, ScrollPhysics physics}) {
+          return new Container(
+              child: new ListView.builder(
+                  itemCount: houses.length,
+                  controller: controller,
+                  physics: physics,
+                  itemBuilder: (context, i) => renderHouseRow(i)));
+        },
+      );
+    }
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('租房'),
@@ -48,64 +63,67 @@ class HouseListPageState extends State<HouseListPage> {
   buildHouseItems() {
     List<Widget> widgets = [];
     for (int i = 0; i < houses.length; i++) {
-      House house = houses[i];
-      var houseImage = new Padding(
-        padding: const EdgeInsets.only(
-          top: 10.0,
-          left: 10.0,
-          right: 10.0,
-          bottom: 10.0,
-        ),
-        child: new Image.network(
-          house.main_img_path.replaceFirst("https", "http"),
-          width: 180.0,
-          height: 140.0,
-        ),
-      );
-
-      var houseInfo = new Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          new Text(
-            house.estate_name,
-            textAlign: TextAlign.left,
-            style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 14.0),
-          ),
-          new Text(house.room_money + "元/月"),
-          new Text(
-            house.room_name.toString(),
-            style: new TextStyle(
-              fontSize: 12.0,
-              color: Colors.grey,
-            ),
-          ),
-        ],
-      );
-
-      var houseItem = new GestureDetector(
-        //点击事件
-        onTap: () => navigateToMovieDetailPage(house, i),
-
-        child: new Column(
-          children: <Widget>[
-            new Row(
-              children: <Widget>[
-                houseImage,
-                new Expanded(
-                  child: houseInfo,
-                ),
-                const Icon(Icons.keyboard_arrow_right),
-              ],
-            ),
-            new Divider(),
-          ],
-        ),
-      );
-
-      widgets.add(houseItem);
+      widgets.add(renderHouseRow(i));
     }
     return widgets;
+  }
+
+  renderHouseRow(int i) {
+    House house = houses[i];
+
+    var houseImage = new Padding(
+      padding: const EdgeInsets.only(
+        top: 10.0,
+        left: 10.0,
+        right: 10.0,
+        bottom: 10.0,
+      ),
+      child: new Image.network(
+        house.main_img_path.replaceFirst("https", "http"),
+        width: 100.0,
+        height: 100.0,
+      ),
+    );
+
+    var houseInfo = new Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        new Text(
+          house.estate_name,
+          textAlign: TextAlign.left,
+          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 14.0),
+        ),
+        new Text(house.room_money + "元/月"),
+        new Text(
+          house.room_name.toString(),
+          style: new TextStyle(
+            fontSize: 12.0,
+            color: Colors.grey,
+          ),
+        ),
+      ],
+    );
+
+    var houseItem = new GestureDetector(
+      key: new Key(i.toString()),
+      onTap: () => navigateToMovieDetailPage(house, i),
+      child: new Column(
+        children: <Widget>[
+          new Row(
+            children: <Widget>[
+              houseImage,
+              new Expanded(
+                child: houseInfo,
+              ),
+              const Icon(Icons.keyboard_arrow_right),
+            ],
+          ),
+          new Divider(),
+        ],
+      ),
+    );
+    return houseItem;
   }
 
   // 跳转页面
@@ -119,7 +137,25 @@ class HouseListPageState extends State<HouseListPage> {
 
   // 网络请求
 
-  getHouseListData() async {
+  Future<Null> onFooterRefresh() {
+    return new Future.delayed(new Duration(seconds: 2), () {
+      setState(() {
+        page++;
+        getHouseListData(page);
+      });
+    });
+  }
+
+  Future<Null> onHeaderRefresh() {
+    return new Future.delayed(new Duration(seconds: 2), () {
+      setState(() {
+        page = 1;
+        getHouseListData(page);
+      });
+    });
+  }
+
+  getHouseListData(int page) async {
     var url = "http://testsh.hizhu.com/v12/house/list.html";
 
     Map<String, dynamic> params = new Map();
@@ -128,7 +164,7 @@ class HouseListPageState extends State<HouseListPage> {
     params['excluded_estate_id'] = "";
     params['key'] = "";
     params['sort'] = -1;
-    params['pageno'] = 1;
+    params['pageno'] = page;
     params['limit'] = 20;
     params['type_no'] = 0;
     params['key_self'] = 0;
@@ -150,7 +186,11 @@ class HouseListPageState extends State<HouseListPage> {
       var jsonData = response.data;
 
       setState(() {
-        houses = House.getList(jsonData);
+        if (page == 1) {
+          houses = House.getList(jsonData);
+        } else {
+          houses.addAll(House.getList(jsonData));
+        }
       });
     }
   }
