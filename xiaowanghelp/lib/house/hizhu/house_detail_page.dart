@@ -4,9 +4,10 @@ import 'dart:ui';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:meta/meta.dart';
+import 'package:xiaowanghelp/constants.dart';
 import 'package:xiaowanghelp/house/hizhu/house.dart';
 import 'package:xiaowanghelp/net_util.dart';
-import 'package:meta/meta.dart';
 
 class HouseDetailPage extends StatefulWidget {
   final House house;
@@ -113,7 +114,7 @@ class HouseDetailPageState extends State<HouseDetailPage> {
   // 网络请求
 
   getHouseDetail() async {
-    var url = "http://testsh.hizhu.com/v2/house/detail.html";
+    var url = Cont.hizhu_house_detail;
 
     Map<String, dynamic> params = new Map();
     params['room_id'] = widget.house.room_id;

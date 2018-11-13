@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_refresh/flutter_refresh.dart';
+import 'package:xiaowanghelp/constants.dart';
 import 'package:xiaowanghelp/house/hizhu/house.dart';
 import 'package:xiaowanghelp/house/hizhu/house_detail_page.dart';
 import 'package:xiaowanghelp/net_util.dart';
@@ -150,20 +151,18 @@ class HouseListPageState extends State<HouseListPage> {
   }
 
   getHouseListData(int page) async {
-    var url = "http://testsh.hizhu.com/v12/house/list.html";
+    var url = Cont.hizhu_house_list;
 
     Map<String, dynamic> params = new Map();
-    params['logicSort'] = "0";
-    params['distance'] = "0";
-    params['excluded_estate_id'] = "";
-    params['key'] = "";
-    params['sort'] = -1;
-    params['pageno'] = page;
-    params['limit'] = 20;
-    params['type_no'] = 0;
-    params['key_self'] = 0;
     params['money_max'] = 0;
     params['money_min'] = 0;
+    params['key'] = "通河新村";
+    params['pageno'] = page;
+
+    params['key_self'] = "1";
+    params['sort'] = -1;
+    params['limit'] = 20;
+    params['type_no'] = 0;
     params['latitude'] = 0.0;
     params['longitude'] = 0.0;
     params['line_ids'] = [];
@@ -171,6 +170,9 @@ class HouseListPageState extends State<HouseListPage> {
     params['plate_ids'] = [];
     params['region_ids'] = [];
     params['stand_ids'] = [];
+    params['distance'] = "0";
+    params['logicSort'] = "0";
+    params['excluded_estate_id'] = "";
 
     var dio = new Dio(getOptionsHizhu());
 
