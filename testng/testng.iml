@@ -134,5 +134,10 @@
     <orderEntry type="library" name="Maven: commons-pool:commons-pool:1.5.4" level="project" />
     <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.6.2" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.gexin.platform:gexin-rp-sdk-http:4.1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.gexin.platform:gexin-rp-sdk-template:4.0.0.19" level="project" />
+    <orderEntry type="library" name="Maven: com.gexin.platform:gexin-rp-sdk-base:4.0.0.25" level="project" />
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: com.gexin.platform:gexin-rp-fastjson:1.0.0.1" level="project" />
   </component>
 </module>
