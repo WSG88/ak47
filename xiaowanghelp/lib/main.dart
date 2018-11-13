@@ -45,29 +45,40 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  var keyTxt = "";
+  var moneyMin = 0.0;
+  var moneyMax = 0.0;
 
   _toHizhu() {
     Navigator.of(context)
         .push(new MaterialPageRoute(builder: (BuildContext context) {
-      return new HouseListPage();
+      return new HouseListPage(_getKeyTxt(), _getMoneyMinS(), _getMoneyMaxS());
     }));
   }
 
   _getNowTime() {
     DateTime now = new DateTime.now();
     return now.toString();
+  }
+
+  _getKeyTxt() {
+    return keyTxt;
+  }
+
+  _getMoneyMin() {
+    return moneyMin;
+  }
+
+  _getMoneyMinS() {
+    return moneyMin * 100.0;
+  }
+
+  _getMoneyMax() {
+    return moneyMax;
+  }
+
+  _getMoneyMaxS() {
+    return moneyMax * 100.0;
   }
 
   @override
@@ -87,7 +98,6 @@ class _MyHomePageState extends State<MyHomePage> {
           new IconButton(
             icon: new Icon(Icons.search),
             onPressed: () {
-              print('onclick search');
             },
           )
         ],
@@ -114,7 +124,47 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               '现在：' + _getNowTime(),
+            ),
+            Text(
+              '位置：',
               style: Theme.of(context).textTheme.title,
+            ),
+            TextField(
+                maxLength: 10,
+                onChanged: (val) {
+                  this.setState(() {
+                    this.keyTxt = val;
+                  });
+                }),
+            Text(
+              '租金小：' + _getMoneyMinS().toString(),
+              style: Theme.of(context).textTheme.title,
+            ),
+            Slider(
+              value: _getMoneyMin(),
+              max: 100.0,
+              min: 0.0,
+              activeColor: Colors.blue,
+              onChanged: (double) {
+                setState(() {
+                  moneyMin = double.roundToDouble();
+                });
+              },
+            ),
+            Text(
+              '租金大：' + _getMoneyMaxS().toString(),
+              style: Theme.of(context).textTheme.title,
+            ),
+            Slider(
+              value: _getMoneyMax(),
+              max: 100.0,
+              min: 0.0,
+              activeColor: Colors.blue,
+              onChanged: (double) {
+                setState(() {
+                  moneyMax = double.roundToDouble();
+                });
+              },
             ),
             new MaterialButton(
               color: Colors.blue,

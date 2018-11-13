@@ -9,12 +9,16 @@ class House {
   List<dynamic> image_urls;
 
   static List<House> getList(String jsonData) {
-    var data = json.decode(jsonData);
-    var results = data['data'];
-    var houseList = results['house_list'];
     List<House> houses = new List<House>();
-    for (int i = 0; i < houseList.length; i++) {
-      houses.add(fromMap(houseList[i]));
+    try {
+      var data = json.decode(jsonData);
+      var results = data['data'];
+      var houseList = results['house_list'];
+      for (int i = 0; i < houseList.length; i++) {
+        houses.add(fromMap(houseList[i]));
+      }
+    } catch (e) {
+      print(e);
     }
     return houses;
   }

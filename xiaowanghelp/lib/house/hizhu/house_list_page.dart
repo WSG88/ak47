@@ -7,6 +7,16 @@ import 'package:xiaowanghelp/house/hizhu/house_detail_page.dart';
 import 'package:xiaowanghelp/net_util.dart';
 
 class HouseListPage extends StatefulWidget {
+  var keyTxt = "";
+  var moneyMin = 0.0;
+  var moneyMax = 0.0;
+
+  HouseListPage(
+    this.keyTxt,
+    this.moneyMin,
+    this.moneyMax,
+  );
+
   @override
   HouseListPageState createState() => new HouseListPageState();
 }
@@ -18,7 +28,7 @@ class HouseListPageState extends State<HouseListPage> {
   @override
   void initState() {
     super.initState();
-    getHouseListData(page);
+    onHeaderRefresh();
   }
 
   @override
@@ -136,7 +146,7 @@ class HouseListPageState extends State<HouseListPage> {
     return new Future.delayed(new Duration(seconds: 2), () {
       setState(() {
         page++;
-        getHouseListData(page);
+        getHouseListData(page, widget.keyTxt, widget.moneyMin, widget.moneyMax);
       });
     });
   }
@@ -145,20 +155,24 @@ class HouseListPageState extends State<HouseListPage> {
     return new Future.delayed(new Duration(seconds: 2), () {
       setState(() {
         page = 1;
-        getHouseListData(page);
+        getHouseListData(page, widget.keyTxt, widget.moneyMin, widget.moneyMax);
       });
     });
   }
 
-  getHouseListData(int page) async {
+  getHouseListData(int page, String key, double min, double max) async {
     var url = Cont.hizhu_house_list;
 
     Map<String, dynamic> params = new Map();
-    params['money_max'] = 0;
-    params['money_min'] = 0;
-    params['key'] = "通河新村";
     params['pageno'] = page;
-
+    params['key'] = key;
+    if (min > max) {
+      params['money_max'] = min.toInt();
+      params['money_min'] = max.toInt();
+    } else {
+      params['money_min'] = min.toInt();
+      params['money_max'] = max.toInt();
+    }
     params['key_self'] = "1";
     params['sort'] = -1;
     params['limit'] = 20;
@@ -174,12 +188,16 @@ class HouseListPageState extends State<HouseListPage> {
     params['logicSort'] = "0";
     params['excluded_estate_id'] = "";
 
+    getPr(url);
+    getPr(params);
+
     var dio = new Dio(getOptionsHizhu());
 
     var response = await dio.post(url, data: params);
 
     if (response.statusCode == 200) {
       var jsonData = response.data;
+      getPr(jsonData);
 
       setState(() {
         if (page == 1) {

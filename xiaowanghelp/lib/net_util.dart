@@ -19,7 +19,7 @@ test() async {
   var response = await dio.post(url, data: params);
 
   if (response.statusCode == HttpStatus.ok) {
-    print(response.data.toString());
+    getPr(response.data.toString());
   }
 }
 
@@ -37,9 +37,14 @@ getOptionsHizhu() {
   heads['channel'] = "devoffline";
   heads['OSVer'] = "android6.0.1";
   options.headers = heads;
+  getPr(heads);
   return options;
 }
 
+///打印日志
+getPr(dynamic s) {
+  print(s);
+}
 //getOptionsHizhu1() async {
 //  var options = new Options();
 //  Map<String, dynamic> heads = new Map();
