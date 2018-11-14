@@ -48,6 +48,14 @@ class _MyHomePageState extends State<MyHomePage> {
   var keyTxt = "";
   var moneyMin = 0.0;
   var moneyMax = 0.0;
+  TextEditingController searchController = TextEditingController();
+
+  void onTextClear() {
+    setState(() {
+      searchController.clear();
+      keyTxt = "";
+    });
+  }
 
   _toHizhu() {
     Navigator.of(context)
@@ -97,8 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: <Widget>[
           new IconButton(
             icon: new Icon(Icons.search),
-            onPressed: () {
-            },
+            onPressed: () {},
           )
         ],
       ),
@@ -125,20 +132,25 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '现在：' + _getNowTime(),
             ),
-            Text(
-              '位置：',
-              style: Theme.of(context).textTheme.title,
+            Column(
+              children: <Widget>[
+                TextField(
+                    decoration: InputDecoration(labelText: "位置关键字"),
+                    controller: searchController,
+                    maxLength: 10,
+                    onChanged: (val) {
+                      setState(() {
+                        keyTxt = val;
+                      });
+                    }),
+                RaisedButton(
+                  onPressed: onTextClear,
+                  child: Text('清空位置关键字'),
+                ),
+              ],
             ),
-            TextField(
-                maxLength: 10,
-                onChanged: (val) {
-                  this.setState(() {
-                    this.keyTxt = val;
-                  });
-                }),
             Text(
               '租金小：' + _getMoneyMinS().toString(),
-              style: Theme.of(context).textTheme.title,
             ),
             Slider(
               value: _getMoneyMin(),
@@ -153,7 +165,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '租金大：' + _getMoneyMaxS().toString(),
-              style: Theme.of(context).textTheme.title,
             ),
             Slider(
               value: _getMoneyMax(),
