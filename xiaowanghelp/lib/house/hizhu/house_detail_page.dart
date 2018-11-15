@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
 import 'package:xiaowanghelp/constants.dart';
+import 'package:xiaowanghelp/house/banner/slide.dart';
 import 'package:xiaowanghelp/house/hizhu/house.dart';
 import 'package:xiaowanghelp/net_util.dart';
 
@@ -61,18 +62,72 @@ class HouseDetailPageState extends State<HouseDetailPage> {
     );
   }
 
-  setData(House houseDetail) {
-    var houseImage = new Hero(
-      tag: widget.imageTag,
-      child: new Center(
-        child: new Image.network(
-          houseDetail.image_urls[0].replaceFirst("https", "http"),
-          width: window.physicalSize.width,
-          height: 200.0,
-          fit: BoxFit.fill,
-        ),
+  Widget renderItem(title, img, index) {
+    return new Container(
+      padding: new EdgeInsets.all(12.0),
+      margin: new EdgeInsets.fromLTRB(12.0, 16.0, 12.0, 0.0),
+      // 圆角和阴影
+      decoration: new BoxDecoration(
+        color: Colors.white,
+        shape: BoxShape.rectangle,
+        borderRadius: new BorderRadius.all(const Radius.circular(2.0)),
+        boxShadow: [
+          new BoxShadow(
+            offset: new Offset(0.0, 1.2),
+            blurRadius: 1.0,
+            color: const Color(0xaadddddd),
+          ),
+        ],
+      ),
+      // 内容
+      child: new Row(
+        crossAxisAlignment: CrossAxisAlignment.start, // 顶端对齐
+        children: <Widget>[
+          new Expanded(
+            child: new Padding(
+              padding: new EdgeInsets.only(right: 12.0),
+              child: new Text(title),
+            ),
+          ),
+          // 圆角的图片
+          new Container(
+            width: 72.0,
+            height: 64.0,
+            decoration: new BoxDecoration(
+              color: Colors.black12,
+              image: new DecorationImage(
+                image: new NetworkImage(img),
+                fit: BoxFit.cover,
+              ),
+              shape: BoxShape.rectangle,
+              borderRadius: new BorderRadius.all(const Radius.circular(2.0)),
+            ),
+          ),
+        ],
       ),
     );
+  }
+
+  setData(House houseDetail) {
+    var title = houseDetail.estate_name +
+        " - " +
+        houseDetail.room_name +
+        " \n " +
+        houseDetail.room_money +
+        "元/月";
+    var img = houseDetail.image_urls[0];
+    var houseImage = renderItem(title, img, 0);
+
+    List datas = [];
+    for (var i = 0; i < houseDetail.image_urls.length; i++) {
+      var map = new Map();
+      map["id"] = i + 1;
+      map["image"] = houseDetail.image_urls[i];
+      map["title"] = houseDetail.image_urls[i];
+      datas.add(map);
+    }
+
+    var banner = new Slide(data: datas);
 
     var houseInfo = new Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,6 +158,7 @@ class HouseDetailPageState extends State<HouseDetailPage> {
       child: new Scrollbar(
         child: new Column(
           children: <Widget>[
+            banner,
             houseImage,
             houseInfo,
           ],
