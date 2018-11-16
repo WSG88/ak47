@@ -1,7 +1,9 @@
 package gt;
 
 import com.gexin.rp.sdk.base.IPushResult;
-import com.gexin.rp.sdk.base.impl.AppMessage;
+import com.gexin.rp.sdk.base.impl.SingleMessage;
+import com.gexin.rp.sdk.base.impl.Target;
+import com.gexin.rp.sdk.exceptions.RequestException;
 import com.gexin.rp.sdk.http.IGtPush;
 import com.gexin.rp.sdk.template.LinkTemplate;
 import com.gexin.rp.sdk.template.TransmissionTemplate;
@@ -27,15 +29,40 @@ public class AppPush {
     List<String> appIds = new ArrayList<String>();
     appIds.add(appId);
 
-    // 定义"AppMessage"类型消息对象，设置消息内容模板、发送的目标App列表、是否支持离线发送、以及离线消息有效期(单位毫秒)
-    AppMessage message = new AppMessage();
-    message.setData(transmissionTemplateDemo());
-    message.setAppIdList(appIds);
-    message.setOffline(true);
-    message.setOfflineExpireTime(1000 * 600);
+    //// 定义"AppMessage"类型消息对象，设置消息内容模板、发送的目标App列表、是否支持离线发送、以及离线消息有效期(单位毫秒)
+    //AppMessage appMessage = new AppMessage();
+    //appMessage.setData(transmissionTemplateDemo());
+    //appMessage.setAppIdList(appIds);
+    //appMessage.setOffline(true);
+    //appMessage.setOfflineExpireTime(1000 * 600);
+    //
+    //IPushResult ret = push.pushMessageToApp(appMessage);
+    //System.out.println(ret.getResponse().toString());
 
-    IPushResult ret = push.pushMessageToApp(message);
-    System.out.println(ret.getResponse().toString());
+    SingleMessage message = new SingleMessage();
+    message.setOffline(true);
+    // 离线有效时间，单位为毫秒，可选
+    message.setOfflineExpireTime(24 * 3600 * 1000);
+    message.setData(transmissionTemplateDemo());
+    // 可选，1为wifi，0为不限制网络环境。根据手机处于的网络情况，决定是否下发
+    message.setPushNetWorkType(0);
+    String CID = "";
+    Target target = new Target();
+    target.setAppId(appId);
+    target.setClientId(CID);
+    //target.setAlias(Alias);
+    IPushResult ret = null;
+    try {
+      ret = push.pushMessageToSingle(message, target);
+    } catch (RequestException e) {
+      e.printStackTrace();
+      ret = push.pushMessageToSingle(message, target, e.getRequestId());
+    }
+    if (ret != null) {
+      System.out.println(ret.getResponse().toString());
+    } else {
+      System.out.println("服务器响应异常");
+    }
   }
 
   private static LinkTemplate getLinkTemplate() {
