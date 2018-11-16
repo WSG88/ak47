@@ -8,7 +8,23 @@ main() {
 }
 
 test() async {
-  var url = "http://testsh.hizhu.com/map/regionlist.html";
+  var url = "http://prersgcommunity.haizhu.com/v2/circle/post/list.html";
+  var jsonData =
+      '''{"gender":0,"is_main":1,"limit":20,"money_max":99999,"money_min":0,"owner_id":"","pageno":1,"plate_ids":[],"roomie_type":0,"sort":-1,"stand_ids":[],"time":0}
+''';
+  Map<String, dynamic> params = json.decode(jsonData);
+
+  var dio = new Dio(getOptionsHizhu());
+
+  var response = await dio.post(url, data: params);
+
+  if (response.statusCode == HttpStatus.ok) {
+    getPr(response.data.toString());
+  }
+}
+
+map_regionlist() async {
+  var url = "http://testsh.haizhu.com/map/regionlist.html";
   var jsonData =
       '''{"distance":"3000","key":"","latitude":0.0,"longitude":0.0,"money_max":0,"money_min":0,"other_ids":[]}
 ''';
@@ -25,17 +41,10 @@ test() async {
 
 getOptionsHizhu() {
   var options = new Options();
-  Map<String, dynamic> heads = new Map();
-  heads['ClientVer'] = "5.4.1";
-  heads['CityCode'] = "001009001";
-  heads['ScreenSize'] = "810x1440";
-  heads['Session'] = "";
-  heads['Platform'] = "android";
-  heads['Udid'] = "434159512668216";
-  heads['os_model'] = "Netease_MuMu";
-  heads['md5'] = "90f8a9fe3f48619e8f829c33dd1395fd";
-  heads['channel'] = "devoffline";
-  heads['OSVer'] = "android6.0.1";
+  var jsonData =
+      '''{"ClientVer":"5.5","CityCode":"001009001","ScreenSize":"810x1440","Session":"","Udid":"434159512668216","os_model":"Netease_MuMu","md5":"8890f8a9fe3f48619e8f829c33dd1395fd","channel":"111","OSVer":"ios11"}
+''';
+  Map<String, dynamic> heads = json.decode(jsonData);
   options.headers = heads;
   getPr(heads);
   return options;
@@ -51,27 +60,11 @@ getPr(dynamic s) {
 //
 //  var width = window.physicalSize.width;
 //  var height = window.physicalSize.height;
-//  heads['ScreenSize'] = width.toString() + "x" + height.toString();
 //
 //  DeviceInfoPlugin deviceInfo = new DeviceInfoPlugin();
 //  if (Platform.isIOS) {
-//    heads['Platform'] = "ios";
-//    IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
-//    heads['os_model'] = iosInfo.model;
-//    heads['OSVer'] = "ios" + iosInfo.systemVersion;
 //  } else if (Platform.isAndroid) {
-//    heads['Platform'] = "android";
-//    AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-//    heads['os_model'] = androidInfo.model;
-//    heads['OSVer'] = "android" + androidInfo.version.release;
 //  }
 //
-//  heads['CityCode'] = "001009001";
-//  heads['Session'] = "";
-//  heads['Udid'] = "434159512668216";
-//  heads['md5'] = "90f8a9fe3f48619e8f829c33dd1395fd";
-//  heads['channel'] = "devoffline";
-//  heads['ClientVer'] = "5.4.1";
-//  options.headers = heads;
 //  return options;
 //}
