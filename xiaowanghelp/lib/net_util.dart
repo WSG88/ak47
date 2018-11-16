@@ -4,23 +4,6 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 
 main() {
-  test();
-}
-
-test() async {
-  var url = "http://prersgcommunity.haizhu.com/v2/circle/post/list.html";
-  var jsonData =
-      '''{"gender":0,"is_main":1,"limit":20,"money_max":99999,"money_min":0,"owner_id":"","pageno":1,"plate_ids":[],"roomie_type":0,"sort":-1,"stand_ids":[],"time":0}
-''';
-  Map<String, dynamic> params = json.decode(jsonData);
-
-  var dio = new Dio(getOptionsHizhu());
-
-  var response = await dio.post(url, data: params);
-
-  if (response.statusCode == HttpStatus.ok) {
-    getPr(response.data.toString());
-  }
 }
 
 map_regionlist() async {
