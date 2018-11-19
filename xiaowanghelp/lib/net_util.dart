@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 main() {
 }
 
-map_regionlist() async {
+map_region_list() async {
   var url = "http://testsh.haizhu.com/map/regionlist.html";
   var jsonData =
       '''{"distance":"3000","key":"","latitude":0.0,"longitude":0.0,"money_max":0,"money_min":0,"other_ids":[]}
@@ -37,7 +37,7 @@ getOptionsHizhu() {
 getPr(dynamic s) {
   print(s);
 }
-//getOptionsHizhu1() async {
+//getOptions() async {
 //  var options = new Options();
 //  Map<String, dynamic> heads = new Map();
 //
