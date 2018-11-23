@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:xiaowanghelp/house/hizhu/house_list_page.dart';
 
-void main() async {
-  debugPaintSizeEnabled = !true;
-  runApp(new MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -27,7 +22,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'xiaowanghelp'),
-//      home: HomePage(),
     );
   }
 }
@@ -50,31 +44,11 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
+class _MyHomePageState extends State<MyHomePage> {
   var keyTxt = "";
   var moneyMin = 0.0;
   var moneyMax = 0.0;
   TextEditingController searchController = TextEditingController();
-  var tabController; // 先声明变量
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    this.tabController = new TabController(
-        vsync: this, // 动画效果的异步处理
-        length: 3 // tab 个数
-        );
-
-    localPath();
-  }
-
-  // 当整个页面 dispose 时，记得把控制器也 dispose 掉，释放内存
-  @override
-  void dispose() {
-    this.tabController.dispose();
-    super.dispose();
-  }
 
   void onTextClear() {
     setState(() {
@@ -113,35 +87,6 @@ class _MyHomePageState extends State<MyHomePage>
 
   _getMoneyMaxS() {
     return moneyMax * 100.0;
-  }
-
-  localPath() async {
-    try {
-      var tempDir = await getTemporaryDirectory();
-      String tempPath = tempDir.path;
-      print('临时目录: ' + tempPath);
-    } catch (err) {
-      print(err);
-    }
-    try {
-      var appDocDir = await getApplicationDocumentsDirectory();
-      String appDocPath = appDocDir.path;
-
-      print('文档目录: ' + appDocPath);
-    } catch (err) {
-      print(err);
-    }
-  }
-
-  String imgsrc = 'http://5b0988e595225.cdn.sohucs.com/images' +
-      '/20171218/342e43903694448b91698b5ce7623314.jpeg';
-
-  List<Widget> buildGridTileList(int number) {
-    List<Widget> widgetList = new List();
-    for (int i = 0; i < number; i++) {
-      widgetList.add(new Text("" + i.toString()));
-    }
-    return widgetList;
   }
 
   @override
@@ -237,27 +182,6 @@ class _MyHomePageState extends State<MyHomePage>
               textColor: Colors.white,
               child: new Text('嗨住租房'),
               onPressed: _toHizhu,
-            ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: new Material(
-        color: Colors.blue,
-        child: new TabBar(
-          controller: this.tabController,
-          indicatorColor: Colors.white,
-          tabs: <Tab>[
-            new Tab(
-              text: '主页1',
-              icon: new Icon(Icons.home),
-            ),
-            new Tab(
-              text: '主页2',
-              icon: new Icon(Icons.home),
-            ),
-            new Tab(
-              text: '主页3',
-              icon: new Icon(Icons.home),
             ),
           ],
         ),
