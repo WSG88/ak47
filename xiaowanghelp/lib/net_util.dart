@@ -4,6 +4,29 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 
 main() {
+  map_region_list1();
+}
+
+map_region_list1() async {
+  var url = "http://api.hizhu.com/service/store/list.html";
+  var jsonData =
+      '''{"pageno":1,"limit":10,"sort":-1,"region_ids":[],"plate_ids":[],"money_max":99999,"money_min":0,"logicSort":"0","key":"","key_self":"0","type_no":0,"search_id":"","latitude":"","longitude":"","distance":"0","other_ids":[],"city_code":"001009001","customer_id":"9a893919-ff3c-2000-0863-44b9cf15ea1b","ab_test":"","recommend":0,"update_time":0}
+''';
+  Map<String, dynamic> params = json.decode(jsonData);
+  var headData =
+      '''{"CityCode":"001009001","ScreenSize":"560x960","Platform":"pc","Udid":"114.94.213.210","DeviceId":"654321","ClientVer":"4.1","Md5":"c961d4ff8fdca9bccb0e2367d10d2cc7","Session":"TJ_2018112249222"}
+''';
+
+  var options = new Options();
+  Map<String, dynamic> heads = json.decode(headData);
+  options.headers = heads;
+
+  var dio = new Dio(options);
+
+  var response = await dio.post(url, data: params);
+
+  getPr(response);
+  getPr(response.data.toString());
 }
 
 map_region_list() async {

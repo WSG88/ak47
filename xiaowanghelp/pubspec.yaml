@@ -27,6 +27,7 @@ dependencies:
   flutter_swiper: ^1.1.4
   carousel_slider: ^0.0.7
   http: ^0.12.0
+  path_provider: ^0.4.1
 
 dev_dependencies:
   flutter_test:
