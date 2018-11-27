@@ -4,7 +4,7 @@ import appiumtest.utils.CmdUtil;
  * Created by wsig on 2018-10-31.
  */
 
-public class NewTest {
+public class TestAdb {
   public static void main(String[] args) {
     CmdUtil cmd = new CmdUtil();
     String res = cmd.runCommandProcess("adb shell dumpsys window | findstr mCurrentFocus");
