@@ -32,17 +32,22 @@ class TestSql {
       Class.forName(driver);
       con = DriverManager.getConnection(url, user, password);
       Statement statement = con.createStatement();
-      sql = "select * from statistic limit 3";
-      sql = "select * from statistic where ship_id='da8fc177-9cd2-18fd-9edf-dba07d7718b7'";
-      sql = "select count(*) as cn from statistic";
+      sql = "select * from statistic";
+      //sql = "select * from statistic where ship_id='da8fc177-9cd2-18fd-9edf-dba07d7718b7'";
+      //sql = "select count(*) as cn from statistic";
 
       ResultSet rs = statement.executeQuery(sql);
-      System.out.println(convertList(rs));
+      //System.out.println(convertList(rs));
+      List<Integer> ll = new ArrayList<>();
       while (rs.next()) {
-
+        String timestamp = rs.getString("timestamp");
+        if (!ll.contains(timestamp.hashCode() & 15)) {
+          ll.add(timestamp.hashCode() & 15);
+        }
       }
+      System.out.println(ll);
       rs.close();
-      System.out.println("数据库数据成功获取！！");
+      System.out.println("ok ！！");
     } catch (Exception e) {
       e.printStackTrace();
     } finally {

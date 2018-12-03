@@ -15,3 +15,44 @@
 https://blog.csdn.net/varyall/article/details/79893625
 
 https://www.cnblogs.com/sunny3096/p/8595058.html
+
+
+php业务提供方数据表分表，使用hashCode
+
+      function hashCode64($str) {
+          $str = (string)$str;
+          $hash = 0;
+          $len = strlen($str);
+          if ($len == 0 )
+              return $hash;
+       
+          for ($i = 0; $i < $len; $i++) {
+              $h = $hash << 5;
+              $h -= $hash;
+              $h += ord($str[$i]);
+              $hash = $h;
+              $hash &= 0xFFFFFFFF;
+          }
+          return $hash;
+      }
+ 
+ 
+      function hashCode32( $s )
+      {
+          $h = 0;
+          $len = strlen($s);
+          for($i = 0; $i < $len; $i++)
+          {
+              $h = overflow32(31 * $h + ord($s[$i]));
+          }
+       
+          return $h;
+      }
+       
+      function overflow32($v)
+      {
+          $v = $v % 4294967296;
+          if ($v > 2147483647) return $v - 4294967296;
+          elseif ($v < -2147483648) return $v + 4294967296;
+          else return $v;
+      }
