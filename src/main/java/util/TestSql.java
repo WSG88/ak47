@@ -40,9 +40,9 @@ class TestSql {
       //System.out.println(convertList(rs));
       List<Integer> ll = new ArrayList<>();
       while (rs.next()) {
-        String timestamp = rs.getString("timestamp");
-        if (!ll.contains(timestamp.hashCode() & 15)) {
-          ll.add(timestamp.hashCode() & 15);
+        String id = rs.getString("id");
+        if (!ll.contains(id.hashCode() & 15)) {
+          ll.add(id.hashCode() & 15);
         }
       }
       System.out.println(ll);
