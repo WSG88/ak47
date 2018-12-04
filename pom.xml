@@ -290,6 +290,20 @@
       <artifactId>okio</artifactId>
       <version>1.14.1</version>
     </dependency>
+
+    <!-- for spring boot -->
+    <dependency>
+      <groupId>io.shardingsphere</groupId>
+      <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+
+    <!-- for spring namespace -->
+    <dependency>
+      <groupId>io.shardingsphere</groupId>
+      <artifactId>sharding-jdbc-spring-namespace</artifactId>
+      <version>3.0.0</version>
+    </dependency>
   </dependencies>
 
   <build>
