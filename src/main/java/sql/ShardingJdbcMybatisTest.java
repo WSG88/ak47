@@ -36,25 +36,37 @@ public class ShardingJdbcMybatisTest {
     return String.valueOf(time);
   }
 
+  static DataSource dataSource, dataSource1;
+  static Connection connection, connection1;
+
   public static void main(String[] args) throws Exception {
-    DataSource dataSource = getDataSource();
-    Connection connection = dataSource.getConnection();
+    dataSource = getDataSource();
+    connection = dataSource.getConnection();
 
-    DataSource dataSource1 = test2();
-    Connection connection1 = dataSource1.getConnection();
+    dataSource1 = test2();
+    connection1 = dataSource1.getConnection();
 
-    String sql = "insert into"
-        + "    statistic(id,ship_id,type,view_no,call_no,call_success_no,reserve_no,house_no,refresh_no,liked_no,link_no,im_no,content,timestamp,city_code)"
-        + "    values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    String sql1 = "select count(*) as cnt from statistic ";
+    PreparedStatement preparedStatement1 = connection1.prepareStatement(sql1);
+    ResultSet resultSet1 = preparedStatement1.executeQuery();
+    while (resultSet1.next()) {
+      String cnt = resultSet1.getString(1);
+      System.out.println("cnt=" + cnt);
+    }
 
-    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+    //for (int i = 20180505; i < 20181204; i++) {
+    //  String ss = getTimeStamp(i + "");
+    //  String sql1 = "select * from statistic where timestamp=" + ss + ";";
+    //  PreparedStatement preparedStatement1 = connection1.prepareStatement(sql1);
+    //  ResultSet resultSet1 = preparedStatement1.executeQuery();
+    //  insertTest(resultSet1);
+    //}
+    System.out.println("ok");
+  }
 
-    for (int i = 20180505; i < 20181204; i++) {
-      String ss = getTimeStamp(i + "");
-      String sql1 = "select * from statistic where timestamp=" + ss + ";";
-      PreparedStatement preparedStatement1 = connection1.prepareStatement(sql1);
-      ResultSet resultSet1 = preparedStatement1.executeQuery();
-      while (resultSet1.next()) {
+  private static void insertTest(ResultSet resultSet1) throws SQLException {
+    while (resultSet1.next()) {
+      try {
         String id = resultSet1.getString(1);
         int type = resultSet1.getInt(2);
         String ship_id = resultSet1.getString(3);
@@ -70,28 +82,30 @@ public class ShardingJdbcMybatisTest {
         String content = resultSet1.getString(13);
         int timestamp = resultSet1.getInt(14);
         String city_code = resultSet1.getString(15);
-        try {
-          preparedStatement.setString(1, id);
-          preparedStatement.setString(2, ship_id);
-          preparedStatement.setInt(3, type);
-          preparedStatement.setInt(4, view_no);
-          preparedStatement.setInt(5, call_no);
-          preparedStatement.setInt(6, call_success_no);
-          preparedStatement.setInt(7, reserve_no);
-          preparedStatement.setInt(8, house_no);
-          preparedStatement.setInt(9, refresh_no);
-          preparedStatement.setInt(10, liked_no);
-          preparedStatement.setInt(11, link_no);
-          preparedStatement.setInt(12, im_no);
-          preparedStatement.setString(13, content);
-          preparedStatement.setInt(14, timestamp);
-          preparedStatement.setString(15, city_code);
-          preparedStatement.execute();
-        } catch (SQLException e) {
-        }
+        String sql = "insert into"
+            + "    statistic(id,ship_id,type,view_no,call_no,call_success_no,reserve_no,house_no,refresh_no,liked_no,link_no,im_no,content,timestamp,city_code)"
+            + "    values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, id);
+        preparedStatement.setString(2, ship_id);
+        preparedStatement.setInt(3, type);
+        preparedStatement.setInt(4, view_no);
+        preparedStatement.setInt(5, call_no);
+        preparedStatement.setInt(6, call_success_no);
+        preparedStatement.setInt(7, reserve_no);
+        preparedStatement.setInt(8, house_no);
+        preparedStatement.setInt(9, refresh_no);
+        preparedStatement.setInt(10, liked_no);
+        preparedStatement.setInt(11, link_no);
+        preparedStatement.setInt(12, im_no);
+        preparedStatement.setString(13, content);
+        preparedStatement.setInt(14, timestamp);
+        preparedStatement.setString(15, city_code);
+        preparedStatement.execute();
+      } catch (SQLException e) {
       }
     }
-    System.out.println("ok");
   }
 
   static DataSource getDataSource() throws SQLException {
