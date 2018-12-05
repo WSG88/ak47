@@ -71,3 +71,24 @@ build/
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
 testng/screenshot
+/r0411gsql/.idea/
+/r0411gsql/target/
+koltin/.gradle/4.10/fileChanges/
+koltin/.gradle/4.10/fileHashes/fileHashes.bin
+koltin/.gradle/4.10/gc.properties
+koltin/.gradle/4.10/taskHistory/taskHistory.bin
+koltin/.gradle/4.10/vcsMetadata-1/
+koltin/.gradle/buildOutputCleanup/cache.properties
+koltin/.gradle/buildOutputCleanup/outputFiles.bin
+koltin/.gradle/vcs-1/
+r0411gsql/target/classes/com/r0411g/sql/dt/mapping/
+r0411gsql/target/classes/props/
+r0411gsql/target/classes/spring-config.xml
+r0411gsql/target/classes/spring-mvc.xml
+r0411gsql/target/classes/spring/
+r0411gsql/target/generated-sources/
+r0411gsql/target/generated-test-sources/
+target/classes/META-INF/
+target/generated-sources/
+target/generated-test-sources/
+target/test-classes/
