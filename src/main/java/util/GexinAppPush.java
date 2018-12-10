@@ -11,7 +11,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppPush {
+/**
+ * 个推推送测试
+ */
+public class GexinAppPush {
 
   //定义常量, appId、appKey、masterSecret 采用本文档 "第二步 获取访问凭证 "中获得的应用配置7
   private static String appId = "MK3XtHhFmv97ItHERcrz5677";
