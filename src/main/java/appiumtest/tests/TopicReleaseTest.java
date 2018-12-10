@@ -1,7 +1,6 @@
 package appiumtest.tests;
 
 import appiumtest.page.BasePage;
-import appiumtest.page.PostPage;
 import appiumtest.utils.AssertionListener;
 import appiumtest.utils.CmdUtil;
 import appiumtest.utils.InitDriver;
@@ -17,10 +16,10 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-@Listeners({ AssertionListener.class }) public class PostTest {
+@Listeners({ AssertionListener.class }) public class TopicReleaseTest {
   AndroidDriver<AndroidElement> driver;
 
-  PostPage basePage;
+  BasePage basePage;
 
   public static void threadSleep() {
     try {
@@ -32,8 +31,8 @@ import org.testng.annotations.Test;
 
   @BeforeClass public void setup() {
     driver = InitDriver.dr;
-    basePage = new PostPage(driver);
-    basePage.findE("mineButton");
+    basePage = new BasePage();
+    basePage.findE(driver, "mineButton");
   }
 
   @Parameters({ "mobile", "password" }) @Test public void testPost(String mobile, String password) {
@@ -55,32 +54,32 @@ import org.testng.annotations.Test;
   }
 
   public void inputText(String title, String otherContent) {
-    basePage.findE("titleInput").sendKeys(otherContent);
-    basePage.findE("otherContentInput").sendKeys(otherContent);
+    basePage.findE(driver, "titleInput").sendKeys(otherContent);
+    basePage.findE(driver, "otherContentInput").sendKeys(otherContent);
   }
 
   public void selectLocation(String... location) {
     String businessCircle = location[0];
     String subway = location[1];
 
-    basePage.findE("locationButton").click();
+    basePage.findE(driver, "locationButton").click();
 
     if (businessCircle != null) {
-      basePage.findE("businessCircle").click();
-      basePage.findE(businessCircle.split("_")[0]).click();
-      basePage.findE(businessCircle.split("_")[1]).click();
+      basePage.findE(driver, "businessCircle").click();
+      basePage.findE(driver, businessCircle.split("_")[0]).click();
+      basePage.findE(driver, businessCircle.split("_")[1]).click();
     }
     if (subway != null) {
-      basePage.findE("subway").click();
-      basePage.findE(subway.split("_")[0]).click();
-      basePage.findE(subway.split("_")[1]).click();
+      basePage.findE(driver, "subway").click();
+      basePage.findE(driver, subway.split("_")[0]).click();
+      basePage.findE(driver, subway.split("_")[1]).click();
     }
 
-    basePage.findE("locationEnsuredButton").click();
+    basePage.findE(driver, "locationEnsuredButton").click();
   }
 
   public void selectPrice() {
-    AndroidElement ae = basePage.findE("priceGlider");
+    AndroidElement ae = basePage.findE(driver, "priceGlider");
     int xlength = ae.getSize().width;
     Point leftPoint = ae.getCenter().moveBy(-(xlength / 2), 0);
     Point rightPoint = ae.getCenter().moveBy(xlength / 2, 0);
@@ -93,9 +92,9 @@ import org.testng.annotations.Test;
 
   public void openPublishPage(String mobile, String password) {
     // 无房->发房
-    basePage.findE("findRoommateButton").click();
-    basePage.findE("publishIcon").click();
-    basePage.findE("hasntRoomButton").click();
+    basePage.findE(driver, "findRoommateButton").click();
+    basePage.findE(driver, "publishIcon").click();
+    basePage.findE(driver, "hasntRoomButton").click();
     threadSleep();
     if (CmdUtil.isSameAct("LoginActivity")) {
       BasePage.simplelogin(driver, mobile, password);
@@ -103,40 +102,42 @@ import org.testng.annotations.Test;
   }
 
   public void clickPublish() {
-    basePage.findE("publishButton").click();
+    basePage.findE(driver, "publishButton").click();
   }
 
   public void clickAllEles(ArrayList<AndroidElement> als, int num) {
 
     for (int x = 0; x < num; x++) {
-      if (x > als.size() - 1) break;
+      if (x > als.size() - 1) {
+        break;
+      }
       als.get(x).click();
     }
   }
 
   public void selectImages() {
     // 选择房间照片
-    basePage.findE("addImagesButton").click();
-    basePage.findE("albumButton").click();
-    basePage.findE("screenshotAlbum").click();
+    basePage.findE(driver, "addImagesButton").click();
+    basePage.findE(driver, "albumButton").click();
+    basePage.findE(driver, "screenshotAlbum").click();
 
     threadSleep();
 
-    clickAllEles(basePage.findEsBy("images"), 3);
-    basePage.findE("imagesEnsuredButton").click();
+    clickAllEles(basePage.findEsBy(driver, "images"), 3);
+    basePage.findE(driver, "imagesEnsuredButton").click();
   }
 
   public void deletePost() {
     threadSleep();
 
-    basePage.findE("mineButton").click();
+    basePage.findE(driver, "mineButton").click();
 
-    while (basePage.findE("myPostButton") == null) {
+    while (basePage.findE(driver, "myPostButton") == null) {
       UsualClass.swipeToUp(driver);
     }
-    basePage.findE("myPostButton").click();
-    basePage.findE("deleteButtons").click();
-    basePage.findE("deleteEnsureButton").click();
+    basePage.findE(driver, "myPostButton").click();
+    basePage.findE(driver, "deleteButtons").click();
+    basePage.findE(driver, "deleteEnsureButton").click();
 
     threadSleep();
   }

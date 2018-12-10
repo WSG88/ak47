@@ -188,7 +188,7 @@ public class UsualClass {
   /**
    * 返回首页或是执行返回按钮
    */
-  public static void back(final AndroidDriver dr) {
+  public static void back(AndroidDriver dr) {
     AndroidDriverWait wait = new AndroidDriverWait(dr, 60);
     wait.until(new ExpectedCondition<WebElement>() {
       @Override public WebElement apply(WebDriver d) {

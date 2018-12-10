@@ -19,8 +19,6 @@ import javax.mail.internet.MimeUtility;
 
 /**
  * 邮件发送操作类
- *
- * @author Administrator
  */
 public class Mailut {
 

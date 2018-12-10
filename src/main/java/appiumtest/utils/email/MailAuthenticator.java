@@ -11,7 +11,7 @@ public class MailAuthenticator extends Authenticator {
   public MailAuthenticator() {
   }
 
-  protected PasswordAuthentication getPasswordAuthentication() {
+  @Override protected PasswordAuthentication getPasswordAuthentication() {
     return new PasswordAuthentication(USERNAME, PASSWORD);
   }
 }

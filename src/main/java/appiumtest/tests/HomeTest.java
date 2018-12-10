@@ -29,7 +29,7 @@ import org.testng.annotations.Test;
  * 首页-按钮入口的测试方法已完善（主要测试一下整租、合租、公寓、视频找房、嗨住美家按钮入口）
  * 发布房源计划在发房测试类中完善
  */
-@Listeners({ AssertionListener.class }) public class HomePageTest {
+@Listeners({ AssertionListener.class }) public class HomeTest {
   private AndroidDriver driver;
   private AndroidDriverWait wait;
 

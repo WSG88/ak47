@@ -27,7 +27,7 @@ import org.testng.annotations.Test;
  * 筛选地铁线、附近、地铁站在房源列表效验，区域商圈进房源详情里面校验字段（同搜索）
  * 筛选不限（目前与筛选附近房源做了关联关系）时，则通过点击若干个房源进入房源详情拿到区域板块再比对是否
  */
-@Listeners({ AssertionListener.class }) public class ScreenHouseTest {
+@Listeners({ AssertionListener.class }) public class HouseScreenTest {
   private AndroidDriver driver;
   private AndroidDriverWait wait = null;
 

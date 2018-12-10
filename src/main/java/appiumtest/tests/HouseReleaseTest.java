@@ -23,7 +23,7 @@ import org.testng.annotations.Test;
 /**
  * 发布房源测试类
  */
-@Listeners({ AssertionListener.class }) public class ReleaseHouseTest {
+@Listeners({ AssertionListener.class }) public class HouseReleaseTest {
   public AndroidDriver driver;
   public AndroidDriverWait wait;
 

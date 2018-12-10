@@ -35,13 +35,7 @@
 
     <classes>
       <class name="appiumtest.utils.InitDriver"/>
-      <!--<class name="appiumtest.tests.LoginTest"/>-->
-      <!--<class name="appiumtest.tests.HomePageTest"/>-->
-      <!--<class name="appiumtest.tests.SearchHouseTest"/>-->
-      <!--<class name="appiumtest.tests.ScreenHouseTest"/>-->
-      <!--<class name="appiumtest.tests.HouseDetailTest"/>-->
-      <class name="appiumtest.tests.PostTest"/>
-      <!--<class name="appiumtest.tests.ReleaseHouseTest"/>-->
+      <class name="appiumtest.tests.TopicReleaseTest"/>
     </classes>
 
   </test>

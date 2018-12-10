@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 /**
  * 这个搜索类包括，搜索小区、地铁、区域、商圈、地标以及品牌
  */
-@Listeners({ AssertionListener.class }) public class SearchHouseTest {
+@Listeners({ AssertionListener.class }) public class HouseSearchTest {
   private AndroidDriver driver;
   private AndroidDriverWait wait = null;
 
