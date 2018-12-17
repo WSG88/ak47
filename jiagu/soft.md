@@ -25,3 +25,9 @@ https://www.idoog.cn
 当前Activity
 https://play.google.com/store/apps/details?id=com.willme.topactivity&hl=zh_CN
 这是一款app应用，用于显示当前手机界面上的Activity等包名信息。
+
+打开Android ADB shell
+输入：dumpsys activity top
+如下图所示，我们可以清晰的看到我们需要的信息。
+Activity: com.android.settings.SubSettings
+Fragment: MiuiWifiSettings
