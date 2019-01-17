@@ -17,6 +17,7 @@
         adb pull /data/local/tmp/xxx.dex c:/xxx.dex
 
         使用dex2jar工具导出jar再来分析
+        使用jadx查看并导出gradle项目
 
 ### 使用工具AndroidKiller
         链接：https://pan.baidu.com/s/1EF5YhDLH2IOzzX9ktaTrew 提取码：m3qh
