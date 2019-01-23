@@ -17,7 +17,7 @@ import javax.imageio.ImageIO;
 public class ImgReduce {
 
   public static void reduceImg(String s, float rate) {
-    reduceImg(s, 0, 0, 0.5f);
+    reduceImg(s, 0, 0, rate);
   }
 
   public static void reduceImg(String s, int w, int h, float rate) {
@@ -82,7 +82,7 @@ public class ImgReduce {
     File file = new File("C:\\Users\\DELL\\Desktop\\my");
     File[] fs = file.listFiles();
     for (File f : fs) {
-      reduceImg(f.getAbsolutePath(), 0.1f);
+      reduceImg(f.getAbsolutePath(), 0.3f);
     }
   }
 }
