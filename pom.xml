@@ -307,6 +307,18 @@
       <artifactId>metadata-extractor</artifactId>
       <version>2.11.0</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.kennycason</groupId>
+      <artifactId>kumo-core</artifactId>
+      <version>1.13</version>
+    </dependency>
+    <dependency>
+      <groupId>com.kennycason</groupId>
+      <artifactId>kumo-tokenizers</artifactId>
+      <version>1.12</version>
+    </dependency>
+
   </dependencies>
 
   <build>
