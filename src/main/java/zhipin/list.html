@@ -1,0 +1,4785 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html class="ie ie6"><![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7"><![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8"><![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="standard"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>【求职|找工作|最新招聘信息】-BOSS直聘</title>
+    <meta content="求职,找工作,最新招聘信息" name="keywords"/>
+    <meta content="BOSS直聘求职频道，为您提供大量的白领求职招聘职位信息,想了解更多关于白领求职招聘职位信息，就来BOSS直聘！" name="description"/>
+    <link href="https://static.zhipin.com/zhipin/v127/web/geek/css/main.css" rel="stylesheet"
+          type="text/css">
+    <link href="https://www.zhipin.com/c101020100/" rel="canonical">
+    <meta content="pc" name="applicable-device">
+    <meta content="format=html5;url=https://m.zhipin.com/c101020100/" name="mobile-agent">
+    <script>
+      var positionList = [];
+    </script>
+</head>
+<body>
+<div class="search-job-list-wrap" id="wrap">
+
+
+    <script>
+      var staticPath = 'https://static.zhipin.com/zhipin/v127';
+      _PAGE = {
+        checkMobileUrl: "/registe/sendSms.json",
+        regMobileUrl: "/registe/save.json",
+        loginMobileUrl: "/login/phone.json",
+        loginAccountUrl: "/login/account.json",
+        getRandomKeyUrl: "/captcha/randkey.json",
+        verifyImgUrl: "/captcha/?randomKey={randomKey}",
+        getPositionUrl: "/user/position.json",
+        skillsUrl: "/common/data/positionSkill"
+
+      }
+    </script>
+
+
+    <div id="header">
+        <div class="inner home-inner">
+            <div class="logo"><a href="https://www.zhipin.com/" ka="header-home-logo"
+                                 title="BOSS直聘"><span>BOSS直聘</span></a></div>
+
+            <div class="nav">
+                <ul>
+                    <li class=""><a href="https://www.zhipin.com/" ka="header-home">首页</a></li>
+                    <li class="cur"><a href="https://www.zhipin.com/job_detail/"
+                                       ka="header-job">职位</a></li>
+                    <li class=""><a href="https://www.zhipin.com/gongsi/" ka="header_brand">公司</a>
+                    </li>
+                    <li class=""><a href="https://app.zhipin.com/" ka="header-app">APP</a></li>
+                    <li class=""><a href="https://news.zhipin.com/" ka="header-article">资讯</a></li>
+                </ul>
+            </div>
+
+            <div class="user-nav">
+
+
+                <!--未登录-->
+                <div class="btns">
+                    <a class="link-sign-resume"
+                       href="https://www.zhipin.com/geek/attresume/parser.html"
+                       ka="nlp_resume_upload" title="上传简历，解析内容，完善注册">上传简历</a>
+                    <a class="link-sign-resume"
+                       href="https://www.zhipin.com/geek/attresume/parser.html" ka="header-geek"
+                       title="上传简历，解析内容，完善注册">我要找工作<span class="new"
+                                                         style="display: inline;">hot</span></a>
+                    <a class="link-scan" href="https://signup.zhipin.com?intent=1" ka="header-boss"
+                       title="我要招聘">我要招聘</a>
+                    <a class="btn btn-outline" href="https://signup.zhipin.com"
+                       ka="header-register">注册</a>
+                    <a class="btn btn-outline" href="https://login.zhipin.com"
+                       ka="header-login">登录</a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="filter-box">
+        <div class="inner home-inner">
+            <div class="search-box">
+                <div class="search-form ">
+                    <form action="/job_detail/" method="get">
+                        <div class="search-form-con">
+                            <div class="city-sel">
+                                <i class="line"></i>
+                                <span class="label-text"><b>上海</b><i
+                                        class="icon-arrow-down"></i></span>
+                            </div>
+                            <div class="industry-sel" ka="search_bos_sel_industry">
+                                <i class="line"></i>
+                                <span class="label-text"><b>公司行业</b><i class="icon-arrow-down"></i></span>
+                            </div>
+                            <div class="position-sel" ka="search_box_sel_jobtype">
+                                <i class="line"></i>
+                                <span class="label-text"><b>职位类型</b><i class="icon-arrow-down"></i></span>
+                            </div>
+                            <p class="ipt-wrap"><input autocomplete="off" class="ipt-search"
+                                                       ka="search-keyword" maxlength="50"
+                                                       name="query" placeholder="搜索职位、公司"
+                                                       type="text" value=""></p>
+                        </div>
+                        <input class="city-code" name="scity" type="hidden" value="101020100"/>
+                        <input class="industry-code" name="industry" type="hidden" value=""/>
+                        <input class="position-code" name="position" type="hidden" value=""/>
+                        <button class="btn btn-search">搜索</button>
+                        <div class="suggest-result">
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="city-box">
+                            <ul class="dorpdown-province">
+                            </ul>
+                            <div class="dorpdown-city">
+                            </div>
+                        </div>
+                        <div class="industry-box">
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="position-box">
+                            <div class="dropdown-menu">
+                                <script>
+                                  var jobData = positionList;
+                                </script>
+                                <div class="select-tree" data-level="3"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- 广告 -->
+                <!--
+                <div class="search-banner">
+                    <img src="http://172.16.24.210/v2/web/geek/images/listbanner.png" alt="">
+                </div>
+                -->
+            </div>
+            <div class="condition-box">
+                <dl class="condition-city show-condition-district">
+                    <dd class="city-wrapper">
+                        <a class="disabled" href="javascript:;">上海</a>
+
+                        <em class="icon-arrow-right"></em>
+                        <a class='link-district selected' href="javascript:;">
+                            不限</a>
+                        <em class="icon-arrow-right"></em>
+
+
+                        <span class="hot-text">热门城市：</span>
+
+                        <a href="/c100010000/" ka="sel-city-100010000">全国</a>
+
+                        <a href="/c101010100/" ka="sel-city-101010100">北京</a>
+
+                        <a href="/c101020100/" ka="sel-city-101020100">上海</a>
+
+                        <a href="/c101280100/" ka="sel-city-101280100">广州</a>
+
+                        <a href="/c101280600/" ka="sel-city-101280600">深圳</a>
+
+                        <a href="/c101210100/" ka="sel-city-101210100">杭州</a>
+
+                        <a href="/c101030100/" ka="sel-city-101030100">天津</a>
+
+                        <a href="/c101110100/" ka="sel-city-101110100">西安</a>
+
+                        <a href="/c101190400/" ka="sel-city-101190400">苏州</a>
+
+                        <a href="/c101200100/" ka="sel-city-101200100">武汉</a>
+
+                        <a href="/c101230200/" ka="sel-city-101230200">厦门</a>
+
+                        <a href="/c101250100/" ka="sel-city-101250100">长沙</a>
+
+                        <a href="/c101270100/" ka="sel-city-101270100">成都</a>
+
+                        <a href="/c101180100/" ka="sel-city-101180100">郑州</a>
+
+                        <a href="/c101040100/" ka="sel-city-101040100">重庆</a>
+
+                        <a class="btn-allcity" href="javascript:;">全部城市</a>
+                    </dd>
+                </dl>
+
+                <dl class='condition-district  show-condition-district '>
+                    <dd>
+                        <a class="selected" href="/c101020100/" ka="sel-business-0">不限</a>
+
+
+                        <a
+
+
+                                href="/c101020100/b_%E6%B5%A6%E4%B8%9C%E6%96%B0%E5%8C%BA/"
+
+
+                                ka="sel-business-1">浦东新区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E5%BE%90%E6%B1%87%E5%8C%BA/"
+
+
+                                ka="sel-business-2">徐汇区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E9%97%B5%E8%A1%8C%E5%8C%BA/"
+
+
+                                ka="sel-business-3">闵行区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E9%9D%99%E5%AE%89%E5%8C%BA/"
+
+
+                                ka="sel-business-4">静安区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E9%BB%84%E6%B5%A6%E5%8C%BA/"
+
+
+                                ka="sel-business-5">黄浦区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E9%95%BF%E5%AE%81%E5%8C%BA/"
+
+
+                                ka="sel-business-6">长宁区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E6%9D%A8%E6%B5%A6%E5%8C%BA/"
+
+
+                                ka="sel-business-7">杨浦区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E6%99%AE%E9%99%80%E5%8C%BA/"
+
+
+                                ka="sel-business-8">普陀区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E5%AE%9D%E5%B1%B1%E5%8C%BA/"
+
+
+                                ka="sel-business-9">宝山区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E8%99%B9%E5%8F%A3%E5%8C%BA/"
+
+
+                                ka="sel-business-10">虹口区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E6%9D%BE%E6%B1%9F%E5%8C%BA/"
+
+
+                                ka="sel-business-11">松江区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E5%98%89%E5%AE%9A%E5%8C%BA/"
+
+
+                                ka="sel-business-12">嘉定区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E9%9D%92%E6%B5%A6%E5%8C%BA/"
+
+
+                                ka="sel-business-13">青浦区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E5%A5%89%E8%B4%A4%E5%8C%BA/"
+
+
+                                ka="sel-business-14">奉贤区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E9%87%91%E5%B1%B1%E5%8C%BA/"
+
+
+                                ka="sel-business-15">金山区</a>
+
+                        <a
+
+
+                                href="/c101020100/b_%E5%B4%87%E6%98%8E%E5%8C%BA/"
+
+
+                                ka="sel-business-16">崇明区</a>
+
+                        <a
+
+                                class="btn-disabled" href="javascript:;"
+
+
+                                ka="sel-business-17">崇明县</a>
+
+
+                    </dd>
+                </dl>
+                <dl class='condition-area '>
+                    <dd>
+                        <a class="selected" href="/c101020100/" ka="sel-area-0">不限</a>
+
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BC%A0%E6%B1%9F/"
+
+
+                                ka="sel-area-1">张江</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%BC%95%E6%B2%B3%E6%B3%BE/"
+
+
+                                ka="sel-area-2">漕河泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%99%86%E5%AE%B6%E5%98%B4/"
+
+
+                                ka="sel-area-3">陆家嘴</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BE%90%E5%AE%B6%E6%B1%87/"
+
+
+                                ka="sel-area-4">徐家汇</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%BA%94%E8%A7%92%E5%9C%BA/"
+
+
+                                ka="sel-area-5">五角场</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%96%E7%BA%AA%E5%85%AC%E5%9B%AD/"
+
+
+                                ka="sel-area-6">世纪公园</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%87%91%E6%A1%A5/"
+
+
+                                ka="sel-area-7">金桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%8E%98%E5%BA%84/"
+
+
+                                ka="sel-area-8">莘庄</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%99%B9%E6%A1%A5/"
+
+
+                                ka="sel-area-9">虹桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B5%A6%E6%B1%9F/"
+
+
+                                ka="sel-area-10">浦江</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%AD%E5%B1%B1%E5%85%AC%E5%9B%AD/"
+
+
+                                ka="sel-area-11">中山公园</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8C%97%E6%96%B0%E6%B3%BE/"
+
+
+                                ka="sel-area-12">北新泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%BA%BA%E6%B0%91%E5%B9%BF%E5%9C%BA/"
+
+
+                                ka="sel-area-13">人民广场</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%97%E4%BA%AC%E8%A5%BF%E8%B7%AF/"
+
+
+                                ka="sel-area-14">南京西路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%83%E5%AE%9D/"
+
+
+                                ka="sel-area-15">七宝</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%9B%9B%E5%B7%9D%E5%8C%97%E8%B7%AF/"
+
+
+                                ka="sel-area-16">四川北路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B1%B6%E6%B0%B4%E8%B7%AF/"
+
+
+                                ka="sel-area-17">汶水路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%9D%99%E5%AE%89%E5%AF%BA/"
+
+
+                                ka="sel-area-18">静安寺</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%BE%99%E5%8D%8E/"
+
+
+                                ka="sel-area-19">龙华</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%96%E6%BB%A9/"
+
+
+                                ka="sel-area-20">外滩</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%81%AB%E8%BD%A6%E7%AB%99/"
+
+
+                                ka="sel-area-21">火车站</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%BF%E5%BE%81/"
+
+
+                                ka="sel-area-22">长征</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%91%A8%E5%AE%B6%E5%98%B4%E8%B7%AF/"
+
+
+                                ka="sel-area-23">周家嘴路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%94%B0%E6%9E%97/"
+
+
+                                ka="sel-area-24">田林</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%BF%E5%AF%BF%E8%B7%AF/"
+
+
+                                ka="sel-area-25">长寿路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8F%A4%E5%8C%97/"
+
+
+                                ka="sel-area-26">古北</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B1%9F%E6%A1%A5/"
+
+
+                                ka="sel-area-27">江桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%89%93%E6%B5%A6%E6%A1%A5/"
+
+
+                                ka="sel-area-28">打浦桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B9%9D%E4%BA%AD/"
+
+
+                                ka="sel-area-29">九亭</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A1%98%E6%A1%A5/"
+
+
+                                ka="sel-area-30">塘桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BE%90%E6%B3%BE/"
+
+
+                                ka="sel-area-31">徐泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%8E%E6%BC%95/"
+
+
+                                ka="sel-area-32">华漕</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%8A%E6%B5%B7%E5%8D%97%E7%AB%99/"
+
+
+                                ka="sel-area-33">上海南站</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%85%AB%E4%BD%B0%E4%BC%B4/"
+
+
+                                ka="sel-area-34">八佰伴</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%99%B9%E6%A1%A5/"
+
+
+                                ka="sel-area-35">虹桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%96%B0%E6%A1%A5/"
+
+
+                                ka="sel-area-36">新桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%96%B0%E5%A4%A9%E5%9C%B0/"
+
+
+                                ka="sel-area-37">新天地</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%A2%9B%E6%A1%A5/"
+
+
+                                ka="sel-area-38">颛桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%9C%9F%E5%A6%82/"
+
+
+                                ka="sel-area-39">真如</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%97%E7%BF%94/"
+
+
+                                ka="sel-area-40">南翔</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8C%97%E8%94%A1/"
+
+
+                                ka="sel-area-41">北蔡</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%AD%E5%B1%B1%E5%8C%97%E8%B7%AF/"
+
+
+                                ka="sel-area-42">中山北路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%B4%E5%B9%B3%E8%B7%AF/"
+
+
+                                ka="sel-area-43">临平路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B7%9E%E5%8D%97/"
+
+
+                                ka="sel-area-44">淞南</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%AE%89%E4%BA%AD/"
+
+
+                                ka="sel-area-45">安亭</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%89%E6%9E%97/"
+
+
+                                ka="sel-area-46">三林</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%99%B9%E5%8F%A3%E8%B6%B3%E7%90%83%E5%9C%BA/"
+
+
+                                ka="sel-area-47">虹口足球场</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%94%90%E9%95%87/"
+
+
+                                ka="sel-area-48">唐镇</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%96%B0%E5%8D%8E%E8%B7%AF/"
+
+
+                                ka="sel-area-49">新华路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B7%AE%E6%B5%B7%E8%B7%AF/"
+
+
+                                ka="sel-area-50">淮海路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B1%9F%E5%AE%81%E8%B7%AF/"
+
+
+                                ka="sel-area-51">江宁路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%97%E6%A1%A5/"
+
+
+                                ka="sel-area-52">南桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%90%B4%E6%B7%9E/"
+
+
+                                ka="sel-area-53">吴淞</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%BE%99%E6%9F%8F/"
+
+
+                                ka="sel-area-54">龙柏</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%82%87%E5%98%89%E6%B5%9C%E8%B7%AF/"
+
+
+                                ka="sel-area-55">肇嘉浜路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9D%BE%E6%B1%9F%E5%A4%A7%E5%AD%A6%E5%9F%8E/"
+
+
+                                ka="sel-area-56">松江大学城</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BA%B7%E6%A1%A5/"
+
+
+                                ka="sel-area-57">康桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%91%A8%E6%B5%A6/"
+
+
+                                ka="sel-area-58">周浦</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B4%8B%E6%B3%BE/"
+
+
+                                ka="sel-area-59">洋泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BA%99%E8%A1%8C/"
+
+
+                                ka="sel-area-60">庙行</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9B%B9%E6%9D%A8/"
+
+
+                                ka="sel-area-61">曹杨</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%A1%83%E6%B5%A6/"
+
+
+                                ka="sel-area-62">桃浦</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A7%E5%8D%8E/"
+
+
+                                ka="sel-area-63">大华</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%A9%AC%E9%99%86/"
+
+
+                                ka="sel-area-64">马陆</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%A1%BE%E6%9D%91/"
+
+
+                                ka="sel-area-65">顾村</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%97%E6%96%B9%E5%95%86%E5%9F%8E/"
+
+
+                                ka="sel-area-66">南方商城</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%96%E9%AB%98%E6%A1%A5/"
+
+
+                                ka="sel-area-67">外高桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%8A%E6%B5%B7%E5%A4%A7%E5%AD%A6/"
+
+
+                                ka="sel-area-68">上海大学</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%B2%81%E8%BF%85%E5%85%AC%E5%9B%AD/"
+
+
+                                ka="sel-area-69">鲁迅公园</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9B%B9%E5%AE%B6%E6%B8%A1/"
+
+
+                                ka="sel-area-70">曹家渡</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%B7%9D%E6%B2%99/"
+
+
+                                ka="sel-area-71">川沙</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%9E%8D%E5%B1%B1/"
+
+
+                                ka="sel-area-72">鞍山</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9D%BE%E6%B1%9F%E6%96%B0%E5%9F%8E/"
+
+
+                                ka="sel-area-73">松江新城</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%80%81%E8%A5%BF%E9%97%A8/"
+
+
+                                ka="sel-area-74">老西门</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%97%E7%A0%81%E5%A4%B4/"
+
+
+                                ka="sel-area-75">南码头</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B1%9F%E6%B9%BE/"
+
+
+                                ka="sel-area-76">江湾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9D%A8%E8%A1%8C/"
+
+
+                                ka="sel-area-77">杨行</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%98%A5%E7%94%B3/"
+
+
+                                ka="sel-area-78">春申</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%97%B8%E5%8C%97%E5%85%AC%E5%9B%AD/"
+
+
+                                ka="sel-area-79">闸北公园</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%A5%BF%E8%97%8F%E5%8C%97%E8%B7%AF/"
+
+
+                                ka="sel-area-80">西藏北路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%B0%E5%BA%84/"
+
+
+                                ka="sel-area-81">丰庄</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%BA%94%E9%87%8C%E6%A1%A5/"
+
+
+                                ka="sel-area-82">五里桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%AD%E5%8E%9F/"
+
+
+                                ka="sel-area-83">中原</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%91%A3%E5%AE%B6%E6%B8%A1/"
+
+
+                                ka="sel-area-84">董家渡</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%B5%B5%E5%B7%B7/"
+
+
+                                ka="sel-area-85">赵巷</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9B%B9%E8%B7%AF/"
+
+
+                                ka="sel-area-86">曹路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%AB%98%E5%A2%83/"
+
+
+                                ka="sel-area-87">高境</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A7%E6%9F%8F%E6%A0%91/"
+
+
+                                ka="sel-area-88">大柏树</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%A2%85%E5%B7%9D%E8%B7%AF/"
+
+
+                                ka="sel-area-89">梅川路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B4%9E%E6%B3%BE/"
+
+
+                                ka="sel-area-90">洞泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%87%89%E5%9F%8E/"
+
+
+                                ka="sel-area-91">凉城</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9B%B2%E9%98%B3/"
+
+
+                                ka="sel-area-92">曲阳</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%97%E4%BA%AC%E4%B8%9C%E8%B7%AF/"
+
+
+                                ka="sel-area-93">南京东路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%9D%99%E5%AE%89%E6%96%B0%E5%9F%8E/"
+
+
+                                ka="sel-area-94">静安新城</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%90%B4%E6%B3%BE/"
+
+
+                                ka="sel-area-95">吴泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%87%E5%AE%81%E8%B7%AF/"
+
+
+                                ka="sel-area-96">镇宁路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A7%E5%8D%8E/"
+
+
+                                ka="sel-area-97">大华</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%A1%A1%E5%B1%B1%E8%B7%AF/"
+
+
+                                ka="sel-area-98">衡山路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%AD%E5%B1%B1/"
+
+
+                                ka="sel-area-99">中山</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9D%BE%E6%B1%9F%E5%B7%A5%E4%B8%9A%E5%8C%BA/"
+
+
+                                ka="sel-area-100">松江工业区</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%83%A0%E5%8D%97/"
+
+
+                                ka="sel-area-101">惠南</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B1%9F%E6%B9%BE/"
+
+
+                                ka="sel-area-102">江湾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%B1%AB%E5%9B%AD/"
+
+
+                                ka="sel-area-103">豫园</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B5%B7%E5%AE%81%E8%B7%AF/"
+
+
+                                ka="sel-area-104">海宁路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%A2%85%E9%99%87/"
+
+
+                                ka="sel-area-105">梅陇</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%BD%97%E5%BA%97/"
+
+
+                                ka="sel-area-106">罗店</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%99%B9%E6%A2%85%E8%B7%AF/"
+
+
+                                ka="sel-area-107">虹梅路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9C%88%E6%B5%A6/"
+
+
+                                ka="sel-area-108">月浦</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A7%E8%BF%9E/"
+
+
+                                ka="sel-area-109">大连</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%B9%B3%E5%87%89%E8%B7%AF/"
+
+
+                                ka="sel-area-110">平凉路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%BD%98%E5%B1%B1/"
+
+
+                                ka="sel-area-111">佘山</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%88%AA%E5%A4%B4/"
+
+
+                                ka="sel-area-112">航头</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%99%B9%E6%A1%A5/"
+
+
+                                ka="sel-area-113">虹桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9B%B9%E5%AE%B6%E6%B8%A1/"
+
+
+                                ka="sel-area-114">曹家渡</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%96%9C%E5%9C%9F%E8%B7%AF/"
+
+
+                                ka="sel-area-115">斜土路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%8D%E5%85%B4%E8%A5%BF%E8%B7%AF/"
+
+
+                                ka="sel-area-116">复兴西路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%A5%9D%E6%A1%A5/"
+
+
+                                ka="sel-area-117">祝桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%8E%98%E5%BA%84/"
+
+
+                                ka="sel-area-118">莘庄</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8F%A4%E7%BE%8E/"
+
+
+                                ka="sel-area-119">古美</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%8E%A7%E6%B1%9F%E8%B7%AF/"
+
+
+                                ka="sel-area-120">控江路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%85%B1%E5%BA%B7/"
+
+
+                                ka="sel-area-121">共康</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%B4%E6%B8%AF%E6%96%B0%E5%9F%8E/"
+
+
+                                ka="sel-area-122">临港新城</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%AB%98%E8%A1%8C/"
+
+
+                                ka="sel-area-123">高行</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A7%E6%9F%8F%E6%A0%91/"
+
+
+                                ka="sel-area-124">大柏树</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%87%91%E6%B1%87/"
+
+
+                                ka="sel-area-125">金汇</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A5%89%E5%9F%8E/"
+
+
+                                ka="sel-area-126">奉城</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%8A%B1%E6%9C%A8/"
+
+
+                                ka="sel-area-127">花木</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%8A%E6%B7%9E%E5%9B%AD%E8%B7%AF/"
+
+
+                                ka="sel-area-128">半淞园路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%87%8D%E5%9B%BA/"
+
+
+                                ka="sel-area-129">重固</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9F%98%E6%9E%97/"
+
+
+                                ka="sel-area-130">柘林</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A7%E5%9C%BA/"
+
+
+                                ka="sel-area-131">大场</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B5%B7%E6%B9%BE/"
+
+
+                                ka="sel-area-132">海湾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%AD%E5%B1%B1%E5%8C%97%E8%B7%AF/"
+
+
+                                ka="sel-area-133">中山北路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%87%E6%BA%90%E5%9F%8E/"
+
+
+                                ka="sel-area-134">万源城</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9E%AB%E6%9E%97%E8%B7%AF/"
+
+
+                                ka="sel-area-135">枫林路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%96%9C%E5%9C%9F%E8%B7%AF/"
+
+
+                                ka="sel-area-136">斜土路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%BA%AD%E6%9E%97/"
+
+
+                                ka="sel-area-137">亭林</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B0%B8%E4%B8%B0/"
+
+
+                                ka="sel-area-138">永丰</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%9F%B3%E5%8C%96/"
+
+
+                                ka="sel-area-139">石化</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9C%B1%E5%AE%B6%E8%A7%92/"
+
+
+                                ka="sel-area-140">朱家角</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%BC%95%E5%AE%9D%E8%B7%AF/"
+
+
+                                ka="sel-area-141">漕宝路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BA%84%E8%A1%8C/"
+
+
+                                ka="sel-area-142">庄行</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B1%9F%E6%B5%A6%E8%B7%AF/"
+
+
+                                ka="sel-area-143">江浦路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%BC%95%E6%B2%B3%E6%B3%BE/"
+
+
+                                ka="sel-area-144">漕河泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%96%B0%E5%9C%BA/"
+
+
+                                ka="sel-area-145">新场</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9B%B9%E5%AE%B6%E6%B8%A1/"
+
+
+                                ka="sel-area-146">曹家渡</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9C%B1%E6%B3%BE/"
+
+
+                                ka="sel-area-147">朱泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%9B%9B%E5%B9%B3%E8%B7%AF/"
+
+
+                                ka="sel-area-148">四平路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%8E%E6%B3%BE/"
+
+
+                                ka="sel-area-149">华泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9E%AB%E6%B3%BE/"
+
+
+                                ka="sel-area-150">枫泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%9F%8E%E9%9A%8D%E5%BA%99/"
+
+
+                                ka="sel-area-151">城隍庙</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%8E%E4%B8%9C%E7%90%86%E5%B7%A5/"
+
+
+                                ka="sel-area-152">华东理工</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%85%AD%E9%87%8C/"
+
+
+                                ka="sel-area-153">六里</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%BD%97%E6%B3%BE/"
+
+
+                                ka="sel-area-154">罗泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%9C%E5%85%B0%E8%B7%AF/"
+
+
+                                ka="sel-area-155">东兰路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%A9%AC%E6%A1%A5/"
+
+
+                                ka="sel-area-156">马桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BC%A0%E5%BA%99/"
+
+
+                                ka="sel-area-157">张庙</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%9B%9B%E5%B9%B3%E8%B7%AF/"
+
+
+                                ka="sel-area-158">四平路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%8E%E5%B8%88%E5%A4%A7/"
+
+
+                                ka="sel-area-159">华师大</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%8D%E5%85%B4%E8%A5%BF%E8%B7%AF/"
+
+
+                                ka="sel-area-160">复兴西路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%87%91%E6%B2%99%E6%B1%9F%E8%B7%AF/"
+
+
+                                ka="sel-area-161">金沙江路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%99%BD%E9%B9%A4/"
+
+
+                                ka="sel-area-162">白鹤</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%AD%A6%E5%AE%81%E8%B7%AF/"
+
+
+                                ka="sel-area-163">武宁路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%BF%E5%AF%BF%E8%B7%AF/"
+
+
+                                ka="sel-area-164">长寿路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%BF%E6%A1%A5/"
+
+
+                                ka="sel-area-165">长桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%B9%BF%E4%B8%AD%E8%B7%AF/"
+
+
+                                ka="sel-area-166">广中路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%9F%8E%E6%A1%A5/"
+
+
+                                ka="sel-area-167">城桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BE%90%E5%AE%B6%E6%B1%87/"
+
+
+                                ka="sel-area-168">徐家汇</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%99%B9%E6%A2%85%E8%B7%AF/"
+
+
+                                ka="sel-area-169">虹梅路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%A2%85%E9%99%87/"
+
+
+                                ka="sel-area-170">梅陇</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B7%AE%E6%B5%B7%E8%B7%AF/"
+
+
+                                ka="sel-area-171">淮海路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B3%A5%E5%9F%8E/"
+
+
+                                ka="sel-area-172">泥城</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%82%87%E5%98%89%E6%B5%9C%E8%B7%AF/"
+
+
+                                ka="sel-area-173">肇嘉浜路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A7%E8%BF%9E/"
+
+
+                                ka="sel-area-174">大连</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%85%B1%E5%92%8C%E6%96%B0%E8%B7%AF/"
+
+
+                                ka="sel-area-175">共和新路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%A2%85%E5%9B%AD/"
+
+
+                                ka="sel-area-176">梅园</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%9F%B3%E8%90%A5%E8%B7%AF/"
+
+
+                                ka="sel-area-177">柳营路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8F%8B%E8%B0%8A%E8%B7%AF/"
+
+
+                                ka="sel-area-178">友谊路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%BF%E7%99%BD%E6%96%B0%E6%9D%91/"
+
+
+                                ka="sel-area-179">长白新村</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%96%B9%E6%9D%BE/"
+
+
+                                ka="sel-area-180">方松</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%83%E6%B5%A6%E8%B7%AF/"
+
+
+                                ka="sel-area-181">七浦路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%97%E7%BF%94/"
+
+
+                                ka="sel-area-182">南翔</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%BA%A4%E5%A4%A7/"
+
+
+                                ka="sel-area-183">交大</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%BF%E5%85%B4%E5%B2%9B/"
+
+
+                                ka="sel-area-184">长兴岛</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%96%E6%BB%A9/"
+
+
+                                ka="sel-area-185">外滩</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8A%A8%E7%89%A9%E5%9B%AD/"
+
+
+                                ka="sel-area-186">动物园</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%BF%E9%98%B3%E8%B7%AF/"
+
+
+                                ka="sel-area-187">长阳路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A9%E5%B1%B1%E8%B7%AF/"
+
+
+                                ka="sel-area-188">天山路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A9%E7%9B%AE%E8%A5%BF%E8%B7%AF/"
+
+
+                                ka="sel-area-189">天目西路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%BC%95%E5%AE%9D%E8%B7%AF/"
+
+
+                                ka="sel-area-190">漕宝路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%BF%E9%A3%8E%E5%85%AC%E5%9B%AD/"
+
+
+                                ka="sel-area-191">长风公园</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%88%AA%E5%8D%8E/"
+
+
+                                ka="sel-area-192">航华</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6/"
+
+
+                                ka="sel-area-193">交通大学</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%BA%90%E6%B7%B1%E4%BD%93%E8%82%B2%E4%B8%AD%E5%BF%83/"
+
+
+                                ka="sel-area-194">源深体育中心</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%8A%E9%92%A2%E6%96%B0%E6%9D%91/"
+
+
+                                ka="sel-area-195">上钢新村</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%99%88%E5%AE%B6/"
+
+
+                                ka="sel-area-196">陈家</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%A8%8B%E5%AE%B6%E6%A1%A5/"
+
+
+                                ka="sel-area-197">程家桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%AD%E8%BF%9C%E4%B8%A4%E6%B9%BE%E5%9F%8E/"
+
+
+                                ka="sel-area-198">中远两湾城</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B1%9F%E5%B7%9D%E8%B7%AF/"
+
+
+                                ka="sel-area-199">江川路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%96%B0%E9%97%B8%E8%B7%AF/"
+
+
+                                ka="sel-area-200">新闸路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A0%A1%E9%95%87/"
+
+
+                                ka="sel-area-201">堡镇</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8C%97%E6%96%B0%E6%B3%BE/"
+
+
+                                ka="sel-area-202">北新泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%9C%BA%E4%B8%AD%E8%B7%AF/"
+
+
+                                ka="sel-area-203">场中路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%91%A8%E5%AE%B6%E5%98%B4%E8%B7%AF/"
+
+
+                                ka="sel-area-204">周家嘴路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8C%97%E4%BA%AC%E8%A5%BF%E8%B7%AF/"
+
+
+                                ka="sel-area-205">北京西路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B1%9F%E5%AE%81%E8%B7%AF/"
+
+
+                                ka="sel-area-206">江宁路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%87%E5%AE%81%E8%B7%AF/"
+
+
+                                ka="sel-area-207">镇宁路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%9F%B3%E6%B3%89%E8%B7%AF/"
+
+
+                                ka="sel-area-208">石泉路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A7%E5%AE%81%E8%B7%AF/"
+
+
+                                ka="sel-area-209">大宁路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B5%B7%E5%AE%81%E8%B7%AF/"
+
+
+                                ka="sel-area-210">海宁路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%8A%B7%E6%B1%9F%E8%A5%BF%E8%B7%AF/"
+
+
+                                ka="sel-area-211">芷江西路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%91%A8%E5%AE%B6%E6%B8%A1/"
+
+
+                                ka="sel-area-212">周家渡</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%83%E6%B5%A6%E8%B7%AF/"
+
+
+                                ka="sel-area-213">七浦路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%9C%E6%98%8E%E8%B7%AF/"
+
+
+                                ka="sel-area-214">东明路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%BF%E9%98%B3%E8%B7%AF/"
+
+
+                                ka="sel-area-215">长阳路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%8D%E6%97%A6%E5%A4%A7%E5%AD%A6/"
+
+
+                                ka="sel-area-216">复旦大学</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6/"
+
+
+                                ka="sel-area-217">交通大学</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%96%B0%E6%B1%9F%E6%B9%BE%E5%9F%8E/"
+
+
+                                ka="sel-area-218">新江湾城</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B9%96%E5%8D%97%E8%B7%AF/"
+
+
+                                ka="sel-area-219">湖南路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B7%9E%E5%AE%9D/"
+
+
+                                ka="sel-area-220">淞宝</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%97%E6%B5%A6%E5%A4%A7%E6%A1%A5/"
+
+
+                                ka="sel-area-221">南浦大桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%99%B9%E6%A2%85%E8%B7%AF/"
+
+
+                                ka="sel-area-222">虹梅路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%8E%E6%BC%95/"
+
+
+                                ka="sel-area-223">华漕</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%8A%E5%8D%97/"
+
+
+                                ka="sel-area-224">上南</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%B2%81%E7%8F%AD%E8%B7%AF/"
+
+
+                                ka="sel-area-225">鲁班路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%87%91%E6%9D%A8%E6%96%B0%E6%9D%91/"
+
+
+                                ka="sel-area-226">金杨新村</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%94%98%E6%B3%89%E8%B7%AF/"
+
+
+                                ka="sel-area-227">甘泉路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%95%BF%E5%BE%81/"
+
+
+                                ka="sel-area-228">长征</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%91%9E%E9%87%91%E4%BA%8C%E8%B7%AF/"
+
+
+                                ka="sel-area-229">瑞金二路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B1%9F%E6%B9%BE/"
+
+
+                                ka="sel-area-230">江湾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%99%B9%E6%A1%A5%E6%9C%BA%E5%9C%BA/"
+
+
+                                ka="sel-area-231">虹桥机场</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%9C%9F%E6%96%B0%E6%96%B0%E6%9D%91/"
+
+
+                                ka="sel-area-232">真新新村</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%AE%9D%E5%B1%B1%E8%B7%AF/"
+
+
+                                ka="sel-area-233">宝山路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%AE%9C%E5%B7%9D%E8%B7%AF/"
+
+
+                                ka="sel-area-234">宜川路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%AE%9D%E5%B1%B1%E8%B7%AF/"
+
+
+                                ka="sel-area-235">宝山路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B0%B4%E4%BA%A7%E8%B7%AF/"
+
+
+                                ka="sel-area-236">水产路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%81%E5%85%AD%E9%93%BA/"
+
+
+                                ka="sel-area-237">十六铺</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B9%96%E5%8D%97%E8%B7%AF/"
+
+
+                                ka="sel-area-238">湖南路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%BA%A4%E5%A4%A7/"
+
+
+                                ka="sel-area-239">交大</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%94%B0%E6%9E%97/"
+
+
+                                ka="sel-area-240">田林</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%92%8C%E7%94%B0/"
+
+
+                                ka="sel-area-241">和田</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%91%9E%E9%87%91%E4%BA%8C%E8%B7%AF/"
+
+
+                                ka="sel-area-242">瑞金二路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%97%E6%B5%A6%E5%A4%A7%E6%A1%A5/"
+
+
+                                ka="sel-area-243">南浦大桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%BF%90%E5%85%89/"
+
+
+                                ka="sel-area-244">运光</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B1%9F%E6%A1%A5/"
+
+
+                                ka="sel-area-245">江桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%B2%B3%E9%98%B3/"
+
+
+                                ka="sel-area-246">岳阳</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%AB%98%E6%A1%A5/"
+
+
+                                ka="sel-area-247">高桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%BD%97%E9%98%B3/"
+
+
+                                ka="sel-area-248">罗阳</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%9C%9F%E5%85%89%E6%96%B0%E6%9D%91/"
+
+
+                                ka="sel-area-249">真光新村</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BB%B6%E5%90%89/"
+
+
+                                ka="sel-area-250">延吉</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%96%B0%E9%97%B8%E8%B7%AF/"
+
+
+                                ka="sel-area-251">新闸路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E8%99%B9%E6%A1%A5%E6%9C%BA%E5%9C%BA/"
+
+
+                                ka="sel-area-252">虹桥机场</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%B9%B3%E5%87%89%E8%B7%AF/"
+
+
+                                ka="sel-area-253">平凉路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%9C%E5%AE%9D%E5%85%B4%E8%B7%AF/"
+
+
+                                ka="sel-area-254">东宝兴路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%92%8C%E5%B9%B3%E5%85%AC%E5%9B%AD/"
+
+
+                                ka="sel-area-255">和平公园</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%87%8C%E4%BA%91%E8%B7%AF/"
+
+
+                                ka="sel-area-256">凌云路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%8D%97%E4%BA%AC%E8%A5%BF%E8%B7%AF/"
+
+
+                                ka="sel-area-257">南京西路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E9%87%91%E5%B1%B1%E5%8D%AB/"
+
+
+                                ka="sel-area-258">金山卫</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A9%E5%B1%B1%E8%B7%AF/"
+
+
+                                ka="sel-area-259">天山路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%85%B1%E5%BA%B7/"
+
+
+                                ka="sel-area-260">共康</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BB%B6%E9%95%BF%E8%B7%AF/"
+
+
+                                ka="sel-area-261">延长路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BD%AD%E6%B5%A6%E6%96%B0%E6%9D%91/"
+
+
+                                ka="sel-area-262">彭浦新村</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%8A%E6%B5%B7%E5%B8%88%E5%A4%A7/"
+
+
+                                ka="sel-area-263">上海师大</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E7%A8%8B%E5%AE%B6%E6%A1%A5/"
+
+
+                                ka="sel-area-264">程家桥</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%AE%9C%E5%B7%9D%E8%B7%AF/"
+
+
+                                ka="sel-area-265">宜川路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%A4%A7%E5%9C%BA/"
+
+
+                                ka="sel-area-266">大场</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E6%B1%B6%E6%B0%B4%E8%B7%AF/"
+
+
+                                ka="sel-area-267">汶水路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%BE%90%E6%B3%BE/"
+
+
+                                ka="sel-area-268">徐泾</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E4%B8%9C%E5%AE%9D%E5%85%B4%E8%B7%AF/"
+
+
+                                ka="sel-area-269">东宝兴路</a>
+
+                        <a
+
+
+                                href="/c101020100/a_%E5%92%8C%E5%B9%B3%E5%85%AC%E5%9B%AD/"
+
+
+                                ka="sel-area-270">和平公园</a>
+
+
+                    </dd>
+                </dl>
+
+            </div>
+            <div class="box-shadow-box"></div>
+            <div class="filter-select-box">
+                <div class="dropdown-wrap">
+                    
+                    <span class="dropdown-select">
+                        
+                            
+                            <input class="ipt" ka="sel-exp" readonly type="text" value="工作经验">
+                        
+                        <i class="icon-select-arrow"></i>
+                        <div class="dropdown-menu">
+                            <ul>
+                                
+                                    <li><a data-urlv2="/c101020100/" href="/c101020100/"
+                                           ka="sel-exp-0">不限</a></li>
+                                
+                                    <li><a data-urlv2="/c101020100/e_102/" href="/c101020100/e_102/"
+                                           ka="sel-exp-102">应届生</a></li>
+                                
+                                    <li><a data-urlv2="/c101020100/e_103/" href="/c101020100/e_103/"
+                                           ka="sel-exp-103">1年以内</a></li>
+                                
+                                    <li><a data-urlv2="/c101020100/e_104/" href="/c101020100/e_104/"
+                                           ka="sel-exp-104">1-3年</a></li>
+                                
+                                    <li><a data-urlv2="/c101020100/e_105/" href="/c101020100/e_105/"
+                                           ka="sel-exp-105">3-5年</a></li>
+                                
+                                    <li><a data-urlv2="/c101020100/e_106/" href="/c101020100/e_106/"
+                                           ka="sel-exp-106">5-10年</a></li>
+                                
+                                    <li><a data-urlv2="/c101020100/e_107/" href="/c101020100/e_107/"
+                                           ka="sel-exp-107">10年以上</a></li>
+                                
+                            </ul>
+                        </div>
+                    </span>
+                </div>
+                <div class="dropdown-wrap">
+                    
+                    <span class="dropdown-select">
+                        
+                            
+                            <input class="ipt" ka="sel-degree" readonly type="text" value="学历要求">
+                        
+                        <i class="icon-select-arrow"></i>
+                        <div class="dropdown-menu">
+                            <ul>
+                                
+                                    <li><a href="/c101020100/" ka="sel-degree-0">不限</a></li>
+                                
+                                    <li><a href="/c101020100/d_209/"
+                                           ka="sel-degree-209">初中及以下</a></li>
+                                
+                                    <li><a href="/c101020100/d_208/"
+                                           ka="sel-degree-208">中专/中技</a></li>
+                                
+                                    <li><a href="/c101020100/d_206/" ka="sel-degree-206">高中</a></li>
+                                
+                                    <li><a href="/c101020100/d_202/" ka="sel-degree-202">大专</a></li>
+                                
+                                    <li><a href="/c101020100/d_203/" ka="sel-degree-203">本科</a></li>
+                                
+                                    <li><a href="/c101020100/d_204/" ka="sel-degree-204">硕士</a></li>
+                                
+                                    <li><a href="/c101020100/d_205/" ka="sel-degree-205">博士</a></li>
+                                
+                            </ul>
+                        </div>
+                    </span>
+                </div>
+                <div class="dropdown-wrap">
+                    
+                    <span class="dropdown-select">
+                        
+                            
+                            <input class="ipt" ka="sel-salary" readonly type="text" value="薪资要求">
+                        
+                        <i class="icon-select-arrow"></i>
+                        <div class="dropdown-menu">
+                            <ul>
+                                
+                                    <li><a href="/c101020100/" ka="sel-salary-0">不限</a></li>
+                                
+                                    <li><a href="/c101020100/y_1/" ka="sel-salary-1">3k以下</a></li>
+                                
+                                    <li><a href="/c101020100/y_2/" ka="sel-salary-2">3-5k</a></li>
+                                
+                                    <li><a href="/c101020100/y_3/" ka="sel-salary-3">5-10k</a></li>
+                                
+                                    <li><a href="/c101020100/y_4/" ka="sel-salary-4">10-15k</a></li>
+                                
+                                    <li><a href="/c101020100/y_5/" ka="sel-salary-5">15-20k</a></li>
+                                
+                                    <li><a href="/c101020100/y_6/" ka="sel-salary-6">20-30k</a></li>
+                                
+                                    <li><a href="/c101020100/y_7/" ka="sel-salary-7">30-50k</a></li>
+                                
+                                    <li><a href="/c101020100/y_8/" ka="sel-salary-8">50k以上</a></li>
+                                
+                            </ul>
+                        </div>
+                    </span>
+                </div>
+                <div class="dropdown-wrap">
+                    
+                    <span class="dropdown-select">
+                        
+                            
+                            <input class="ipt" ka="sel-stage" readonly type="text" value="融资阶段">
+                        
+                        <i class="icon-select-arrow"></i>
+                        <div class="dropdown-menu">
+                            <ul>
+                                
+                                    <li><a href="/c101020100/" ka="sel-stage-0">不限</a></li>
+                                
+                                    <li><a href="/c101020100/t_801/" ka="sel-stage-801">未融资</a></li>
+                                
+                                    <li><a href="/c101020100/t_802/" ka="sel-stage-802">天使轮</a></li>
+                                
+                                    <li><a href="/c101020100/t_803/" ka="sel-stage-803">A轮</a></li>
+                                
+                                    <li><a href="/c101020100/t_804/" ka="sel-stage-804">B轮</a></li>
+                                
+                                    <li><a href="/c101020100/t_805/" ka="sel-stage-805">C轮</a></li>
+                                
+                                    <li><a href="/c101020100/t_806/"
+                                           ka="sel-stage-806">D轮及以上</a></li>
+                                
+                                    <li><a href="/c101020100/t_807/" ka="sel-stage-807">已上市</a></li>
+                                
+                                    <li><a href="/c101020100/t_808/"
+                                           ka="sel-stage-808">不需要融资</a></li>
+                                
+                            </ul>
+                        </div>
+                    </span>
+                </div>
+                <div class="dropdown-wrap">
+                    
+                    <span class="dropdown-select">
+                        
+                            
+                            <input class="ipt" ka="sel-scale" readonly type="text" value="公司规模">
+                        
+                        <i class="icon-select-arrow"></i>
+                        <div class="dropdown-menu">
+                            <ul>
+                                
+                                    <li><a href="/c101020100/" ka="sel-scale-0">不限</a></li>
+                                
+                                    <li><a href="/c101020100/s_301/"
+                                           ka="sel-scale-301">0-20人</a></li>
+                                
+                                    <li><a href="/c101020100/s_302/"
+                                           ka="sel-scale-302">20-99人</a></li>
+                                
+                                    <li><a href="/c101020100/s_303/" ka="sel-scale-303">100-499人</a></li>
+                                
+                                    <li><a href="/c101020100/s_304/" ka="sel-scale-304">500-999人</a></li>
+                                
+                                    <li><a href="/c101020100/s_305/"
+                                           ka="sel-scale-305">1000-9999人</a></li>
+                                
+                                    <li><a href="/c101020100/s_306/" ka="sel-scale-306">10000人以上</a></li>
+                                
+                            </ul>
+                        </div>
+                    </span>
+                </div>
+                <div class="dropdown-wrap">
+                    
+                    <span class="dropdown-select">
+                        
+                            
+                            <input class="ipt" ka="sel-scale" readonly type="text" value="发布时间">
+                        
+                        <i class="icon-select-arrow"></i>
+                        <div class="dropdown-menu">
+                            <ul>
+                                
+                                    <li><a href="/c101020100/" ka="sel-scale-0">不限</a></li>
+                                
+                                    <li><a href="/c101020100/?period=1"
+                                           ka="sel-scale-1">一天以内</a></li>
+                                
+                                    <li><a href="/c101020100/?period=2"
+                                           ka="sel-scale-2">三天以内</a></li>
+                                
+                                    <li><a href="/c101020100/?period=3"
+                                           ka="sel-scale-3">七天以内</a></li>
+                                
+                                    <li><a href="/c101020100/?period=4"
+                                           ka="sel-scale-4">十五天以内</a></li>
+                                
+                                    <li><a href="/c101020100/?period=5"
+                                           ka="sel-scale-5">一个月以内</a></li>
+                                
+                            </ul>
+                        </div>
+                    </span>
+                </div>
+
+
+                <a class="empty-filter" href="/c101020100/" ka="empty-filter">清空筛选条件</a>
+            </div>
+        </div>
+    </div>
+    <div class="inner home-inner" id="main">
+        <div class="job-box">
+            <div class="sider">
+
+                <div class="sign-wrap sign-wrap-v2">
+                    <div class="sign-form sign-quick" style="display: block;">
+                        <canvas height="50" id="sign-side" width="250"></canvas>
+                        <h3 class="title">一份简历日均5位对我<br/>感兴趣的Boss</h3>
+                        <form action="/wapi/zppassport/login/phone" ka="sup_g_right_done"
+                              method="post">
+                            <div class="tip-error tip-error-form"></div>
+                            <div class="form-row row-select">
+                                <span class="dropdown-select"><i class="icon-select-arrow"></i><em
+                                        class="text-select">+86</em><input name="regionCode"
+                                                                           type="hidden"
+                                                                           value="+86"/></span>
+                                <span class="ipt-wrap"><i class="icon-sign-phone"></i><input
+                                        class="ipt ipt-phone required" ka="signin-account"
+                                        name="phone" placeholder="手机号" type="tel"/></span>
+                                <div class="dropdown-menu">
+
+                                    <ul>
+                                        <li data-val="+86"><span class="num">+86</span>中国大陆</li>
+                                        <li data-val="+1"><span class="num">+1</span>美国</li>
+                                        <li data-val="+852"><span class="num">+852</span>香港</li>
+                                        <li data-val="+81"><span class="num">+81</span>日本</li>
+                                        <li data-val="+886"><span class="num">+886</span>台湾</li>
+                                        <li data-val="+44"><span class="num">+44</span>英国</li>
+                                        <li data-val="+82"><span class="num">+82</span>韩国</li>
+                                        <li data-val="+33"><span class="num">+33</span>法国</li>
+                                        <li data-val="+7"><span class="num">+7</span>俄罗斯</li>
+                                        <li data-val="+39"><span class="num">+39</span>意大利</li>
+                                        <li data-val="+65"><span class="num">+65</span>新加坡</li>
+                                        <li data-val="+63"><span class="num">+63</span>菲律宾</li>
+                                        <li data-val="+60"><span class="num">+60</span>马来西亚</li>
+                                        <li data-val="+64"><span class="num">+64</span>新西兰</li>
+                                        <li data-val="+34"><span class="num">+34</span>西班牙</li>
+                                        <li data-val="+95"><span class="num">+95</span>缅甸</li>
+                                        <li data-val="+230"><span class="num">+230</span>毛里求斯</li>
+                                        <li data-val="+263"><span class="num">+263</span>津巴布韦</li>
+                                        <li data-val="+20"><span class="num">+20</span>埃及</li>
+                                        <li data-val="+92"><span class="num">+92</span>巴基斯坦</li>
+                                        <li data-val="+880"><span class="num">+880</span>孟加拉国</li>
+                                    </ul>
+                                </div>
+                                <div class="tip-error"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="row-code" id="loginVerrifyCode2">
+                                </div>
+                                <div class="tip-error"></div>
+                            </div>
+                            <input name="csessionId" type="hidden">
+                            <input name="csig" type="hidden">
+                            <input name="ctoken" type="hidden">
+                            <input name="cscene" type="hidden" value="nc_login">
+                            <input name="cappKey" type="hidden" value="FFFF0N00000000006DC1">
+                            <div class="form-row">
+                        <span class="ipt-wrap"><i class="icon-sign-sms"></i><input
+                                class="ipt ipt-sms required" ka="signup-sms" maxlength="6"
+                                name="phoneCode" placeholder="短信验证码" type="text"/><input
+                                name="smsType" type="hidden" value="7"/><button class="btn btn-sms"
+                                                                                data-url="/wapi/zppassport/send/smsCode"
+                                                                                type="button">发送验证码</button></span>
+                                <div class="tip-error"></div>
+                            </div>
+                            <div class="form-btn">
+                                <button class="btn" ka="sup_g_right" type="submit">登录/注册</button>
+                            </div>
+                            <div class="text-tip"><a
+                                    href="https://www.zhipin.com/register/protocol/introduce"
+                                    target="_blank">注册代表你已同意用户协议及隐私政策</a></div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="complete-resume">
+                    <a class="btn"
+                       href="https://www.zhipin.com/geek/attresume/parser.html">上传附件简历</a>
+                </div>
+
+
+                <div class="sider-list" style="display:none">
+                    <h3>看过的职位</h3>
+                    <ul>
+                    </ul>
+                </div>
+
+                <div class="promotion-img nomargin"><a href="/activity/personality/index.html"
+                                                       ka="ad_banner_0" target="_blank"><img alt=""
+                                                                                             src="https://z.zhipin.com/web/upload/market/coop/20180421-03.jpg"/></a>
+                </div>
+                <div class="promotion-img"><a href="/app.html" ka="ad_banner_1" target="_blank"><img
+                        alt=""
+                        src="https://static.zhipin.com/zhipin/v127/web/geek/images/pro-1.png"/></a>
+                </div>
+                <div class="promotion-img"><a href="/user/login.html?initType=3" ka="ad_banner_2"
+                                              target="_blank"><img alt=""
+                                                                   src="https://static.zhipin.com/zhipin/v127/web/geek/images/pro-2.png"/></a>
+                </div>
+            </div>
+
+
+            <div class="job-list">
+                <div class="job-tab" data-filter="" data-keyword="" data-l3code="" data-page="1"
+                     data-rescount="247049" data-source="1" style="display: none">
+                    <a class="cur" href="javascript:;" ka="recommend-job-list">热门职位</a><a
+                        href="javascript:;" ka="new-job-list">最新职位</a>
+                </div>
+
+
+                <ul>
+
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="1" data-itemid="1"
+                                       data-jid="b4e8a5065776d4321Hd83dS1FFM~" data-jobid="33669841"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/b4e8a5065776d4321Hd83dS1FFM~.html"
+                                       ka="search_list_1" target="_blank">
+                                        <div class="job-title">bi经理</div>
+                                        <span class="red">25k-50k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 长宁区 北新泾<em class="vline"></em>5-10年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/69a877c4ff0646b00XJ80w~~.html"
+                                                        ka="search_list_company_1_custompage"
+                                                        target="_blank">携程旅行网</a></h3>
+                                    <p>互联网<em class="vline"></em>已上市<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180629/8597ea192d1f94b15cad4ff7851e1e0c3dfbb669708113ffad35fed5e896197a_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>孙莹莹<em
+                                        class="vline"></em>人事</h3>
+                                <p>发布于02月14日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=b4e8a5065776d4321Hd83dS1FFM~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=9a74f2ae02d285ca1nV_2Nm8GFU~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="2" data-itemid="2"
+                                       data-jid="86f14d30b979f5a91HBz2t67ElQ~" data-jobid="34913626"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/86f14d30b979f5a91HBz2t67ElQ~.html"
+                                       ka="search_list_2" target="_blank">
+                                        <div class="job-title">SAP/ABAP</div>
+                                        <span class="red">20k-35k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 浦东新区 张江<em class="vline"></em>5-10年<em class="vline"></em>大专
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/6276d5fc47b473cf1X182dy1.html"
+                                                        ka="search_list_company_2_custompage"
+                                                        target="_blank">纬创</a></h3>
+                                    <p>计算机软件<em class="vline"></em>已上市<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20190221/4b654209b4c01c4abbc8228716467859419582233cb6b5717e10389664eb7897_s.png?x-oss-process=image/resize,w_40,limit_0"/>杨女士<em
+                                        class="vline"></em>HR</h3>
+                                <p>发布于昨天</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=86f14d30b979f5a91HBz2t67ElQ~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=80e005de457223e00nB43tq1FFQ~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="3" data-itemid="3"
+                                       data-jid="673e4cfdb5ca76e11nZ-29S7F1A~" data-jobid="12409672"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/673e4cfdb5ca76e11nZ-29S7F1A~.html"
+                                       ka="search_list_3" target="_blank">
+                                        <div class="job-title">JAVA架构师</div>
+                                        <span class="red">25k-50k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 四川北路<em class="vline"></em>5-10年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_3_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180802/d060404dddcc81b5c9c4df47d981d50c9d721efc9d6999d59067cee5c2a5b4ed_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>施泽英<em
+                                        class="vline"></em>HRBP</h3>
+                                <p>发布于08月21日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=673e4cfdb5ca76e11nZ-29S7F1A~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=078cc6fdc7d9c71a1nZ72dy-E1M~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="4" data-itemid="4"
+                                       data-jid="9983cf804329fe061XB_29S5EVQ~" data-jobid="24509416"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/9983cf804329fe061XB_29S5EVQ~.html"
+                                       ka="search_list_4" target="_blank">
+                                        <div class="job-title">高级测试开发工程师／测试专家</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 浦东新区 陆家嘴<em class="vline"></em>5-10年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/e9a2427bc19f1b1a33Z_3t0~.html"
+                                                        ka="search_list_company_4_custompage"
+                                                        target="_blank">蚂蚁金服</a></h3>
+                                    <p>互联网<em class="vline"></em>C轮<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180810/ee2305bf83d1e90f9c8685c8b0f960ddcfcd208495d565ef66e7dff9f98764da_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>陈浩天<em
+                                        class="vline"></em>测试开发专家</h3>
+                                <p>发布于昨天</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=9983cf804329fe061XB_29S5EVQ~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=1819baf4f921b85c03B42tq_EFM~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="5" data-itemid="5"
+                                       data-jid="10edccf60253bd2f1Xxy3tS0GFI~" data-jobid="28859980"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/10edccf60253bd2f1Xxy3tS0GFI~.html"
+                                       ka="search_list_5" target="_blank">
+                                        <div class="job-title">java开发工程师</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 黄浦区 新天地<em class="vline"></em>3-5年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/efa878c051261c7433Z6.html"
+                                                        ka="search_list_company_5_custompage"
+                                                        target="_blank">好未来</a></h3>
+                                    <p>互联网<em class="vline"></em>已上市<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180427/30285f08bdc4ab8335121851ac214f8abbc312f9784b5d8c7cc7082d524b75d4_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>唐浚然<em
+                                        class="vline"></em>招聘顾问</h3>
+                                <p>发布于10月31日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=10edccf60253bd2f1Xxy3tS0GFI~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=9d3fcf7312daeca71Hx62dy7E1Y~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="6" data-itemid="6"
+                                       data-jid="e945120d4669f70f1XB63dS8EVM~" data-jobid="24069111"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/e945120d4669f70f1XB63dS8EVM~.html"
+                                       ka="search_list_6" target="_blank">
+                                        <div class="job-title">测试开发</div>
+                                        <span class="red">25k-50k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 浦东新区 陆家嘴<em class="vline"></em>5-10年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/1f8227007663695b3nV63Q~~.html"
+                                                        ka="search_list_company_6_custompage"
+                                                        target="_blank">支付宝</a></h3>
+                                    <p>移动互联网<em class="vline"></em>B轮<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img2.bosszhipin.com/boss/avatar/avatar_6.png?x-oss-process=image/resize,w_40,limit_0"/>张中健<em
+                                        class="vline"></em>招聘者</h3>
+                                <p>发布于12月13日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=e945120d4669f70f1XB63dS8EVM~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=e135da90b780cee103d_3926E1c~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="7" data-itemid="7"
+                                       data-jid="b1914b36a5451eef1XN_2ti4FFo~" data-jobid="27515548"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/b1914b36a5451eef1XN_2ti4FFo~.html"
+                                       ka="search_list_7" target="_blank">
+                                        <div class="job-title">高级软件开发工程师-监控/日志</div>
+                                        <span class="red">30k-31k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 徐汇区 田林<em class="vline"></em>3-5年<em class="vline"></em>本科</p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/a67b361452e384e71XV82N4~.html"
+                                                        ka="search_list_company_7_custompage"
+                                                        target="_blank">今日头条</a></h3>
+                                    <p>移动互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20181011/af13319a8e4c106b9bedfcd245c8452bcfcd208495d565ef66e7dff9f98764da_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>李春梅<em
+                                        class="vline"></em>招聘者</h3>
+                                <p>发布于10月08日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=b1914b36a5451eef1XN_2ti4FFo~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=f79e16ab65b2598e1HN53ty_GFQ~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="8" data-itemid="8"
+                                       data-jid="f79594b3d25158561HB52NS9FVc~" data-jobid="34339055"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/f79594b3d25158561HB52NS9FVc~.html"
+                                       ka="search_list_8" target="_blank">
+                                        <div class="job-title">架构师</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 闵行区 虹桥<em class="vline"></em>5-10年<em class="vline"></em>大专
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/5bd791e3512031691nN_0tu-.html"
+                                                        ka="search_list_company_8_custompage"
+                                                        target="_blank">华住酒店集团</a></h3>
+                                    <p>旅游<em class="vline"></em>已上市<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img2.bosszhipin.com/boss/avatar/avatar_15.png?x-oss-process=image/resize,w_40,limit_0"/>孙先生<em
+                                        class="vline"></em>研发经理</h3>
+                                <p>发布于02月20日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=f79594b3d25158561HB52NS9FVc~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=7d90480e6697e3590nV939u7EFE~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="9" data-itemid="9"
+                                       data-jid="d3e52143f29391371HV62Nu7GVs~" data-jobid="31036699"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/d3e52143f29391371HV62Nu7GVs~.html"
+                                       ka="search_list_9" target="_blank">
+                                        <div class="job-title">计算机视觉算法工程师</div>
+                                        <span class="red">20k-30k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 徐汇区 漕河泾<em class="vline"></em>1-3年<em class="vline"></em>硕士
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/93d136f750abf16c1XV62d-0.html"
+                                                        ka="search_list_company_9_custompage"
+                                                        target="_blank">复星云济信息</a></h3>
+                                    <p>互联网<em class="vline"></em>已上市<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180705/36bdb92778feb553a6a5145eaf9dde463e96ebceaa1742e9f3b1688c2f8d6882_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>姜辰希<em
+                                        class="vline"></em>高级项目经理</h3>
+                                <p>发布于12月09日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=d3e52143f29391371HV62Nu7GVs~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=e242637332bce5da1nFy2Nm-FQ~~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="10" data-itemid="10"
+                                       data-jid="568e3fc5c1581d791HZ52Nu9GFY~" data-jobid="32336084"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/568e3fc5c1581d791HZ52Nu9GFY~.html"
+                                       ka="search_list_10" target="_blank">
+                                        <div class="job-title">iOS架构师（基础架构方向）</div>
+                                        <span class="red">25k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 四川北路<em class="vline"></em>5-10年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_10_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180802/d060404dddcc81b5c9c4df47d981d50c9d721efc9d6999d59067cee5c2a5b4ed_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>施泽英<em
+                                        class="vline"></em>HRBP</h3>
+                                <p>发布于02月20日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=568e3fc5c1581d791HZ52Nu9GFY~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=078cc6fdc7d9c71a1nZ72dy-E1M~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="11" data-itemid="11"
+                                       data-jid="7d497c4146bc100c1nZ-0ti_EFs~" data-jobid="12495209"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/7d497c4146bc100c1nZ-0ti_EFs~.html"
+                                       ka="search_list_11" target="_blank">
+                                        <div class="job-title">音视频开发工程师</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 四川北路<em class="vline"></em>5-10年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_11_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180802/d060404dddcc81b5c9c4df47d981d50c9d721efc9d6999d59067cee5c2a5b4ed_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>施泽英<em
+                                        class="vline"></em>HRBP</h3>
+                                <p>发布于10月24日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=7d497c4146bc100c1nZ-0ti_EFs~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=078cc6fdc7d9c71a1nZ72dy-E1M~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="12" data-itemid="12"
+                                       data-jid="2d4d1544271e1c071XB639W0F1s~" data-jobid="24048979"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/2d4d1544271e1c071XB639W0F1s~.html"
+                                       ka="search_list_12" target="_blank">
+                                        <div class="job-title">SH前端开发专家</div>
+                                        <span class="red">25k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 浦东新区 世纪公园<em class="vline"></em>3-5年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/5d627415a46b4a750nJ9.html"
+                                                        ka="search_list_company_12_custompage"
+                                                        target="_blank">阿里巴巴集团</a></h3>
+                                    <p>互联网<em class="vline"></em>已上市<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20171109/5e7897648fda5a77e25e44b50fe7f13e8787258726668b1aa3e3a5e170b3cd21_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>陈杰<em
+                                        class="vline"></em>高级前端开发工程师</h3>
+                                <p>发布于08月02日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=2d4d1544271e1c071XB639W0F1s~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=6f8b8761d4a58f911X190ty1ElU~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="13" data-itemid="13"
+                                       data-jid="c2f499eec7692dd61HZ90tm_F1Y~" data-jobid="32794274"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/c2f499eec7692dd61HZ90tm_F1Y~.html"
+                                       ka="search_list_13" target="_blank">
+                                        <div class="job-title">算法研究员</div>
+                                        <span class="red">30k-60k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 四川北路<em class="vline"></em>3-5年<em class="vline"></em>硕士
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_13_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180802/d060404dddcc81b5c9c4df47d981d50c9d721efc9d6999d59067cee5c2a5b4ed_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>施泽英<em
+                                        class="vline"></em>HRBP</h3>
+                                <p>发布于01月25日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=c2f499eec7692dd61HZ90tm_F1Y~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=078cc6fdc7d9c71a1nZ72dy-E1M~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="14" data-itemid="14"
+                                       data-jid="d1432bb7021cdd211nF43dy1GFY~" data-jobid="15261884"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/d1432bb7021cdd211nF43dy1GFY~.html"
+                                       ka="search_list_14" target="_blank">
+                                        <div class="job-title">JAVA开发主管</div>
+                                        <span class="red">25k-45k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 长宁区 虹桥<em class="vline"></em>5-10年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_14_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180802/d060404dddcc81b5c9c4df47d981d50c9d721efc9d6999d59067cee5c2a5b4ed_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>施泽英<em
+                                        class="vline"></em>HRBP</h3>
+                                <p>发布于09月25日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=d1432bb7021cdd211nF43dy1GFY~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=078cc6fdc7d9c71a1nZ72dy-E1M~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="15" data-itemid="15"
+                                       data-jid="902b65efbebb39401XR62tu9FlM~" data-jobid="20016061"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/902b65efbebb39401XR62tu9FlM~.html"
+                                       ka="search_list_15" target="_blank">
+                                        <div class="job-title">大数据架构师</div>
+                                        <span class="red">25k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 临平路<em class="vline"></em>5-10年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_15_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180802/d060404dddcc81b5c9c4df47d981d50c9d721efc9d6999d59067cee5c2a5b4ed_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>施泽英<em
+                                        class="vline"></em>HRBP</h3>
+                                <p>发布于05月10日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=902b65efbebb39401XR62tu9FlM~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=078cc6fdc7d9c71a1nZ72dy-E1M~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="16" data-itemid="16"
+                                       data-jid="b1f33e93924416031HZ72Nm8FVU~" data-jobid="32134157"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/b1f33e93924416031HZ72Nm8FVU~.html"
+                                       ka="search_list_16" target="_blank">
+                                        <div class="job-title">java软件开发工程师</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 浦东新区 张江<em class="vline"></em>经验不限<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/ab9fdc6f043679990HY~.html"
+                                                        ka="search_list_company_16_custompage"
+                                                        target="_blank">百度</a></h3>
+                                    <p>互联网<em class="vline"></em>已上市<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img2.bosszhipin.com/boss/avatar/avatar_10.png?x-oss-process=image/resize,w_40,limit_0"/>刘茗芮<em
+                                        class="vline"></em>HR</h3>
+                                <p>发布于01月02日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=b1f33e93924416031HZ72Nm8FVU~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=409441ae7c493d9c0nV73tq9E1E~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="17" data-itemid="17"
+                                       data-jid="909c330505012a1a1HV62tq_F1A~" data-jobid="31017272"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/909c330505012a1a1HV62tq_F1A~.html"
+                                       ka="search_list_17" target="_blank">
+                                        <div class="job-title">算法架构师</div>
+                                        <span class="red">30k-60k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 四川北路<em class="vline"></em>3-5年<em class="vline"></em>硕士
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_17_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180802/d060404dddcc81b5c9c4df47d981d50c9d721efc9d6999d59067cee5c2a5b4ed_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>施泽英<em
+                                        class="vline"></em>HRBP</h3>
+                                <p>发布于12月08日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=909c330505012a1a1HV62tq_F1A~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=078cc6fdc7d9c71a1nZ72dy-E1M~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="18" data-itemid="18"
+                                       data-jid="f258988460b7800d1Xd-09S1EVA~" data-jobid="23489812"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/f258988460b7800d1Xd-09S1EVA~.html"
+                                       ka="search_list_18" target="_blank">
+                                        <div class="job-title">安卓开发工程师</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 四川北路<em class="vline"></em>经验不限<em class="vline"></em>大专
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_18_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180408/ad71008dfcdb0535641a4f8327aa1ba949a71cf1f087a3bd58c69cd8f3305420_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>赵爱华<em
+                                        class="vline"></em>人事</h3>
+                                <p>发布于07月27日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=f258988460b7800d1Xd-09S1EVA~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=26f7bcf3021017881Xx-0tS_"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="19" data-itemid="19"
+                                       data-jid="466229be353e26cc1XZy3du9EVc~" data-jobid="22866015"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/466229be353e26cc1XZy3du9EVc~.html"
+                                       ka="search_list_19" target="_blank">
+                                        <div class="job-title">H5开发工程师</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 四川北路<em class="vline"></em>3-5年<em class="vline"></em>大专
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_19_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180408/ad71008dfcdb0535641a4f8327aa1ba949a71cf1f087a3bd58c69cd8f3305420_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>赵爱华<em
+                                        class="vline"></em>人事</h3>
+                                <p>发布于08月15日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=466229be353e26cc1XZy3du9EVc~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=26f7bcf3021017881Xx-0tS_"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="20" data-itemid="20"
+                                       data-jid="f04a9572ac1dbfeb1HZy2960EVc~" data-jobid="32803915"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/f04a9572ac1dbfeb1HZy2960EVc~.html"
+                                       ka="search_list_20" target="_blank">
+                                        <div class="job-title">算法工程师</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 四川北路<em class="vline"></em>3-5年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_20_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180802/d060404dddcc81b5c9c4df47d981d50c9d721efc9d6999d59067cee5c2a5b4ed_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>施泽英<em
+                                        class="vline"></em>HRBP</h3>
+                                <p>发布于01月19日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=f04a9572ac1dbfeb1HZy2960EVc~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=078cc6fdc7d9c71a1nZ72dy-E1M~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="21" data-itemid="21"
+                                       data-jid="cb51eb0812bb347b1Xd709u-Flo~" data-jobid="23186368"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/cb51eb0812bb347b1Xd709u-Flo~.html"
+                                       ka="search_list_21" target="_blank">
+                                        <div class="job-title">Java开发工程师</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 四川北路<em class="vline"></em>3-5年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_21_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180408/ad71008dfcdb0535641a4f8327aa1ba949a71cf1f087a3bd58c69cd8f3305420_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>赵爱华<em
+                                        class="vline"></em>人事</h3>
+                                <p>发布于08月21日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=cb51eb0812bb347b1Xd709u-Flo~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=26f7bcf3021017881Xx-0tS_"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="22" data-itemid="22"
+                                       data-jid="ae6e15541f985b6d1Xd-09S4F1s~" data-jobid="23489579"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/ae6e15541f985b6d1Xd-09S4F1s~.html"
+                                       ka="search_list_22" target="_blank">
+                                        <div class="job-title">web前端</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 四川北路<em class="vline"></em>经验不限<em class="vline"></em>大专
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_22_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180408/ad71008dfcdb0535641a4f8327aa1ba949a71cf1f087a3bd58c69cd8f3305420_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>赵爱华<em
+                                        class="vline"></em>人事</h3>
+                                <p>发布于08月15日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=ae6e15541f985b6d1Xd-09S4F1s~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=26f7bcf3021017881Xx-0tS_"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="23" data-itemid="23"
+                                       data-jid="8d699d10714271651XJ82tS5Flc~" data-jobid="26619465"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/8d699d10714271651XJ82tS5Flc~.html"
+                                       ka="search_list_23" target="_blank">
+                                        <div class="job-title">优图人脸识别研发工程师</div>
+                                        <span class="red">35k-63k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 徐汇区 漕河泾<em class="vline"></em>1年以内<em class="vline"></em>硕士
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/2e64a887a110ea9f1nRz.html"
+                                                        ka="search_list_company_23_custompage"
+                                                        target="_blank">腾讯</a></h3>
+                                    <p>互联网<em class="vline"></em>已上市<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20171225/2caae747d6fcc3c7d6e453394371a601889ae7e8d50c9fe480d60ea141065384_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>Catchy<em
+                                        class="vline"></em>coe集团招聘部</h3>
+                                <p>发布于09月17日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=8d699d10714271651XJ82tS5Flc~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=3c60d415a2e2b88f1Hd-2tW1GVc~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="24" data-itemid="24"
+                                       data-jid="65be203b8317bd001HV-0tm-EFE~" data-jobid="31494303"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/65be203b8317bd001HV-0tm-EFE~.html"
+                                       ka="search_list_24" target="_blank">
+                                        <div class="job-title">算法专家</div>
+                                        <span class="red">30k-60k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 虹口区 四川北路<em class="vline"></em>5-10年<em class="vline"></em>硕士
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/f24ec0c4ee1e997d1HVy0w~~.html"
+                                                        ka="search_list_company_24_custompage"
+                                                        target="_blank">掌门1对1</a></h3>
+                                    <p>互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180802/d060404dddcc81b5c9c4df47d981d50c9d721efc9d6999d59067cee5c2a5b4ed_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>施泽英<em
+                                        class="vline"></em>HRBP</h3>
+                                <p>发布于12月18日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=65be203b8317bd001HV-0tm-EFE~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=078cc6fdc7d9c71a1nZ72dy-E1M~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="25" data-itemid="25"
+                                       data-jid="747d76526aa0fe2c1X1-39S1Fls~" data-jobid="29449869"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/747d76526aa0fe2c1X1-39S1Fls~.html"
+                                       ka="search_list_25" target="_blank">
+                                        <div class="job-title">JAVA技术专家</div>
+                                        <span class="red">25k-50k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 浦东新区 陆家嘴<em class="vline"></em>3-5年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/e9a2427bc19f1b1a33Z_3t0~.html"
+                                                        ka="search_list_company_25_custompage"
+                                                        target="_blank">蚂蚁金服</a></h3>
+                                    <p>互联网<em class="vline"></em>C轮<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img2.bosszhipin.com/boss/avatar/avatar_15.png?x-oss-process=image/resize,w_40,limit_0"/>黄雄杰<em
+                                        class="vline"></em>开发工程师</h3>
+                                <p>发布于11月09日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=747d76526aa0fe2c1X1-39S1Fls~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=86406d131161dc7a1Xxy0927Fls~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="26" data-itemid="26"
+                                       data-jid="b808b0676fd949fb1HB72N-4EVA~" data-jobid="34132512"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/b808b0676fd949fb1HB72N-4EVA~.html"
+                                       ka="search_list_26" target="_blank">
+                                        <div class="job-title">Android高级软件工程师（广告SDK）</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 浦东新区 张江<em class="vline"></em>5-10年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/3d0b6629203bb0b61nJy3t-0.html"
+                                                        ka="search_list_company_26_custompage"
+                                                        target="_blank">传音控股</a></h3>
+                                    <p>移动互联网<em class="vline"></em>不需要融资<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20181030/997006026f9e27cab7094b04072e3a417e464e597916af8ee5b4fa17d26515fe_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>孙先生<em
+                                        class="vline"></em>产品经理</h3>
+                                <p>发布于昨天</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=b808b0676fd949fb1HB72N-4EVA~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=d17a81377e46ff501n1y3tu0FVs~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="27" data-itemid="27"
+                                       data-jid="e9d168948ef4a2831HZ409-0ElQ~" data-jobid="32282926"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/e9d168948ef4a2831HZ409-0ElQ~.html"
+                                       ka="search_list_27" target="_blank">
+                                        <div class="job-title">Android工程师 - 抖音方向</div>
+                                        <span class="red">25k-50k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 黄浦区 五里桥<em class="vline"></em>1-3年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/7d01ce6cfe2022030HJ409y-.html"
+                                                        ka="search_list_company_27_custompage"
+                                                        target="_blank">北京字节跳动</a></h3>
+                                    <p>移动互联网<em class="vline"></em>D轮及以上<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img2.bosszhipin.com/boss/avatar/avatar_15.png?x-oss-process=image/resize,w_40,limit_0"/>陈先生<em
+                                        class="vline"></em>火山审核编辑</h3>
+                                <p>发布于01月13日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=e9d168948ef4a2831HZ409-0ElQ~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=e36bdb2e2593a22e1Hd609W7E1E~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="28" data-itemid="28"
+                                       data-jid="b9f7ea2edad54f3c1Xxy09y5EVI~" data-jobid="28881410"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/b9f7ea2edad54f3c1Xxy09y5EVI~.html"
+                                       ka="search_list_28" target="_blank">
+                                        <div class="job-title">资深OCR算法工程师</div>
+                                        <span class="red">30k-60k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 黄浦区 新天地<em class="vline"></em>3-5年<em class="vline"></em>本科
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/efa878c051261c7433Z6.html"
+                                                        ka="search_list_company_28_custompage"
+                                                        target="_blank">好未来</a></h3>
+                                    <p>互联网<em class="vline"></em>已上市<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img.bosszhipin.com/beijin/mcs/useravatar/20180427/30285f08bdc4ab8335121851ac214f8abbc312f9784b5d8c7cc7082d524b75d4_s.jpg?x-oss-process=image/resize,w_40,limit_0"/>唐浚然<em
+                                        class="vline"></em>招聘顾问</h3>
+                                <p>发布于10月31日</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=b9f7ea2edad54f3c1Xxy09y5EVI~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=9d3fcf7312daeca71Hx62dy7E1Y~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="job-primary">
+                            <div class="info-primary">
+                                <h3 class="name">
+                                    <a data-index="29" data-itemid="29"
+                                       data-jid="7e2b66c131a6ffe01HBz0tu_EVQ~" data-jobid="34996216"
+                                       data-lid="1mka5RjGv7A.search"
+                                       href="/job_detail/7e2b66c131a6ffe01HBz0tu_EVQ~.html"
+                                       ka="search_list_29" target="_blank">
+                                        <div class="job-title">传感器算法工程师</div>
+                                        <span class="red">20k-40k</span>
+                                        <div class="info-detail"></div>
+                                    </a>
+                                </h3>
+                                <p>上海 浦东新区 金桥<em class="vline"></em>经验不限<em class="vline"></em>硕士
+                                </p>
+                            </div>
+                            <div class="info-company">
+                                <div class="company-text">
+                                    <h3 class="name"><a href="/gongsi/02cd05cce753437e33V50w~~.html"
+                                                        ka="search_list_company_29_custompage"
+                                                        target="_blank">华为</a></h3>
+                                    <p>计算机软件<em class="vline"></em>不需要融资<em class="vline"></em>10000人以上
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-publis">
+                                <h3 class="name"><img
+                                        src="https://img2.bosszhipin.com/boss/avatar/avatar_6.png?x-oss-process=image/resize,w_40,limit_0"/>李溪<em
+                                        class="vline"></em>华为上研招聘经理</h3>
+                                <p>发布于11:42</p>
+                            </div>
+                            <a class="btn btn-startchat"
+                               data-url="/gchat/addRelation.json?jobId=7e2b66c131a6ffe01HBz0tu_EVQ~&lid=1mka5RjGv7A.search"
+                               href="javascript:;"
+                               redirect-url="/geek/new/index/chat?id=1eaed26eca9732851XR43tm_EVA~"
+                               target="_blank">立即沟通
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+
+                <div class="page">
+
+                    <a class="prev disabled" href="javascript:;" ka="page-prev"></a>
+
+
+                    <a class="cur" href="javascript:;" ka="page-cur">1</a>
+                    <a href="/c101020100/?page=2" ka="page-2">2</a>
+                    <a href="/c101020100/?page=3" ka="page-3">3</a>
+                    <span>...</span>
+
+
+                    <a class="next" href="/c101020100/?page=2" ka="page-next"></a>
+
+                </div>
+
+
+            </div>
+
+            <form class="satisfaction-feedback">
+                <b class="title">对搜索结果是否满意？</b>
+                <div class="satisfaction level-2" data-level="1">不满意</div>
+                <div class="satisfaction level-3" data-level="2">一般</div>
+                <div class="satisfaction level-4" data-level="3">满意</div>
+                <textarea class="ipt" name="feedback" placeholder="请填写更多反馈建议..."></textarea>
+                <button class="btn disabled" disabled="disabled">提交</button>
+                <input class="form-data" name="level" type="hidden" value=""/>
+                <input class="form-data" name="query" type="hidden" value=""/>
+                <input class="form-data" name="c" type="hidden" value="101020100"/>
+                <input class="form-data" name="i" type="hidden" value=""/>
+                <input class="form-data" name="p" type="hidden" value=""/>
+                <input class="form-data" name="e" type="hidden" value=""/>
+                <input class="form-data" name="d" type="hidden" value=""/>
+                <input class="form-data" name="s" type="hidden" value=""/>
+                <input class="form-data" name="y" type="hidden" value=""/>
+                <input class="form-data" name="t" type="hidden" value=""/>
+                <input class="form-data" name="a" type="hidden" value=""/>
+                <input class="form-data" name="b" type="hidden" value=""/>
+                <input class="form-data" name="lid" type="hidden" value="1mka5RjGv7A"/>
+            </form>
+
+        </div>
+    </div>
+    <!--底部footer-->
+
+
+    <div id="footer">
+        <div class="inner home-inner">
+            <div class="footer-social">
+                <img alt=""
+                     src="https://static.zhipin.com/zhipin/v127/web/geek/images/footer-logo.png">
+                <p>企业服务热线和举报投诉 <span>400 065 5799</span></p>
+                <p>工作日 <span>8:00 - 22:00</span></p>
+                <p>休息日 <span>9:30 - 18:30</span></p>
+                <p class="footer-icon">
+                    <a class="icon-weibo" href="http://www.weibo.com/bosszhipin"
+                       ka="cpc-footer-weibo" ka="link-weibo" target="_blank"><span>官方微博</span></a>
+                    <a class="icon-weixin" href="javascript:;"
+                       ka="link-weixin"><span>微信公众号</span><img class="qrcode-weixin"
+                                                               src="/v2/web/geek/images/we_chat_qr.jpg"/></a>
+                    <a class="icon-app" href="https://app.zhipin.com"
+                       ka="link-downloadapp"><span>下载</span></a>
+                </p>
+            </div>
+            <div class="footer-about clear-fix">
+                <dl>
+                    <dt>企业服务</dt>
+                    <dd>
+                        <a href="/job_detail/" ka="link-search">职位搜索</a>
+                        <a href="https://news.zhipin.com/" ka="link-news">新闻资讯</a>
+                        <a href="https://app.zhipin.com/" ka="link-app">BOSS直聘APP</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>使用与帮助</dt>
+                    <dd>
+                        <a href="/register/protocol/introduce" ka="link-privacy" target="_blank">用户协议与隐私政策</a>
+                        <a href="/activity/cc/anticheatguide.html" ka="link-anticheatguide"
+                           target="_blank">防骗指南</a>
+                        <a href="/activity/cc/postrules.html" ka="link-postrules" target="_blank">职位发布规则</a>
+                        <a href="/activity/cc/usehelp.html" ka="link-usehelp"
+                           target="_blank">使用帮助</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>联系BOSS直聘</dt>
+                    <dd>
+                        <p>北京华品博睿网络技术有限公司</p>
+                        <p>公司地址 北京市朝阳区太阳宫中路8号冠捷大厦302</p>
+                        <p>联系电话 010-84150633</p>
+                        <p>违法和不良信息举报邮箱 <a class="report-mail" href="mailto:jubao@kanzhun.com">jubao@kanzhun.com</a>
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+            <div class="copyright">
+                <p>
+                    <span>Copyright © 2019 BOSS直聘</span><span>京ICP备14013441号-5</span>
+                    <span>
+                     <a href="/activity/cc/businesslicense.html" ka="link-businesslicense"
+                        target="_blank">
+                         <img alt=""
+                              src="https://static.zhipin.com/zhipin/v127/web/geek/images/icon-badge-1.png"/>
+                         电子营业执照
+                     </a>
+                 </span>
+                    <span><a
+                            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502032801"
+                            ka="link-beian" target="_blank">京公网安备11010502032801 <img alt=""
+                                                                                     src="/v2/web/geek/images/icon-beian.png"/></a></span>
+                    <span><a href="http://sdwj.zhipin.com/web/index.html" ka="link-sdwj"
+                             target="_blank">首都网警</a></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="links links-friends">
+        <dl class="links-item">
+            <dt>友情链接：</dt>
+            <dd>
+
+                <a href="http://www.7360.cc/" ka="friendly-link-1" target="_blank">面试经验</a>
+
+                <a href="http://www.360guakao.net/" ka="friendly-link-2" target="_blank">360挂靠网</a>
+
+                <a href="https://lie.zhipin.com/" ka="friendly-link-3" target="_blank">BOSS直聘猎头版</a>
+
+                <a href="http://www.ganji.com/zhaopin/" ka="friendly-link-4"
+                   target="_blank">北京招聘</a>
+
+                <a href="http://bengbu.goodjobs.cn" ka="friendly-link-5" target="_blank">蚌埠人才网</a>
+
+                <a href="http://www.job5156.com/dongguan/" ka="friendly-link-6" target="_blank">东莞招聘网</a>
+
+                <a href="http://www.ilife.cn/baike/" ka="friendly-link-7" target="_blank">健康小常识</a>
+
+                <a href="https://www.huisuanzhang.com/" ka="friendly-link-8"
+                   target="_blank">代理记账</a>
+
+                <a href="http://www.icauto.com.cn/baike/" ka="friendly-link-9"
+                   target="_blank">用车手册</a>
+
+                <a href="http://www.xzhichang.com" ka="friendly-link-10" target="_blank">人力资源</a>
+
+                <a href="http://kx.zxxk.com/" ka="friendly-link-11" target="_blank">初中科学</a>
+
+                <a href="http://www.gaodun.com/cfa/" ka="friendly-link-12" target="_blank">CFA</a>
+
+                <a href="http://www.yixue99.com/wsrc/" ka="friendly-link-13"
+                   target="_blank">招聘信息</a>
+
+                <a href="http://www.chinabgao.com/stat/" ka="friendly-link-14"
+                   target="_blank">行业数据</a>
+
+                <a href="http://www.huibo.com/xiaoyuan/" ka="friendly-link-15"
+                   target="_blank">校园招聘</a>
+
+                <a href="https://www.kanqibao.com/news" ka="friendly-link-16"
+                   target="_blank">企业资讯</a>
+
+
+            </dd>
+        </dl>
+        <label><span>展开</span><i class="fz fz-slidedown"></i></label>
+    </div>
+
+
+    <!-- 通用侧边栏 -->
+    <div id="siderbar">
+        <div class="sider-index">
+            <ul class="siderbar-top">
+                <li data-value="interest">
+                    <a href="javascript:;" ka="side_interest"><i class="icon-sider-interest"></i>感兴趣</a>
+                </li>
+                <li data-value="contact">
+                    <a href="javascript:;" ka="side_chat"><i class="icon-sider-chat"></i>沟通过</a>
+                </li>
+                <li data-value="deliver">
+                    <a href="javascript:;" ka="side_deliver"><i
+                            class="icon-sider-resume"></i>已投递</a>
+                </li>
+                <li data-value="interview">
+                    <a href="javascript:;" ka="side_interview"><i class="icon-sider-interview"></i>面试</a>
+                </li>
+            </ul>
+            <ul class="siderbar-bottom">
+                <li>
+                    <a class="siderbar-back-top" href="javascript:;" title="返回顶部"></a>
+                </li>
+                <li>
+                    <a class="siderbar-feedback" href="javascript:;">反馈</a>
+                </li>
+                <li>
+                    <a class="siderbar-wechat" href="javascript:;">微信
+                        <div class="qrcode-layer "><i></i><img alt=""
+                                                               src="https://static.zhipin.com/zhipin/v127/web/geek/images/qrcode/wechat-qrcode.jpg">关注BOSS直聘微信服务号
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="siderbar-app" href="javascript:;">APP
+                        <div class="qrcode-layer"><i></i><img alt=""
+                                                              src="/qrcode/common.json?content=https%3A%2F%2Fwww.zhipin.com%2Fd%2Fv2%2F%3Ftype%3Dck%26pkn%3Dmain-m%26sid%3Dmoren_14&w=200&h=200">下载BOSS直聘APP
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!--通用注册登录-->
+    <div class="sign-wrap sign-wrap-v2" style="display: none">
+
+
+        <!--密码登录-->
+        <div class="sign-form sign-pwd" style="display:none;">
+            <div class="sign-slide-box">
+                <a class="logo" href="https://www.zhipin.com/" ka="header-logo">
+                    <img src="https://static.zhipin.com/v2/web/geek/images/logo.png">
+                </a>
+                <ul>
+                    <li>
+                        <i class="icon"></i>
+                        <span>11000000</span>
+                        <span>企业Boss数</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>沟通</span>
+                        <span>在线职位及时沟通</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>任性选</span>
+                        <span>各大行业职位任你选</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="sign-content">
+                <div class="inner-box">
+                    <h3 class="title">登录BOSS直聘</h3>
+                    <form action="/wapi/zppassport/login/account" method="post">
+                        <div class="sign-tab"><span class="link-signin cur">密码登录</span><span
+                                class="link-sms">短信登录</span><span class="link-scan">扫码登录</span>
+                        </div>
+                        <div class="tip-error tip-error-form"></div>
+                        <div class="form-row row-select">
+                            <span class="dropdown-select"><i class="icon-select-arrow"></i><em
+                                    class="text-select">+86</em><input name="regionCode"
+                                                                       type="hidden"
+                                                                       value="+86"/></span>
+                            <span class="ipt-wrap"><i class="icon-sign-phone"></i><input
+                                    class="ipt ipt-phone required" ka="signin-account"
+                                    name="account" placeholder="手机号" type="tel"/></span>
+                            <div class="dropdown-menu">
+
+                                <ul>
+                                    <li data-val="+86"><span class="num">+86</span>中国大陆</li>
+                                    <li data-val="+1"><span class="num">+1</span>美国</li>
+                                    <li data-val="+852"><span class="num">+852</span>香港</li>
+                                    <li data-val="+81"><span class="num">+81</span>日本</li>
+                                    <li data-val="+886"><span class="num">+886</span>台湾</li>
+                                    <li data-val="+44"><span class="num">+44</span>英国</li>
+                                    <li data-val="+82"><span class="num">+82</span>韩国</li>
+                                    <li data-val="+33"><span class="num">+33</span>法国</li>
+                                    <li data-val="+7"><span class="num">+7</span>俄罗斯</li>
+                                    <li data-val="+39"><span class="num">+39</span>意大利</li>
+                                    <li data-val="+65"><span class="num">+65</span>新加坡</li>
+                                    <li data-val="+63"><span class="num">+63</span>菲律宾</li>
+                                    <li data-val="+60"><span class="num">+60</span>马来西亚</li>
+                                    <li data-val="+64"><span class="num">+64</span>新西兰</li>
+                                    <li data-val="+34"><span class="num">+34</span>西班牙</li>
+                                    <li data-val="+95"><span class="num">+95</span>缅甸</li>
+                                    <li data-val="+230"><span class="num">+230</span>毛里求斯</li>
+                                    <li data-val="+263"><span class="num">+263</span>津巴布韦</li>
+                                    <li data-val="+20"><span class="num">+20</span>埃及</li>
+                                    <li data-val="+92"><span class="num">+92</span>巴基斯坦</li>
+                                    <li data-val="+880"><span class="num">+880</span>孟加拉国</li>
+                                </ul>
+                            </div>
+                            <div class="tip-error"></div>
+                        </div>
+                        <div class="form-row">
+                            <span class="ipt-wrap"><i class="icon-sign-pwd"></i><input
+                                    class="ipt ipt-pwd required" ka="signin-password"
+                                    name="password" placeholder="密码" type="password"/></span>
+                            <div class="tip-error"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="row-code" id="pwdVerrifyCode">
+                            </div>
+                            <div class="tip-error"></div>
+                        </div>
+                        <input name="csessionId" type="hidden">
+                        <input name="csig" type="hidden">
+                        <input name="ctoken" type="hidden">
+                        <input name="cscene" type="hidden" value="nc_login">
+                        <input name="cappKey" type="hidden" value="FFFF0N00000000006DC1">
+                        <!--<div class="form-row row-code">
+                          <span class="cell-wrap"><i class="icon-sign-code"></i><input type="text" class="ipt ipt-code" name="captcha" ka="signin-code" maxlength="4" placeholder="验证码" data-url="/captcha/randkey.json" /></span><span class="cell-wrap"><img src="/captcha/?randomKey=JL5TNyymkIiLXpH1BF9Xspuy4Va3Rk4H" class="verifyimg"/></span>
+                          <input type="hidden" name="randomKey" class="randomkey" value="JL5TNyymkIiLXpH1BF9Xspuy4Va3Rk4H" />
+                        </div>-->
+                        <div class="form-btn">
+                            <button class="btn" type="submit">登录</button>
+                        </div>
+
+
+                        <div class="text-tip">没有账号 <a class="link-signup"
+                                                      href="javascript:;">立即注册</a></div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--短信登录-->
+        <div class="sign-form sign-sms" style="display:none;">
+            <div class="sign-slide-box">
+                <a class="logo" href="https://www.zhipin.com/" ka="header-logo">
+                    <img src="https://static.zhipin.com/v2/web/geek/images/logo.png">
+                </a>
+                <ul>
+                    <li>
+                        <i class="icon"></i>
+                        <span>11000000</span>
+                        <span>企业Boss数</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>沟通</span>
+                        <span>在线职位及时沟通</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>任性选</span>
+                        <span>各大行业职位任你选</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="sign-content">
+                <div class="inner-box">
+                    <h3 class="title">登录BOSS直聘</h3>
+                    <form action="/wapi/zppassport/login/phone" method="post">
+                        <div class="sign-tab"><span class="link-signin">密码登录</span><span
+                                class="link-sms cur">短信登录</span><span class="link-scan">扫码登录</span>
+                        </div>
+                        <div class="tip-error tip-error-form"></div>
+                        <div class="form-row row-select">
+                            <span class="dropdown-select"><i class="icon-select-arrow"></i><em
+                                    class="text-select">+86</em><input name="regionCode"
+                                                                       type="hidden"
+                                                                       value="+86"/></span>
+                            <span class="ipt-wrap"><i class="icon-sign-phone"></i><input
+                                    class="ipt ipt-phone required" ka="signin-account" name="phone"
+                                    placeholder="手机号" type="tel"/></span>
+                            <div class="dropdown-menu">
+
+                                <ul>
+                                    <li data-val="+86"><span class="num">+86</span>中国大陆</li>
+                                    <li data-val="+1"><span class="num">+1</span>美国</li>
+                                    <li data-val="+852"><span class="num">+852</span>香港</li>
+                                    <li data-val="+81"><span class="num">+81</span>日本</li>
+                                    <li data-val="+886"><span class="num">+886</span>台湾</li>
+                                    <li data-val="+44"><span class="num">+44</span>英国</li>
+                                    <li data-val="+82"><span class="num">+82</span>韩国</li>
+                                    <li data-val="+33"><span class="num">+33</span>法国</li>
+                                    <li data-val="+7"><span class="num">+7</span>俄罗斯</li>
+                                    <li data-val="+39"><span class="num">+39</span>意大利</li>
+                                    <li data-val="+65"><span class="num">+65</span>新加坡</li>
+                                    <li data-val="+63"><span class="num">+63</span>菲律宾</li>
+                                    <li data-val="+60"><span class="num">+60</span>马来西亚</li>
+                                    <li data-val="+64"><span class="num">+64</span>新西兰</li>
+                                    <li data-val="+34"><span class="num">+34</span>西班牙</li>
+                                    <li data-val="+95"><span class="num">+95</span>缅甸</li>
+                                    <li data-val="+230"><span class="num">+230</span>毛里求斯</li>
+                                    <li data-val="+263"><span class="num">+263</span>津巴布韦</li>
+                                    <li data-val="+20"><span class="num">+20</span>埃及</li>
+                                    <li data-val="+92"><span class="num">+92</span>巴基斯坦</li>
+                                    <li data-val="+880"><span class="num">+880</span>孟加拉国</li>
+                                </ul>
+                            </div>
+                            <div class="tip-error"></div>
+                        </div>
+                        <!--<div class="form-row row-code">
+                          <span class="cell-wrap"><i class="icon-sign-code"></i><input type="text" class="ipt ipt-code" name="captcha" ka="signin-code" maxlength="4" placeholder="验证码" data-url="/captcha/randkey.json" /></span><span class="cell-wrap"><img src="/captcha/?randomKey=JL5TNyymkIiLXpH1BF9Xspuy4Va3Rk4H" class="verifyimg"/></span>
+                          <input type="hidden" name="randomKey" class="randomkey" value="JL5TNyymkIiLXpH1BF9Xspuy4Va3Rk4H"/>
+                        </div>-->
+                        <div class="form-row">
+                            <div class="row-code" id="loginVerrifyCode">
+                            </div>
+                            <div class="tip-error"></div>
+                        </div>
+                        <input name="csessionId" type="hidden">
+                        <input name="csig" type="hidden">
+                        <input name="ctoken" type="hidden">
+                        <input name="cscene" type="hidden" value="nc_login">
+                        <input name="cappKey" type="hidden" value="FFFF0N00000000006DC1">
+                        <div class="form-row">
+                        <span class="ipt-wrap"><i class="icon-sign-sms"></i><input
+                                class="ipt ipt-sms required" ka="signup-sms" maxlength="6"
+                                name="phoneCode" placeholder="短信验证码" type="text"/><input
+                                name="smsType" type="hidden" value="1"/><button class="btn btn-sms"
+                                                                                data-url="/wapi/zppassport/send/smsCode"
+                                                                                type="button">发送验证码</button></span>
+                            <div class="tip-error"></div>
+                        </div>
+                        <div class="form-btn">
+                            <button class="btn" type="submit">登录</button>
+                        </div>
+
+
+                        <div class="text-tip">没有账号 <a class="link-signup"
+                                                      href="javascript:;">立即注册</a></div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!--扫码登录-->
+        <div class="sign-form sign-scan" style="display:none;">
+            <div class="sign-slide-box">
+                <a class="logo" href="https://www.zhipin.com/" ka="header-logo">
+                    <img src="https://static.zhipin.com/v2/web/geek/images/logo.png">
+                </a>
+                <ul>
+                    <li>
+                        <i class="icon"></i>
+                        <span>11000000</span>
+                        <span>企业Boss数</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>沟通</span>
+                        <span>在线职位及时沟通</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>任性选</span>
+                        <span>各大行业职位任你选</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="sign-content">
+                <div class="inner-box">
+                    <div class="tip-error tip-error-form"></div>
+                    <div class="sign-tab"><span class="link-signin">密码登录</span><span
+                            class="link-sms">短信登录</span><span class="link-scan cur">扫码登录</span>
+                    </div>
+                    <div class="qrcode-box">
+                        <input class="uuid" type="hidden" value=""/>
+                        <p><span>使用 BOSS直聘 APP 扫码登录</span><em>扫码帮助</em></p>
+                        <div class="qrcodeimg-box">
+                            <div class="invalid-box">
+                                <p>请重新刷新二维码</p>
+                                <button class="btn">点击刷新</button>
+                            </div>
+                            <img data-url="https://www.zhipin.com/qrscan/dispatcher?qrId="
+                                 src="/qrcode/"/>
+                        </div>
+                        <div class="qrcode-tip"><span class="gray">知道了</span>Boss现在也可以使用密码和短信登录了
+                        </div>
+                        <div class="hover-range-left"></div>
+                        <div class="hover-range-right"></div>
+                        <div class="sign-scan-help animation">
+                            <h4>扫码帮助</h4>
+                            <ul class="scan-help-tab">
+                                <li class="active">我是BOSS</li>
+                                <li>我是牛人</li>
+                            </ul>
+                            <div class="sub-title">我的&nbsp;&gt;&nbsp;登录网页版</div>
+                            <ul class="scan-help-content">
+                                <li class="help-boss active"></li>
+                                <li class="help-geek"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-tip">没有账号 <a class="link-signup" href="javascript:;">立即注册</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--注册-->
+
+        <div class="sign-form sign-register" style="display:block;">
+            <div class="sign-slide-box">
+                <a class="logo" href="https://www.zhipin.com/" ka="header-logo">
+                    <img src="https://static.zhipin.com/v2/web/geek/images/logo.png">
+                </a>
+                <ul class="geek-slide ">
+                    <li>
+                        <i class="icon"></i>
+                        <span>11000000</span>
+                        <span>企业Boss数</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>沟通</span>
+                        <span>在线职位及时沟通</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>任性选</span>
+                        <span>各大行业职位任你选</span>
+                    </li>
+                </ul>
+                <ul class="boss-slide hide">
+                    <li>
+                        <i class="icon"></i>
+                        <span>招聘效果好</span>
+                        <span>与职场牛人在线开聊</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>更多在线牛人</span>
+                        <span>入职速度快</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>人才匹配度高</span>
+                        <span>获取更精准的牛人</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="sign-content">
+                <div class="inner-box">
+                    <h3 class="title">注册BOSS直聘</h3>
+                    <form action="/wapi/zppassport/user/registered" method="post">
+                        <input name="act" type="hidden" value="">
+                        <input name="purpose" type="hidden" value="">
+
+                        <h4>一份简历日均5位对我感兴趣的Boss</h4>
+                        <div class="tip-error tip-error-form"></div>
+                        <div class="form-row row-select">
+                            <span class="dropdown-select"><i class="icon-select-arrow"></i><em
+                                    class="text-select">+86</em><input name="regionCode"
+                                                                       type="hidden"
+                                                                       value="+86"/></span>
+                            <span class="ipt-wrap"><i class="icon-sign-phone"></i><input
+                                    class="ipt ipt-phone required" ka="signin-account" name="phone"
+                                    placeholder="手机号" type="tel"/></span>
+                            <div class="dropdown-menu">
+
+                                <ul>
+                                    <li data-val="+86"><span class="num">+86</span>中国大陆</li>
+                                    <li data-val="+1"><span class="num">+1</span>美国</li>
+                                    <li data-val="+852"><span class="num">+852</span>香港</li>
+                                    <li data-val="+81"><span class="num">+81</span>日本</li>
+                                    <li data-val="+886"><span class="num">+886</span>台湾</li>
+                                    <li data-val="+44"><span class="num">+44</span>英国</li>
+                                    <li data-val="+82"><span class="num">+82</span>韩国</li>
+                                    <li data-val="+33"><span class="num">+33</span>法国</li>
+                                    <li data-val="+7"><span class="num">+7</span>俄罗斯</li>
+                                    <li data-val="+39"><span class="num">+39</span>意大利</li>
+                                    <li data-val="+65"><span class="num">+65</span>新加坡</li>
+                                    <li data-val="+63"><span class="num">+63</span>菲律宾</li>
+                                    <li data-val="+60"><span class="num">+60</span>马来西亚</li>
+                                    <li data-val="+64"><span class="num">+64</span>新西兰</li>
+                                    <li data-val="+34"><span class="num">+34</span>西班牙</li>
+                                    <li data-val="+95"><span class="num">+95</span>缅甸</li>
+                                    <li data-val="+230"><span class="num">+230</span>毛里求斯</li>
+                                    <li data-val="+263"><span class="num">+263</span>津巴布韦</li>
+                                    <li data-val="+20"><span class="num">+20</span>埃及</li>
+                                    <li data-val="+92"><span class="num">+92</span>巴基斯坦</li>
+                                    <li data-val="+880"><span class="num">+880</span>孟加拉国</li>
+                                </ul>
+                            </div>
+                            <div class="tip-error"></div>
+                        </div>
+                        <!--<div class="form-row row-code">
+                          <span class="cell-wrap"><i class="icon-sign-code"></i><input type="text" class="ipt ipt-code" name="captcha" ka="signin-code" maxlength="4" placeholder="验证码" data-url="/captcha/randkey.json" /></span><span class="cell-wrap"><img src="/captcha/?randomKey=JL5TNyymkIiLXpH1BF9Xspuy4Va3Rk4H" class="verifyimg"/></span>
+                          <input type="hidden" name="randomKey" class="randomkey" value="JL5TNyymkIiLXpH1BF9Xspuy4Va3Rk4H" />
+                        </div>-->
+                        <div class="form-row">
+                            <div class="row-code" id="regVerrifyCode"></div>
+                            <div class="tip-error"></div>
+                        </div>
+
+                        <input name="csessionId" type="hidden">
+                        <input name="csig" type="hidden">
+                        <input name="ctoken" type="hidden">
+                        <input name="cscene" type="hidden" value="nc_login">
+                        <input name="cappKey" type="hidden" value="FFFF0N00000000006DC1">
+                        <div class="form-row">
+                  <span class="ipt-wrap"><i class="icon-sign-sms"></i><input
+                          class="ipt ipt-sms required" ka="signup-sms" maxlength="6"
+                          name="phoneCode" placeholder="短信验证码" type="text"/><input
+                          name="smsType" type="hidden" value="2"/><button class="btn btn-sms"
+                                                                          data-url="/wapi/zppassport/send/smsCode"
+                                                                          type="button">发送验证码</button></span>
+
+                            <div class="tip-error"></div>
+                        </div>
+                        <div class="form-btn">
+                            <button class="btn" type="submit">注册</button>
+                        </div>
+                        <div class="text-tip">
+                            <a class="user-agreement"
+                               href="https://www.zhipin.com/register/protocol/introduce"
+                               target="_blank">注册代表你已同意用户协议及隐私政策</a>
+                            <a class="link-signin" href="javascript:;">直接登录</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="btn-switch ewm-switch">
+                    <div class="switch-tip">微信极速注册<i class="icon-triangle"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!--扫码小程序注册-->
+
+        <div class="sign-form sign-miniapp" style="display: none;">
+            <div class="sign-slide-box">
+                <a class="logo" href="https://www.zhipin.com/" ka="header-logo">
+                    <img src="https://static.zhipin.com/v2/web/geek/images/logo.png">
+                </a>
+                <ul>
+                    <li>
+                        <i class="icon"></i>
+                        <span>11000000</span>
+                        <span>企业Boss数</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>沟通</span>
+                        <span>在线职位及时沟通</span>
+                    </li>
+                    <li>
+                        <i class="icon"></i>
+                        <span>任性选</span>
+                        <span>各大行业职位任你选</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="sign-content">
+                <div class="inner-box">
+                    <input class="scene" type="hidden" value="24bb7d35b24948dabc601951b7744bb5"/>
+                    <h4>微信快速注册</h4>
+                    <div class="qrcodeimg-box">
+                        <div class="invalid-box">
+                            <p>请重新刷新二维码</p>
+                            <button class="btn">点击刷新</button>
+                        </div>
+                        <img data-url="https://www.zhipin.com/qrscan/dispatcher?qrId=24bb7d35b24948dabc601951b7744bb5"
+                             src="">
+                    </div>
+                    <p class="sign-tip">请用微信“扫一扫”扫描上方二维码<br/>进入快捷注册</p>
+                    <div class="text-tip">已有账号 <a class="link-signin" href="javascript:;">立即登录</a>
+                    </div>
+                </div>
+                <div class="btn-switch phone-switch">
+                    <div class="switch-tip">手机号注册在这里<i class="icon-triangle"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!--扫码小程序注册成功-->
+        <div class="sign-form sign-succ">
+            <h3 class="title">注册BOSS直聘</h3>
+            <img class="img-succ"
+                 src="https://static.zhipin.com/zhipin/v127/web/geek/images/success.png"/>
+            <p>注册成功，即将跳转完善流程</p>
+            <div class="btn-switch phone-switch"></div>
+        </div>
+
+        <!--注册成功完善简历-->
+        <div class="sign-form sign-welcome">
+            <h3 class="title">欢迎来到BOSS直聘</h3>
+            <div class="welcome-box">
+                <div class="welcome-text">
+                    <b>快速完善简历</b>
+                    <p>做好与Boss对话前的准备吧。</p>
+                </div>
+                <img alt="" src="/v2/web/geek/images/icon-sign-welcome.png"/>
+                <div class="form-btn"><a class="btn" href="/geek/complete/guide.html"
+                                         ka="registe-complete">开始完善</a>
+                </div>
+                <div class="count-down"><em class="num">3s</em> 后自动跳转</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://static.zhipin.com/library/js/lib/jquery-1.12.2.min.js"></script>
+<script src="https://static.zhipin.com/zhipin/v127/web/geek/js/main.js"></script>
+<input id="page_key_name" type="hidden" value="cpc_job_list"/>
+
+
+<script>
+  function get_share_datas_from_html_inapp() {
+    var shid = "shdefault", urlShid, urlSid, pk = "pkdefault", pp = "ppdefault",
+        pkn = (typeof _PK != 'undefined' ? _PK : document.getElementById("page_key_name")),
+        getQueryString = function (name) {
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"),
+              r = window.location.search.substr(1).match(reg);
+          if (r != null) {
+            return unescape(r[2])
+          }
+          return null;
+        };
+    urlShid = getQueryString("shid");
+    urlSid = getQueryString("sid");
+    if (urlShid) {
+      shid = urlShid;
+    } else if (urlSid) {
+      shid = urlSid;
+    }
+    if (pkn) {
+      var pknVal = pkn.value;
+      if (pknVal) {
+        var pkArray = pknVal.split("|");
+        if (pkArray.length == 1) {
+          pk = pkArray[0];
+        } else if (pkArray.length >= 2) {
+          pk = pkArray[0];
+          pp = pkArray[1];
+        }
+      }
+    }
+    var ret = [];
+    ret["shid"] = shid;
+    ret["pk"] = pk;
+    ret["pp"] = pp;
+    return ret;
+  }
+
+  function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return null;
+  }
+</script>
+<script>
+  var _T = _T || [];
+  (function () {
+    var script = document.createElement("script");
+    script.src = "https://static.zhipin.com/library/js/analytics/ka.js";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(script, s);
+  })();
+
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?194df3105ad7148dcf2b98a91b5e727a";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://zhanzhang.baidu.com/contexts/cambrian.jsonld",
+        "@id": "https://www.zhipin.com/c101020100/",
+        "title": "【求职|找工作|最新招聘信息】-BOSS直聘",
+        "description": "BOSS直聘求职频道，为您提供大量的白领求职招聘职位信息,想了解更多关于白领求职招聘职位信息，就来BOSS直聘！",
+        "upDate": "2019-02-14T16:16:55"
+    }
+</script>
+</body>
+</html>
