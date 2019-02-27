@@ -1,7 +1,8 @@
 package zhipin;
 
+import java.io.File;
 import java.io.IOException;
-import java.net.URLEncoder;
+import java.io.RandomAccessFile;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -29,15 +30,16 @@ class ZhiPin {
   public static void list(String key, int page) {
     try {
       Document doc;
-      String url = "https://www.zhipin.com/job_detail/?query="
-          + URLEncoder.encode(key)
-          + "&city=101010100&page="
-          + page;
-      System.out.println(url);
-      doc = Jsoup.connect(url).get();
 
-      //File input = new File("D:\\DEMO\\ak47\\src\\main\\java\\zhipin\\list.html");
-      //doc = Jsoup.parse(input, "UTF-8", "http://www.zhipin.com/");
+      //String url = "https://www.zhipin.com/job_detail/?query="
+      //    + URLEncoder.encode(key)
+      //    + "&city=101010100&page="
+      //    + page;
+      //System.out.println(url);
+      //doc = Jsoup.connect(url).get();
+
+      File input = new File("D:\\DEMO\\ak47\\src\\main\\java\\zhipin\\list.html");
+      doc = Jsoup.parse(input, "UTF-8", "http://www.zhipin.com/");
 
       Elements elements = doc.select("#main > div > div.job-list > ul > li");
       System.out.println(elements.size());
@@ -49,45 +51,28 @@ class ZhiPin {
 
         String sp = "<em class=\"vline\"></em>";
 
-        String job_html = element.select(" div > div.info-primary > p").html();
-        String job_address = job_html.split(sp)[0];
-        String job_year = job_html.split(sp)[1];
-        String job_edu = job_html.split(sp)[2];
+        try {
+          String job_html = element.select(" div > div.info-primary > p").html();
+          String job_address = job_html.split(sp)[0];
+          String job_year = job_html.split(sp)[1];
+          String job_edu = job_html.split(sp)[2];
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
 
         String job_company = element.select(" div > div.info-company > div > h3 > a").text();
 
-        String job_company_html = element.select(" div > div.info-company > div > p").html();
-        String job_company_desc1 = job_company_html.split(sp)[0];
-        String job_company_desc2 = job_company_html.split(sp)[1];
-        String job_company_desc3 = job_company_html.split(sp)[2];
+        try {
+          String job_company_html = element.select(" div > div.info-company > div > p").html();
+          String job_company_desc1 = job_company_html.split(sp)[0];
+          String job_company_desc2 = job_company_html.split(sp)[1];
+          String job_company_desc3 = job_company_html.split(sp)[2];
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
 
         String job_publish_people = element.select(" div > div.info-publis > h3").text();
         String job_publish_time = element.select(" div > div.info-publis > p").text();
-
-        System.out.println(job_href
-            + "\n"
-            + job_title
-            + "\n"
-            + job_money
-            + "\n"
-            + job_address
-            + "\n"
-            + job_year
-            + "\n"
-            + job_edu
-            + "\n"
-            + job_company
-            + "\n"
-            + job_company_desc1
-            + "\n"
-            + job_company_desc2
-            + "\n"
-            + job_company_desc3
-            + "\n"
-            + job_publish_people
-            + "\n"
-            + job_publish_time
-            + "\n");
 
         detail("https://www.zhipin.com" + job_href);
       }
@@ -114,6 +99,19 @@ class ZhiPin {
           "#main > div.job-box > div > div.job-detail > div.detail-content > div.job-sec.company-info > div")
           .text();
       System.out.println(job_company);
+
+      fileWriter("test_doc111133---.txt", job_desc + "\n");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static void fileWriter(String pathname, String content) {
+    try {
+      RandomAccessFile randomAccessFile = new RandomAccessFile(pathname, "rw");
+      randomAccessFile.seek(randomAccessFile.length());
+      randomAccessFile.write(content.getBytes());
+      randomAccessFile.close();
     } catch (IOException e) {
       e.printStackTrace();
     }
