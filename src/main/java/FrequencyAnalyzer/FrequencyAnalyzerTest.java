@@ -47,9 +47,9 @@ class FrequencyAnalyzerTest {
 
     //指定文本文件路径，生成词频集合
     try {
-      List<WordFrequency> wordFrequencyList = frequencyAnalyzer.load("test_doc111133---.txt");
+      List<WordFrequency> wordFrequencyList = frequencyAnalyzer.load("test_.txt");
       wordCloud.build(wordFrequencyList);
-      wordCloud.writeToFile("wy.png");
+      wordCloud.writeToFile("test_.png");
     } catch (IOException e) {
       e.printStackTrace();
     }

@@ -100,7 +100,7 @@ class ZhiPin {
           .text();
       System.out.println(job_company);
 
-      fileWriter("test_doc111133---.txt", job_desc + "\n");
+      fileWriter("test_.txt", job_desc + "\n");
     } catch (IOException e) {
       e.printStackTrace();
     }
