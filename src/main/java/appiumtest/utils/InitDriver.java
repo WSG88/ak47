@@ -33,7 +33,7 @@ public class InitDriver {
     // 每次启动时覆盖session，否则第二次后运行会报错不能新建session
     //desiredCapabilities.setCapability("sessionOverride", true);
     desiredCapabilities.setCapability("noReset", true);
-    desiredCapabilities.setCapability("automationName", "UIAutomator2");
+    //desiredCapabilities.setCapability("automationName", "UIAutomator2");
 
     dr = new AndroidDriver(new URL("http://127.0.0.1:" + port + "/wd/hub"), desiredCapabilities);
 

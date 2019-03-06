@@ -14,3 +14,7 @@ am broadcast -a com.zjdroid.invoke --ei target 6249 --es cmd '{"action":"invoke"
 
 
         adb pull /data/data/com.fzisen.app51zxw/files/smali D:\DEV\AK47\demo\smali
+        
+adb shell logcat -s zjdroid-shell-com.meituan.tower
+
+adb shell logcat -s zjdroid-apimonitor-com.meituan.tower

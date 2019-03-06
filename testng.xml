@@ -13,17 +13,17 @@
     <parameter name="port" value="4723"/>
 
 
-    <!--<parameter name="platformVersion" value="7.1.1"/>-->
-    <!--<parameter name="deviceName" value="R9s"/>-->
-    <!--<parameter name="udid" value="e87adaf6"/>-->
+    <parameter name="platformVersion" value="7.1.1"/>
+    <parameter name="deviceName" value="R9s"/>
+    <parameter name="udid" value="e87adaf6"/>
 
     <!--<parameter name="platformVersion" value="5.1.1"/>-->
     <!--<parameter name="deviceName" value="HNKIW-Q"/>-->
     <!--<parameter name="udid" value="QMS0216331002608"/>-->
 
-    <parameter name="platformVersion" value="4.4.2"/>
-    <parameter name="deviceName" value="android"/>
-    <parameter name="udid" value="127.0.0.1:62001"/>
+    <!--<parameter name="platformVersion" value="4.4.2"/>-->
+    <!--<parameter name="deviceName" value="android"/>-->
+    <!--<parameter name="udid" value="127.0.0.1:62001"/>-->
 
     <!--<parameter name="platformVersion" value="5.1"/>-->
     <!--<parameter name="deviceName" value="R9"/>-->
