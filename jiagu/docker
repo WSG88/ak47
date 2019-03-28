@@ -1,0 +1,3 @@
+一条命令实现停用并删除容器：
+
+docker stop $(docker ps -q) & docker rm $(docker ps -aq)
