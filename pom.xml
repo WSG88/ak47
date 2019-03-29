@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.satest</groupId>
-  <artifactId>com.satest</artifactId>
+  <artifactId>ak47</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <repositories>
