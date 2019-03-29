@@ -1,0 +1,20 @@
+###清空环境： mvn clean -DAPP_ENV=prod
+###打包+装配+安装二进制： mvn install -DAPP_ENV=idc_product -Dmaven.test.skip=true
+###正则匹配搜索ip地址 ((2[0-4]\d|25[0-5]|[01]?\d\d?).){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)
+###需要调整的配置数据库rds kafka redis
+###上传部署命令
+设置环境变量(需要的话) export JAVA_HOME=/usr/java/jdk1.8.0_172
+进入目录 cd /mnt/hizhu-message-system/tomcat/apache-tomcat-8.0.52/bin
+查看进程 ps -ax|grep message
+关闭进程 kill xxxx
+备份下载war（旧）
+导入文件war（新）
+权限赋予 chmod u+x *.sh
+启动服务 ./startup.sh
+查看进程 ps -ax|grep message
+查看日志文件命令 tail xxxx
+查看端口命令 netstat -na
+
+
+后台运行jar项目
+java -jar xx.jar &
