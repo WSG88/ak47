@@ -1,0 +1,55 @@
+安卓网络手机抓包：
+ adb push c:\wherever_you_put\tcpdump /data/local/tcpdump
+
+adb shell chmod 6755 /data/local/tcpdump
+
+adb shell,   su获得root权限
+
+cd /data/local
+
+./tcpdump -i any -p -s 0 -w /sdcard/capture.pcap
+
+命令参数：
+
+        # "-i any": listen on any network interface
+
+　　# "-p": disable promiscuous mode (doesn't work anyway)
+
+　　# "-s 0": capture the entire packet
+
+　　# "-w": write packets to a file (rather than printing to stdout)
+
+　　... do whatever you want to capture, then ^C to stop it ...
+
+adb pull /sdcard/capture.pcap d:/
+
+9,  在电脑上用wireshark打开capture.pcap即可分析log
+
+Execute the following if you would like to watch packets go by rather than capturing them to a file (-n skips DNS lookups. -s 0 captures the entire packet rather than just the header):
+
+adb shell tcpdump -n -s0 
+
+Typical tcpdump options apply. For example, if you want to see HTTP traffic:
+
+只监听http 
+
+adb shell tcpdump -X -n -s0 port 80
+
+根据以上的信息，写一个bat去执行（tcpdump文件必须在当前目录里）。
+
+开始tcpdump
+
+adb push tcpdump /data/local/tcpdump
+adb shell chmod 6755 /data/local/tcpdump
+adb shell rm -r /sdcard/capture.pcap
+adb shell  /data/local/tcpdump -i any -p -s 0 -w /sdcard/capture.pcap
+pause
+下载tcpdump文件到电脑
+
+adb pull /sdcard/capture.pcap capture.pcap
+
+问题：有些机器root后通过adb shell 后，默认不是root用户，需要输入 su才能切换到root，这样在执行批处理会有问题，解决方法如下
+
+adb shell "su -c 'sleep 1'"
+adb start-server
+adb push tcpdump /data/local/tcpdump
