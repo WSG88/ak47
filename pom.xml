@@ -271,7 +271,16 @@
       <artifactId>selenium-chrome-driver</artifactId>
       <version>${selenium.version}</version>
     </dependency>
-
+    <dependency>
+      <artifactId>core</artifactId>
+      <groupId>com.google.zxing</groupId>
+      <version>3.3.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>javase</artifactId>
+      <groupId>com.google.zxing</groupId>
+      <version>3.3.0</version>
+    </dependency>
     <dependency>
       <groupId>com.sun.mail</groupId>
       <artifactId>javax.mail</artifactId>
